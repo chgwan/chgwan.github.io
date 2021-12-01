@@ -4,7 +4,6 @@
 
 layout: home
 ---
-# Mr. wan 的开源小仓库 
 # Mr. wan Open source repo
 ### Reports
 [2021 成都报告](../DataBase/Wan_2021_Chengdu_report.pdf)
