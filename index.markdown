@@ -12,7 +12,11 @@ layout: home
 [2021 南宁报告](../DataBase/Wan_2021_NanNing_report.pdf)
 
 [2021 4th IAEA](../DataBase/Wan_2021_IAEA_report.pdf)
+
+
 ### Papers
 [2021 Nuclear Fusion](../DataBase/Wan_2021_NF.pdf)
 
-[2021_12 Nuclear Fusion](../DataBase/draft_Proof_hi.pdf)
+[2022 Nuclear Fusion](https://arxiv.org/pdf/2110.00346.pdf)
+
+[2022 IEEE Transactions on Plasma Science](https://arxiv.org/pdf/2206.08414.pdf)
