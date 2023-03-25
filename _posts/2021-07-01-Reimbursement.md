@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "ASIPP Paper Reimbursement"
+title:  "ASIPP Reimbursement"
 date:   2021-07-01 10:36:33 +0800
 categories: ASIPP
 ---
