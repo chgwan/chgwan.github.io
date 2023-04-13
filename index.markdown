@@ -33,6 +33,3 @@ layout: home
 [基于双向长短时记忆神经网络的托卡马克放电建模系统](https://pss-system.cponline.cnipa.gov.cn/documents/detail?prevPageTit=changgui)
 
 [一种用于科学计算程序的全生命周期管理系统和方法](https://pss-system.cponline.cnipa.gov.cn/documents/detail?prevPageTit=changgui)
-
-
-[indexJ](./indexJ.md)
