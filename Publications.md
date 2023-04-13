@@ -4,7 +4,7 @@
 
 layout: page
 title: "Publications"
-permalink: /Publications
+permalink: /Publications/
 ---
 # Mr. Wan Publications
 

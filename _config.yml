@@ -23,7 +23,7 @@ email: chenguang.wan@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
   Some simple research experience sharing of Mr.wan.
 domain: chgwan.github.io
-baseurl: # the subpath of your site, e.g. /blog
+baseurl: ""# the subpath of your site, e.g. /blog
 url: https://chgwan.github.io # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  chgwan
