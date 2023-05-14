@@ -19,6 +19,8 @@ permalink: /Publications/
 
 [2023-04-28 成都](../DataBase/Wan_2023_Chengdu.pdf)
 
+[2023-05-15 廊坊新奥](../DataBase/Wan_2023_LangFang_ENN_pre_cn)
+
 
 ### Papers
 [Experiment data-driven modeling of tokamak discharge in EAST Nucl. Fusion 61 066015](../DataBase/Wan_2021_NF.pdf)
