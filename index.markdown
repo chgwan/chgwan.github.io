@@ -15,6 +15,11 @@ layout: home
 
 [2023-04-13 庐江](../DataBase/Wan_2023_Lujiang.pdf)
 
+[2023-04-28](../DataBase/Report_2023_Chengdu_2thFusionAI_pre_cn)
+
+[2023-05-15 廊坊新奥](../DataBase/Wan_2023_LangFang_ENN_pre_cn)
+
+
 
 ### Papers
 [2021 Nuclear Fusion](../DataBase/Wan_2021_NF.pdf)
