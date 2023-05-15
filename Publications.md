@@ -19,7 +19,7 @@ permalink: /Publications/
 
 [2023-04-28 成都](../DataBase/Wan_2023_Chengdu.pdf)
 
-[2023-05-15 廊坊新奥](../DataBase/Wan_2023_LangFang_ENN_pre_cn)
+[2023-05-15 廊坊新奥](../DataBase/Wan_2023_LangFang_ENN_pre_cn.pdf)
 
 
 ### Papers
