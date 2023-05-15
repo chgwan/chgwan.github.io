@@ -7,30 +7,30 @@ layout: home
 # Mr. wan Open source repo
 
 ### Reports
-[2021 成都报告](../DataBase/Wan_2021_Chengdu_report.pdf)
+[2021 成都报告](./DataBase/Wan_2021_Chengdu_report.pdf)
 
-[2021 南宁报告](../DataBase/Wan_2021_NanNing_report.pdf)
+[2021 南宁报告](./DataBase/Wan_2021_NanNing_report.pdf)
 
-[2021 4th IAEA](../DataBase/Wan_2021_IAEA_report.pdf)
+[2021 4th IAEA](./DataBase/Wan_2021_IAEA_report.pdf)
 
-[2023-04-13 庐江](../DataBase/Wan_2023_Lujiang.pdf)
+[2023-04-13 庐江](./DataBase/Wan_2023_Lujiang.pdf)
 
-[2023-04-28 成都](../DataBase/Report_2023_Chengdu_2thFusionAI_pre_cn)
+[2023-04-28 成都](./DataBase/Report_2023_Chengdu_2thFusionAI_pre_cn.pdf)
 
-[2023-05-15 廊坊新奥](../DataBase/Wan_2023_LangFang_ENN_pre_cn)
+[2023-05-15 廊坊新奥](./DataBase/Wan_2023_LangFang_ENN_pre_cn.pdf)
 
 
 
 ### Papers
-[2021 Nuclear Fusion](../DataBase/Wan_2021_NF.pdf)
+[2021 Nuclear Fusion](./DataBase/Wan_2021_NF.pdf)
 
-[2022 Nuclear Fusion](../DataBase/Wan_2022_Nucl._Fusion_62_126060.pdf)
+[2022 Nuclear Fusion](./DataBase/Wan_2022_Nucl._Fusion_62_126060.pdf)
 
-[2022 IEEE Transactions on Plasma Science](../DataBase/A_Robust_and_Fast_Data_Management_System_for_Machine-Learning_Research_of_Tokamaks.pdf)
+[2022 IEEE Transactions on Plasma Science](./DataBase/A_Robust_and_Fast_Data_Management_System_for_Machine-Learning_Research_of_Tokamaks.pdf)
 
-[2022 IEEE Transactions on Power Electronics](../DataBase/High-Uniformity_Calculation_Method_of_Four-Coil_Configuration_in_Large-Caliber_Magnetic_Field_Immunity_Testing_System.pdf)
+[2022 IEEE Transactions on Power Electronics](./DataBase/High-Uniformity_Calculation_Method_of_Four-Coil_Configuration_in_Large-Caliber_Magnetic_Field_Immunity_Testing_System.pdf)
 
-[2023 Nuclear Fusion](../DataBase/Wan_2023_Nucl._Fusion_63_056019.pdf)
+[2023 Nuclear Fusion](./DataBase/Wan_2023_Nucl._Fusion_63_056019.pdf)
 
 ### Patents
 [一种托卡马克磁场最外闭合磁面的建模方法](https://pss-system.cponline.cnipa.gov.cn/documents/detail?prevPageTit=changgui)
