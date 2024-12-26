@@ -8,7 +8,7 @@ date: 2019-08-09 20:55:00 +0800
 categories: [Blogging, Demo]
 tags: [getting started]
 pin: false
-media_subpath: '/posts/20180809'
+media_subpath: "/assets/img/commons"
 ---
 
 ## Creating a Site Repository
