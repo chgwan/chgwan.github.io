@@ -3,7 +3,7 @@ title: Customize the Favicon
 author: cotes
 date: 2019-08-11 00:34:00 +0800
 updated: 2024-12-25
-categories: [Blogging, Tutorial]
+categories: [Blogging, Demo]
 tags: [favicon]
 ---
 
