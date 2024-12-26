@@ -3,7 +3,7 @@ name: Publish
 on:
   push:
     branches:
-      - docs
+      - gh-pages
   workflow_call:
     secrets:
       GH_PAT:
