@@ -1,7 +1,7 @@
 ---
 title: Submit LyX file to arXiv
-author: cotes
-date: 2024-12-27 14:10:00 +0800
+author: chgwan
+# date: 2024-12-27 14:10:00 +0800
 categories: [Notes, Tex]
 tags: [tex]
 render_with_liquid: false
@@ -16,7 +16,6 @@ render_with_liquid: false
     ```
 3. Upload `.aux` and `.bbl` file:  
     The multi-layer path needs to be modified into a single layer like below:
-
     `begin{figure}includegraphics[width=0.45\textwidth]{Images/77873}\includegraphics[width=0.45\textwidth]{Images/78461}`  
     to:  
     `begin{figure}includegraphics[width=0.45\textwidth]{Images/77873}\includegraphics[width=0.45\textwidth]{78461}`
