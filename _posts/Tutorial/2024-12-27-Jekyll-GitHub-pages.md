@@ -13,10 +13,9 @@ render_with_liquid: false
 
 - [安装 Jekyll](https://jekyllrb.com/docs/installation/ubuntu/)
 - [Chrispy theme](https://github.com/cotes2020/jekyll-theme-chirpy)
-- [Chrispy theme getting start](https://chirpy.cotes.page/posts/getting-started/)
+- [Chrispy theme getting start](https://chirpy.cotes.page/posts/getting-started/) 
 
-## 安装 Jekyll 等
-
+## 安装 Jekyll 等 <span id="jump"></span>
 ```bash
 sudo apt-get install ruby-full build-essential zlib1g-dev
 ## add to bashrc the Gems
@@ -72,7 +71,7 @@ A: 大概率是没有执行 `bash tools/init.sh`
 
 ### 在 `_config.yml` 中添加新的 collections 
 
-用以让 Jekyll 可以编译除除 `_post` 之外的位置
+用以让 Jekyll 可以编译除 `_post` 之外的位置
 
 ```yaml
 collections:
@@ -127,4 +126,36 @@ defaults:
       --disable-external \
       --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
   ```
+
+### 实现指定update和自动update两种update时间方法
+
+按照如下方式修改`_layouts/post.html`文件
+
+```html
+      
+      <!-- manual update date -->
+      {% if page.updated and page.updated != page.date %}
+        <span>
+          {{ site.data.locales[lang].post.updated }}
+          {% include datetime.html date=page.updated tooltip=true lang=lang %}
+        </span>
+      <!-- lastmod date -->
+      {% elsif page.last_modified_at and page.last_modified_at != page.date %}
+        <span>
+          {{ site.data.locales[lang].post.updated }}
+          {% include datetime.html date=page.last_modified_at tooltip=true lang=lang %}
+        </span>
+      {% endif %}
+```
+
+## 快速部署
+
+```bash
+git clone git@github.com:chgwan/chgwan.github.io.git
+# 需要先安装Gems, ruby 等, 安装方法如下安装方法
+cd chgwan.github.io
+bundle install
+```
+
+[安装方法](#jump)
 
