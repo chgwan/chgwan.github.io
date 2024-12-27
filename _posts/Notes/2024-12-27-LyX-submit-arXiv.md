@@ -1,7 +1,7 @@
 ---
 title: Submit LyX file to arXiv
 author: cotes
-date: 2019-08-08 14:10:00 +0800
+date: 2024-12-27 14:10:00 +0800
 categories: [Notes, Tex]
 tags: [tex]
 render_with_liquid: false
