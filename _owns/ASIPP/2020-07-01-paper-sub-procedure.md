@@ -3,8 +3,6 @@ title: "ASIPP paper submit procedure"
 author: chgwan
 date: 2020-07-01 14:10:00 +0800
 updated: 2024-12-23
-categories: [ASIPP]
-tags: [notes]
 render_with_liquid: false
 ---
 

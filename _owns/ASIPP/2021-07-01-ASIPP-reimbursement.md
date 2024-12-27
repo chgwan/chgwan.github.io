@@ -3,8 +3,6 @@ title: "ASIPP reimbursement requirments"
 author: chgwan
 date: 2020-07-01 14:10:00 +0800
 updated: 2024-01-01 
-categories: [ASIPP]
-tags: [notes]
 render_with_liquid: false
 ---
 ## 等离子体所论文报销要求
