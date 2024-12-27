@@ -29,7 +29,12 @@ script_includes:
       </span>
 
       <!-- lastmod date -->
-      {% if page.last_modified_at and page.last_modified_at != page.date %}
+      {% if page.updated and page.updated != page.date %}
+        <span>
+          {{ site.data.locales[lang].post.updated }}
+          {% include datetime.html date=page.updated tooltip=true lang=lang %}
+        </span>
+      {% elsif page.last_modified_at and page.last_modified_at != page.date %}
         <span>
           {{ site.data.locales[lang].post.updated }}
           {% include datetime.html date=page.last_modified_at tooltip=true lang=lang %}
@@ -176,6 +181,7 @@ script_includes:
     <!-- .post-tail-bottom -->
   </div>
   <!-- div.post-tail-wrapper -->
+   <!-- github page comments support -->
   <script src="https://utteranc.es/client.js"
           repo="chgwan/chgwan.github.io"
           issue-term="pathname"
