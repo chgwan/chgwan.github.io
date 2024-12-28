@@ -69,6 +69,10 @@ A: 大概率是没有执行 `bash tools/init.sh`
 
 ## Tricks
 
+### markdown 语法参考
+
+[GitHub markdown 基本语法教程](https://docs.github.com/zh/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+
 ### 在 `_config.yml` 中添加新的 collections 
 
 用以让 Jekyll 可以编译除 `_post` 之外的位置
@@ -115,38 +119,39 @@ defaults:
               
   ```
 
-- 参考[链接](https://github.com/gjtorikian/html-proofer?tab=readme-ov-file#using-on-the-command-line)，寻找 htmlproofer command line 用法
+> 参考[链接](https://github.com/gjtorikian/html-proofer?tab=readme-ov-file#using-on-the-command-line)，寻找 htmlproofer command line 用法
 
-- 因为修改了 `.github/workflows/pages-deploy.yml` 文件，故也要修改 `tools/test.sh` 用以保持一致
-
-  ```bash
-    # --no-enforce-https 为新加部分
-    bundle exec htmlproofer "$SITE_DIR" \
-      --no-enforce-https \
-      --disable-external \
-      --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
-  ```
+> 因为修改了 `.github/workflows/pages-deploy.yml` 文件，故也要修改 `tools/test.sh` 用以保持一致
+> 
+> ```bash
+>     # --no-enforce-https 为新加部分
+>     bundle exec htmlproofer "$SITE_DIR" \
+>       --no-enforce-https \
+>       --disable-external \
+>       --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
+> ```
 
 ### 实现指定update和自动update两种update时间方法
 
 按照如下方式修改`_layouts/post.html`文件
 
-```html
-      
-      <!-- manual update date -->
-      {% if page.updated and page.updated != page.date %}
-        <span>
-          {{ site.data.locales[lang].post.updated }}
-          {% include datetime.html date=page.updated tooltip=true lang=lang %}
-        </span>
-      <!-- lastmod date -->
-      {% elsif page.last_modified_at and page.last_modified_at != page.date %}
-        <span>
-          {{ site.data.locales[lang].post.updated }}
-          {% include datetime.html date=page.last_modified_at tooltip=true lang=lang %}
-        </span>
-      {% endif %}
-```
+> ```html
+>       
+>       <!-- manual update date -->
+>       {% if page.updated and page.updated != page.date %}
+>         <span>
+>           {{ site.data.locales[lang].post.updated }}
+>           {% include datetime.html date=page.updated tooltip=true lang=lang %}
+>         </span>
+>       <!-- lastmod date -->
+>       {% elsif page.last_modified_at and page.last_modified_at != page.date %}
+>         <span>
+>           {{ site.data.locales[lang].post.updated }}
+>           {% include datetime.html date=page.last_modified_at tooltip=true lang=lang %}
+>         </span>
+>       {% endif %}
+> ```
+>
 
 ## 快速部署
 
