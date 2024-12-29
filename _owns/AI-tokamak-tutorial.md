@@ -10,6 +10,7 @@ media_subpath: "/assets/img/commons"
 - 磁约束等离子体实验物理
 - 托卡马克第四版，清华大学出版社
 - Dive into deep learning - author Mu Li
+- 强化学习 - EasyRL https://datawhalechina.github.io/easy-rl 
 - https://www.deeplearningbook.org/  MIT  deep learning book
 
 ## 预备知识
