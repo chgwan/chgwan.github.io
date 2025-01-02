@@ -2,7 +2,7 @@
 title: AI tokamak tutorial
 author: chgwan
 date: 2024-12-27 00:34:00 +0800
-tags: [tutorial]
+tags: [Tutorial]
 media_subpath: "/assets/img/commons"
 ---
 
@@ -17,6 +17,9 @@ media_subpath: "/assets/img/commons"
 - Linux 的基本操作
 - 机器学习模型搭建的基本操作
 - HDF5，matplotlib，numpy， torch，sql 的熟练运用
+
+## 代码开发规范
+请查看
 
 ## 论文撰写和文献管理相关
 

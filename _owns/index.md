@@ -8,3 +8,4 @@ permalink: /posts/owns/
 - **[AI tokamak 入门指南](AI-tokamak-tutorial)**
 - **[ASIPP论文投稿](paper-sub-procedure)**
 - **[ASIPP报销](paper-sub-procedure)**
+- **[开发规范](development-styles)**
