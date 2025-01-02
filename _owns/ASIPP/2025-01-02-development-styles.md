@@ -8,6 +8,11 @@ media_subpath: "/assets/img/commons"
 # 开发风格
 **统一组内代码风格规范**。遵循该规范，方便协作和 code review.
 
+## Git 提交规范
+基本的规范化网站参考：https://www.conventionalcommits.org/en/v1.0.0/#summary
+
+可以使用 chgwan 编写的 hooks 来进行规范化提交用法参考：https://github.com/chgwan/conventional_commits/tree/main
+
 ## Python 项目规范
 ### 命名规范
 
