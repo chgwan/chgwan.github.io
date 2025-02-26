@@ -6,7 +6,7 @@ date: 2025-02-26
 media_subpath: "/assets/img/commons"
 --- 
 ## 使用入门
-参考瀚海22[使用手册](https://scc.ustc.edu.cn/389/list.htm?from=kdocs_link)
+参考瀚海22 [使用手册](https://scc.ustc.edu.cn/389/list.htm?from=kdocs_link)
 
 ## Slurm 的使用
 ```bash
