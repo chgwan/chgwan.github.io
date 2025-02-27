@@ -29,7 +29,7 @@ media_subpath: "/assets/img/commons"
 | 私有变量   | _start                     |                                |
 
 ### 函数文档规范
-主要参考 pyTorch 项目的相关规范，[链接](https://pytorch.org/docs/stable/_modules/torch/nn/modules/transformer.html#Transformer)
+主要参考 pyTorch 项目的相关规范，[Transformer例子链接](https://github.com/pytorch/pytorch/blob/v2.6.0/torch/nn/modules/transformer.py#L57)
 
 一个简单的例子如下：
 ```python
