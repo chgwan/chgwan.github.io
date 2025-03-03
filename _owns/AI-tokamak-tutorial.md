@@ -10,6 +10,8 @@ media_subpath: "/assets/img/commons"
 - **软件著作权**：500 每篇
 - **发明专利**：2000 每项；实用新型：500每项
 - **论文**：影响因子 * 1000 + 其他奖励（视论文级别而定），NF总计为~8000
+  
+- 以上所说奖励第一单位，需为等离子体物理研究所，也就是说如果非等所为第一单位，奖励不一定能发放到手，供参考
 
 ## 教材和书本
 - 磁约束等离子体实验物理
@@ -24,7 +26,7 @@ media_subpath: "/assets/img/commons"
 - HDF5，matplotlib，numpy， torch，sql 的熟练运用
 
 ## 代码开发规范
-请查看
+参考pyTorch文档规范[Transformer](https://github.com/pytorch/pytorch/blob/v2.6.0/torch/nn/modules/transformer.py#L57)，[RNN](https://github.com/pytorch/pytorch/blob/v2.6.0/torch/nn/modules/rnn.py#L470)
 
 ## 论文撰写和文献管理相关
 
@@ -63,6 +65,11 @@ _lyx 版本转换_
 8. The Innovation (Cell Press)
 9. Journal of Fusion Energy
 
+### 可投水刊列表
+1. IEEE Transactions on Nuclear Science
+2. Fusion Engineering and Design
+3. IEEE Transactions on Plasma Science
+
 ## 推荐审稿人列表
 [不宜公开内容，列表见链接](https://kdocs.cn/l/cewDvJxZMyPX)
 
@@ -70,4 +77,4 @@ _lyx 版本转换_
 [金山网盘协作](https://kdocs.cn/join/gxxq4mo)
 
 
-**PS**: 如果有部分链接，你无法打开说明你不是小组成员，这些部分内容不共享
+**PS**: 如果有部分链接，你无法打开说明你不是小组成员，这部分内容不共享

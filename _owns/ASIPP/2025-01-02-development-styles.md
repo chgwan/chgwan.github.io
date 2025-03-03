@@ -38,7 +38,7 @@ def get_h5_tokamak(
     nodes: List[LiteralString],
     dtype=np.float32,
 ) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
-    """ A function for easy get h5 file from tokamak
+    r""" A function for easy get h5 file from tokamak
     bla bla bla
 
     Args:
