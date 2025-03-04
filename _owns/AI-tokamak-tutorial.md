@@ -24,6 +24,7 @@ media_subpath: "/assets/img/commons"
 - Linux 的基本操作
 - 机器学习模型搭建的基本操作
 - HDF5，matplotlib，numpy， torch，sql 的熟练运用
+- 熟读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)，之后再提问，特别注意不着编边际的问题。
 
 ## 代码开发规范
 参考pyTorch文档规范[Transformer](https://github.com/pytorch/pytorch/blob/v2.6.0/torch/nn/modules/transformer.py#L57)，[RNN](https://github.com/pytorch/pytorch/blob/v2.6.0/torch/nn/modules/rnn.py#L470)
