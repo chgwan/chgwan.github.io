@@ -5,28 +5,30 @@ date: 2024-12-27 00:34:00 +0800
 tags: [Tutorial]
 media_subpath: "/assets/img/commons"
 ---
-
 ## 奖励标准
+
 - **软件著作权**：500 每篇
 - **发明专利**：2000 每项；实用新型：500每项
 - **论文**：影响因子 * 1000 + 其他奖励（视论文级别而定），NF总计为~8000
-  
 - 以上所说奖励第一单位，需为等离子体物理研究所，也就是说如果非等所为第一单位，奖励不一定能发放到手，供参考
 
 ## 教材和书本
+
 - 磁约束等离子体实验物理
 - 托卡马克第四版，清华大学出版社
 - Dive into deep learning - author Mu Li
-- 强化学习 - EasyRL https://datawhalechina.github.io/easy-rl 
+- 强化学习 - EasyRL https://datawhalechina.github.io/easy-rl
 - https://www.deeplearningbook.org/  MIT  deep learning book
 
 ## 预备知识
+
 - Linux 的基本操作
 - 机器学习模型搭建的基本操作
 - HDF5，matplotlib，numpy， torch，sql 的熟练运用
 - 熟读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)，之后再提问，特别注意不着编边际的问题。
 
 ## 代码开发规范
+
 参考pyTorch文档规范[Transformer](https://github.com/pytorch/pytorch/blob/v2.6.0/torch/nn/modules/transformer.py#L57)，[RNN](https://github.com/pytorch/pytorch/blob/v2.6.0/torch/nn/modules/rnn.py#L470)
 
 ## 论文撰写和文献管理相关
@@ -43,15 +45,13 @@ _lyx 版本转换_
 - Nuclear Fusion 相关 lyx 模板，请基于该模板进行撰写，该模板的格式更加优美，能让审稿人看的更爽，下载链接  https://www.kdocs.cn/l/ccj2tevnX0Tl
 - 如果喜欢 latex overleaf, 建议使用 **中科科技云** overleaf 共享网站 https://sharelatex.cstcloud.cn/project
 - 其他格式 一般按照 Nuclear Fusion 格式，特别注意文献引用和图表引用
+- 最好保证自己的**英文论文能用 pdflatex 编译不出错**，这样才是各类英文期刊比较容易通过的格式
 
 ### 论文撰写
 
 - 投稿之前一定要让我确认作者列表，这个十分重要！！！
-
 - 如果合适的话，在论文投稿之前，最好写一个 **专利和软著**
-
 - 论文投稿之前，需要在 pinboard 上 **公示**，[参考](../paper-sub-procedure)
-
 - 基本流程：论文初稿 &rarr; 专利 &rarr; 软著&rarr; 投稿
 
 ### 可投期刊推荐
@@ -61,21 +61,28 @@ _lyx 版本转换_
 3. Nature Communications
 4. Communications Physics
 5. Cell Reports Physical Science
-6. Nuclear Fusion 
+6. Nuclear Fusion
 7. Nature Machine Intelligence
 8. The Innovation (Cell Press)
 9. Journal of Fusion Energy
 
+### 二区期刊可投
+1. Nuclear Materials and Energy
+2. NUCLEAR ENGINEERING AND DESIGN
+3. PPCF 
+
 ### 可投水刊列表
+
 1. IEEE Transactions on Nuclear Science
 2. Fusion Engineering and Design
 3. IEEE Transactions on Plasma Science
 
 ## 推荐审稿人列表
+
 [不宜公开内容，列表见链接](https://kdocs.cn/l/cewDvJxZMyPX)
 
 ## 小组共享资料
-[金山网盘协作](https://kdocs.cn/join/gxxq4mo)
 
+[金山网盘协作](https://kdocs.cn/join/gxxq4mo)
 
 **PS**: 如果有部分链接，你无法打开说明你不是小组成员，这部分内容不共享
