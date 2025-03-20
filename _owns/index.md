@@ -9,4 +9,4 @@ permalink: /posts/owns/
 - **[ASIPP论文投稿](paper-sub-procedure)**
 - **[ASIPP报销](paper-sub-procedure)**
 - **[开发规范](development-styles)**
-- **[瀚海使用手册](Hanhai-slurm-tutorial)**
+- **[内部服务器使用手册](Internal-Servers-Tutorial)**
