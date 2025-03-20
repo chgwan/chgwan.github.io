@@ -28,22 +28,7 @@ media_subpath: "/assets/img/commons"
 - 熟读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)，之后再提问，特别注意**不着编边际的问题**。
 
 ## 代码开发规范
-
-### 命名规范
-| 类型       | 惯例                        | 备注                          |
-| ---------- | --------------------------- | ----------------------------- |
-| 包和模块   | lower_with_under            |                               |
-| 类         | CapWords                    |                               |
-| 文件夹名   | CapWords                    |                               |
-| 文件名     | capWords / capWrods_<intro> | 一般用capWords，_表示补充说明 |
-| 常量       | CAPS_WITH_UNDER             |                               |
-| 实例       | lower_with_under            |                               |
-| 方法与功能 | lower_with_under()          |                               |
-| 变量       | lower_with_under            |                               |
-| 私有变量   | _start                      |                               |
-
-### 函数文档规范
-参考pyTorch文档规范[Transformer](https://github.com/pytorch/pytorch/blob/v2.6.0/torch/nn/modules/transformer.py#L57)，[RNN](https://github.com/pytorch/pytorch/blob/v2.6.0/torch/nn/modules/rnn.py#L470)
+见 [开发规范](../development-styles)
 
 ## 论文撰写和文献管理相关
 
