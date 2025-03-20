@@ -25,10 +25,24 @@ media_subpath: "/assets/img/commons"
 - Linux 的基本操作
 - 机器学习模型搭建的基本操作
 - HDF5，matplotlib，numpy， torch，sql 的熟练运用
-- 熟读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)，之后再提问，特别注意不着编边际的问题。
+- 熟读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)，之后再提问，特别注意**不着编边际的问题**。
 
 ## 代码开发规范
 
+### 命名规范
+| 类型       | 惯例                        | 备注                          |
+| ---------- | --------------------------- | ----------------------------- |
+| 包和模块   | lower_with_under            |                               |
+| 类         | CapWords                    |                               |
+| 文件夹名   | CapWords                    |                               |
+| 文件名     | capWords / capWrods_<intro> | 一般用capWords，_表示补充说明 |
+| 常量       | CAPS_WITH_UNDER             |                               |
+| 实例       | lower_with_under            |                               |
+| 方法与功能 | lower_with_under()          |                               |
+| 变量       | lower_with_under            |                               |
+| 私有变量   | _start                      |                               |
+
+### 函数文档规范
 参考pyTorch文档规范[Transformer](https://github.com/pytorch/pytorch/blob/v2.6.0/torch/nn/modules/transformer.py#L57)，[RNN](https://github.com/pytorch/pytorch/blob/v2.6.0/torch/nn/modules/rnn.py#L470)
 
 ## 论文撰写和文献管理相关
@@ -67,9 +81,10 @@ _lyx 版本转换_
 9. Journal of Fusion Energy
 
 ### 二区期刊可投
+
 1. Nuclear Materials and Energy
 2. NUCLEAR ENGINEERING AND DESIGN
-3. PPCF 
+3. PPCF
 
 ### 可投水刊列表
 
@@ -84,5 +99,66 @@ _lyx 版本转换_
 ## 小组共享资料
 
 [金山网盘协作](https://kdocs.cn/join/gxxq4mo)
+
+### 论文中建议给下列论文，全都引用一遍
+
+```bib
+@article{Wan2021,
+  title = {Experiment Data-Driven Modeling of Tokamak Discharge in {{EAST}}},
+  author = {Wan, Chenguang and Yu, Zhi and Wang, Feng and Liu, Xiaojuan and Li, Jiangang},
+  year = {2021},
+  month = jun,
+  journal = {Nuclear Fusion},
+  volume = {61},
+  number = {6},
+  pages = {066015},
+  issn = {0029-5515},
+  doi = {10.1088/1741-4326/abf419}
+}
+
+@article{Wan2022,
+  title = {{{EAST}} Discharge Prediction without Integrating Simulation Results},
+  author = {Wan, Chenguang and Yu, Zhi and Pau, Alessandro and Liu, Xiaojuan and Li, Jiangang},
+  year = {2022},
+  month = dec,
+  journal = {Nuclear Fusion},
+  volume = {62},
+  number = {12},
+  pages = {126060},
+  publisher = {IOP Publishing},
+  issn = {17414326},
+  doi = {10.1088/1741-4326/ac9c1a},
+  copyright = {All rights reserved}
+}
+
+@article{Wan2023,
+  title = {A Machine-Learning-Based Tool for Last Closed-Flux Surface Reconstruction on Tokamaks},
+  author = {Wan, Chenguang and Yu, Zhi and Pau, Alessandro and Sauter, Olivier and Liu, Xiaojuan and Yuan, Qiping and Li, Jiangang},
+  year = {2023},
+  month = may,
+  journal = {Nuclear Fusion},
+  volume = {63},
+  number = {5},
+  pages = {056019},
+  issn = {0029-5515},
+  doi = {10.1088/1741-4326/acbfcc}
+}
+
+@article{Wan2024,
+  title = {Predict the Last Closed-Flux Surface Evolution without Physical Simulation},
+  author = {Wan, Chenguang and Bai, Shuhang and Yu, Zhi and Yuan, Qiping and Huang, Yao and Liu, Xiaojuan and Hu, Yemin and Li, Jiangang},
+  year = {2024},
+  month = feb,
+  journal = {Nuclear Fusion},
+  volume = {64},
+  number = {2},
+  pages = {026014},
+  issn = {0029-5515},
+  doi = {10.1088/1741-4326/ad171f}
+}
+
+```
+
+**## 其他说明**
 
 **PS**: 如果有部分链接，你无法打开说明你不是小组成员，这部分内容不共享
