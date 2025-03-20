@@ -3,7 +3,7 @@ title: Submit LyX file to arXiv
 author: chgwan
 # date: 2024-12-27 14:10:00 +0800
 categories: [Notes, Tex]
-tags: [tex]
+tags: [Note, Tex]
 render_with_liquid: false
 ---
 ## Submit lyx file to arXiv

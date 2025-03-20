@@ -6,7 +6,7 @@ description: >-
 author: cotes
 date: 2019-08-09 20:55:00 +0800
 categories: [Blogging, Demo]
-tags: [tutorial]
+tags: [Tutorial]
 pin: false
 media_subpath: "/assets/img/commons"
 ---

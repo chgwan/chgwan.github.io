@@ -198,6 +198,10 @@ defaults:
       type: owns
     values:  
       layout: post
+      comments: true
+      toc: true
+      permalink: /posts/owns/:title/
+      # tags: []
   - scope:
       path: _drafts
     values:

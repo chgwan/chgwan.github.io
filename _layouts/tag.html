@@ -12,7 +12,9 @@ layout: page
     <span class="lead text-muted ps-2">{{ page.posts | size }}</span>
   </h1>
   <ul class="content ps-0">
-    {% for post in page.posts %}
+    {% assign all_posts = site.posts | concat: site.owns %}
+    {% assign tagged_posts = all_posts | where: "tags", page.title %}
+    {% for post in tagged_posts %}
       <li class="d-flex justify-content-between px-md-3">
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
         <span class="dash flex-grow-1"></span>
