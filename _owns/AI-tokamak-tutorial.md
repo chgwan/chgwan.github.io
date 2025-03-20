@@ -28,6 +28,7 @@ media_subpath: "/assets/img/commons"
 - 熟读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)，之后再提问，特别注意**不着编边际的问题**。
 
 ## 代码开发规范
+
 见 [开发规范](../development-styles)
 
 ## 论文撰写和文献管理相关
@@ -144,6 +145,6 @@ _lyx 版本转换_
 
 ```
 
-**## 其他说明**
+## **其他说明**
 
 **PS**: 如果有部分链接，你无法打开说明你不是小组成员，这部分内容不共享

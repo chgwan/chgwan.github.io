@@ -2,7 +2,7 @@
 title: Internal Servers Tutorial
 author: chgwan
 date: 2025-02-26
-# tags: [tutorial, note]
+tags: [Tutorial, Note]
 media_subpath: "/assets/img/commons"
 --- 
 ## USTC 瀚海

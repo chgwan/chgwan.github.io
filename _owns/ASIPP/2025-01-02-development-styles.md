@@ -2,7 +2,7 @@
 title: Development styles
 author: chgwan
 date: 2025-01-02
-# tags: [tutorial, note]
+tags: [Tutorial, Note]
 media_subpath: "/assets/img/commons"
 --- 
 # 开发风格
