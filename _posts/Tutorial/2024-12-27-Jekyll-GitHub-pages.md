@@ -39,7 +39,7 @@ gem install jekyll bundler
    ```bash
    cd <username>.github.io
    bash tools/init.sh # 这一步非常重要
-   bundle
+   bundle install
    ```
 
 4. 打开 Jekyll server
@@ -66,6 +66,20 @@ gem install jekyll bundler
 Q: 仅出现 --- layout: home # Index page --- jekyll chrispy
 
 A: 大概率是没有执行 `bash tools/init.sh`
+
+## 迁移到其他设备
+### 配置环境
+1. 安装rbenv
+```bash
+# add the following statements in .bashrc
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+```
+2. 用rbenv重新安装ruby，建议版本号高于3.2
+3. 回到[安装Jekyll](#jump)
+4. git clone git@github.com:<username>/<username>.github.io.git
+5. `cd <the folder>; bundle install`
+6. 测试结果: `tools/test.sh` 
 
 ## Tricks
 
