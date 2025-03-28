@@ -3,7 +3,7 @@ title: resume
 author: chgwan
 date: 2024-12-27
 # tags: [Tutorial, Jekyll]
-permalink: /posts/owns/
+# permalink: /posts/owns/
 ---
 
 Sonya Sawtelle

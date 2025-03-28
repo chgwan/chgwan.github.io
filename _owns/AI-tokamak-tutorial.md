@@ -90,7 +90,7 @@ _lyx 版本转换_
 
 ```bib
 @article{Wan2021,
-  title = {Experiment Data-Driven Modeling of Tokamak Discharge in {{EAST}}},
+  title = {Experiment Data-Driven Modeling of Tokamak Discharge in EAST},
   author = {Wan, Chenguang and Yu, Zhi and Wang, Feng and Liu, Xiaojuan and Li, Jiangang},
   year = {2021},
   month = jun,
@@ -103,7 +103,7 @@ _lyx 版本转换_
 }
 
 @article{Wan2022,
-  title = {{{EAST}} Discharge Prediction without Integrating Simulation Results},
+  title = {EAST Discharge Prediction without Integrating Simulation Results},
   author = {Wan, Chenguang and Yu, Zhi and Pau, Alessandro and Liu, Xiaojuan and Li, Jiangang},
   year = {2022},
   month = dec,
