@@ -33,6 +33,14 @@ media_subpath: "/assets/img/commons"
 
 ## 论文撰写和文献管理相关
 
+#### 论文署名
+
+**论文署名还能署错，那就是真不动脑子，下面署名一个标点符号都不能错**
+
+中文名：中国科学院合肥物质科学研究院等离子体物理研究所，合肥 230031，中国
+
+英文名：Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences, Hefei 230031, China
+
 ### 软件和 LyX 模板等
 
 - 文献管理 -- 使用 zotero，
@@ -56,15 +64,16 @@ _lyx 版本转换_
 
 ### 可投期刊推荐
 
-1. Nature Physics
-2. Nature Energy
-3. Nature Communications
-4. Communications Physics
-5. Cell Reports Physical Science
-6. Nuclear Fusion
-7. Nature Machine Intelligence
-8. The Innovation (Cell Press)
-9. Journal of Fusion Energy
+1. Nature Machine Intelligence： 这个比较简单，目测是很容易拿下的子刊
+2. Nature Physics
+3. Nature Energy
+4. Nature Communications
+5. Communications Physics
+6. Cell Reports Physical Science
+7. Nuclear Fusion
+8. Nature Machine Intelligence
+9. The Innovation (Cell Press)
+10. Journal of Fusion Energy
 
 ### 二区期刊可投
 

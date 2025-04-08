@@ -15,7 +15,7 @@ render_with_liquid: false
 - [Chrispy theme](https://github.com/cotes2020/jekyll-theme-chirpy)
 - [Chrispy theme getting start](https://chirpy.cotes.page/posts/getting-started/) 
 
-## 安装 Jekyll 等 <span id="jump"></span>
+## 安装 Jekyll 等 <span id="jump"> </span>
 ```bash
 sudo apt-get install ruby-full build-essential zlib1g-dev
 ## add to bashrc the Gems
@@ -69,17 +69,39 @@ A: 大概率是没有执行 `bash tools/init.sh`
 
 ## 迁移到其他设备
 ### 配置环境
-1. 安装rbenv
+1. 安装 rbenv
 ```bash
 # add the following statements in .bashrc
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 ```
-2. 用rbenv重新安装ruby，建议版本号高于3.2
-3. 回到[安装Jekyll](#jump)
-4. git clone git@github.com:<username>/<username>.github.io.git
-5. `cd <the folder>; bundle install`
-6. 测试结果: `tools/test.sh` 
+2. 用 rbenv 重新安装 ruby，建议版本号高于 3.2
+
+3. 安装 node，参考 [安装教程](https://nodejs.org/en/download)
+
+   ```bash
+   # Download and install fnm:
+   curl -o- https://fnm.vercel.app/install | bash
+   
+   # Download and install Node.js:
+   fnm install 22
+   
+   # Verify the Node.js version:
+   node -v # Should print "v22.14.0".
+   
+   # Verify npm version:
+   npm -v # Should print "10.9.2".
+   ```
+
+   
+
+4. 回到 [安装 Jekyll](#jump)
+
+5. git clone git@github.com: <username>/<username>.github.io.git
+
+6. `cd <the folder>; bundle install`
+
+7. 测试结果: `tools/test.sh` 
 
 ## Tricks
 
@@ -133,7 +155,7 @@ defaults:
               
   ```
 
-> 参考[链接](https://github.com/gjtorikian/html-proofer?tab=readme-ov-file#using-on-the-command-line)，寻找 htmlproofer command line 用法
+> 参考 [链接](https://github.com/gjtorikian/html-proofer?tab=readme-ov-file#using-on-the-command-line)，寻找 htmlproofer command line 用法
 
 > 因为修改了 `.github/workflows/pages-deploy.yml` 文件，故也要修改 `tools/test.sh` 用以保持一致
 > 
@@ -145,9 +167,9 @@ defaults:
 >       --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
 > ```
 
-### 实现指定update和自动update两种update时间方法
+### 实现指定 update 和自动 update 两种 update 时间方法
 
-按照如下方式修改`_layouts/post.html`文件
+按照如下方式修改 `_layouts/post.html` 文件
 
 > ```html
 >       
