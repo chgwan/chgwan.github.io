@@ -2,6 +2,7 @@
 title: AI tokamak tutorial
 author: chgwan
 date: 2024-12-27 00:34:00 +0800
+updated: 2024-04-15 
 tags: [Tutorial]
 media_subpath: "/assets/img/commons"
 ---
@@ -33,7 +34,7 @@ media_subpath: "/assets/img/commons"
 
 ## 论文撰写和文献管理相关
 
-#### 论文署名
+### 论文署名
 
 **论文署名还能署错，那就是真不动脑子，下面署名一个标点符号都不能错**
 
@@ -57,14 +58,25 @@ _lyx 版本转换_
 
 ### 论文撰写
 
-- 投稿之前一定要让我确认作者列表，这个十分重要！！！
+- 投稿之前一定要让"Chenguang Wan@chenguang.wan@ipp.ac.cn"确认作者列表，这个十分重要！！！
 - 如果合适的话，在论文投稿之前，最好写一个 **专利和软著**
 - 论文投稿之前，需要在 pinboard 上 **公示**，[参考](../paper-sub-procedure)
 - 基本流程：论文初稿 &rarr; 专利 &rarr; 软著&rarr; 投稿
 
+### 论文致谢
+这个部分非常重要，关系到科研项目是否能顺利结项。
+
+1. 如果用到EAST数据需要添加下列语句：
+
+We thank the staff members at EAST in Hefei (https://cstr.cn/31130.02.EAST ), for providing technical support and assistance in data collection and analysis.
+
+2. 其次对于所有在本论文中帮助过你的人，但是不在论文作者中，需要在致谢部分给出
+
+3. 项目致谢，这部分需要让 chenguang.wan@ipp.ac.cn 确认
+
 ### 可投期刊推荐
 
-1. Nature Machine Intelligence： 这个比较简单，目测是很容易拿下的子刊
+1. Nature Machine Intelligence: 这个比较简单，目测是很容易拿下的子刊
 2. Nature Physics
 3. Nature Energy
 4. Nature Communications
@@ -150,6 +162,20 @@ _lyx 版本转换_
   pages = {026014},
   issn = {0029-5515},
   doi = {10.1088/1741-4326/ad171f}
+}
+
+@article{Wan2025,
+  title = {A High-Fidelity Surrogate Model for the Ion Temperature Gradient ({{ITG}}) Instability Using a Small Expensive Simulation Dataset},
+  author = {Wan, Chenguang and Cho, YoungWoo and Qu, Zhisong and Camenen, Yann and Varennes, Robin and Lim, Kyungtak and Li, Kunpeng and Li, Jiangang and Li, Yanlong and Garbet, Xavier},
+  year = {2025},
+  month = apr,
+  journal = {Nuclear Fusion},
+  number = {65},
+  pages = {054001},
+  issn = {0029-5515, 1741-4326},
+  doi = {10.1088/1741-4326/adc7c9},
+  urldate = {2025-04-02},
+  copyright = {All rights reserved}
 }
 
 ```
