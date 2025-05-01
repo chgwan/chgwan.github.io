@@ -2,7 +2,7 @@
 title: "ASIPP paper submit procedure"
 author: chgwan
 date: 2020-07-01 14:10:00 +0800
-updated: 2024-12-23
+updated: 2025-04-15
 render_with_liquid: false
 ---
 
@@ -25,3 +25,8 @@ TODO: 上述地址可能不一样了，需要更新
 ## 2024-12-26 更新
 论文报销只需要上传文件到[Pinboard](http://202.127.204.44/pinboard/index.php)，其他的均不是强制要求  
 如果需要写专利的话，最好**专利在论文**之前。最好是在论文没有提交之前就给专利发表了。
+
+## 2025-04-15
+专项办通知 - 请各位科研人员在发表EAST装置运行相关的论文时，务必在致谢部分标注上该设施的中（英）文名称及代码，感谢配合与支持！
+
+We thank the staff members at EAST in Hefei (https://cstr.cn/31130.02.EAST ), for providing technical support and assistance in data collection and analysis.
