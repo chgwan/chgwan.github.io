@@ -32,6 +32,12 @@ media_subpath: "/assets/img/commons"
 
 见 [开发规范](../development-styles)
 
+## EAST的数据使用和相关的数据库位置
+
+1. **请不要用 python 脚本读取MDS+数据库**。虽然我们内部的有相对应的数据读取方法，但是这个会影响到 EAST 正常实验的进行。如果需要使用，请一定要征得 chenguang.wan 的同意
+2. 数据库位置 `/gpfs/mds_data/DataBase`，如果你想要的数据没有。请联系 chenguang.wan 或 minglong.wang
+3. 数据库所有的数据请不要进行除读数据外的任何操作。误删会影响所有人的工作
+
 ## 论文撰写和文献管理相关
 
 ### 论文署名
