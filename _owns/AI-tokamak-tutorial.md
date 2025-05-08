@@ -78,7 +78,7 @@ _lyx 版本转换_
 
 1. 如果用到EAST数据需要添加下列语句：
 
-We thank the staff members at EAST in Hefei (https://cstr.cn/31130.02.EAST ), for providing technical support and assistance in data collection and analysis.
+    > We thank the staff members at EAST in Hefei (https://cstr.cn/31130.02.EAST ), for providing technical support and assistance in data collection and analysis.
 
 2. 其次对于所有在本论文中帮助过你的人，但是不在论文作者中，需要在致谢部分给出
 
