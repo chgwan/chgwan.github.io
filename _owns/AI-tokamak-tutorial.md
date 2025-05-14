@@ -192,4 +192,8 @@ _lyx 版本转换_
 
 ## **其他说明**
 
-**PS**: 如果有部分链接，你无法打开说明你不是小组成员，这部分内容不共享
+- 如果有部分链接，你无法打开说明你不是小组成员，这部分内容不共享
+- RSS订阅列表
+  - [合肥物质科学研究院科研规划处](https://politepol.com/fd/iYjG8cdjXr5m.xml)
+  - [等离子体所通知](https://politepol.com/fd/iTZb41hW1tqT.xml)
+  - [合肥物质科学研究院研究生处](https://politepol.com/fd/MfAI440x47sF.xml)
