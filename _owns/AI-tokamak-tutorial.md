@@ -2,7 +2,7 @@
 title: AI tokamak tutorial
 author: chgwan
 date: 2024-12-27 00:34:00 +0800
-updated: 2025-05-08 
+updated: 2025-05-15
 tags: [Tutorial]
 media_subpath: "/assets/img/commons"
 ---
@@ -24,19 +24,20 @@ media_subpath: "/assets/img/commons"
 ## 预备知识
 
 - Linux 的基本操作
+  - 特别是 `LIBRARY_PATH, LD_LIBRARY_PATH, PATH, INCLUDE, MANPATH`，这5个环境变量的使用方法
 - 机器学习模型搭建的基本操作
 - HDF5，matplotlib，numpy， torch，sql 的熟练运用
 - 熟读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)，之后再提问，特别注意**不着编边际的问题**。
 
 ## 代码开发规范
-
-见 [开发规范](../development-styles)
+- 工具链：Conda + Pytorch + Python > 3.9 (推荐3.11)
+- 代码风格见 [开发规范](../development-styles)
 
 ## EAST的数据使用和相关的数据库位置
 
 1. **请不要用 python 脚本读取MDS+数据库**。虽然我们内部的有相对应的数据读取方法，但是这个会影响到 EAST 正常实验的进行。如果需要使用，请一定要征得 chenguang.wan 的同意
 2. 数据库位置 `/gpfs/mds_data/DataBase`，如果你想要的数据没有。请联系 chenguang.wan 或 minglong.wang
-3. 数据库所有的数据请不要进行除读数据外的任何操作。误删会影响所有人的工作
+3. 数据库所有的数据请不要进行除读数据外的任何操作。误删会影响**所有人的工作**
 
 ## 论文撰写和文献管理相关
 
