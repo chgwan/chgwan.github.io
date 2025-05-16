@@ -1,8 +1,6 @@
 ---
 title: Internal Servers Tutorial
 author: chgwan
-date: 2025-02-26
-updated: 2025-05-15
 tags: [Tutorial, Note]
 media_subpath: "/assets/img/commons"
 --- 

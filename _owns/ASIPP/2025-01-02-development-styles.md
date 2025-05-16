@@ -1,7 +1,6 @@
 ---
 title: Development styles
 author: chgwan
-date: 2025-01-02
 tags: [Tutorial, Note]
 media_subpath: "/assets/img/commons"
 --- 
