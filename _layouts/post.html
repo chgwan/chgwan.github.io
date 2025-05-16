@@ -28,12 +28,13 @@ script_includes:
         {% include datetime.html date=page.date tooltip=true lang=lang %}
       </span>
 
-      <!-- lastmod date -->
+      <!-- manual update date -->
       {% if page.updated and page.updated != page.date %}
         <span>
           {{ site.data.locales[lang].post.updated }}
           {% include datetime.html date=page.updated tooltip=true lang=lang %}
         </span>
+      <!-- lastmod date -->
       {% elsif page.last_modified_at and page.last_modified_at != page.date %}
         <span>
           {{ site.data.locales[lang].post.updated }}
