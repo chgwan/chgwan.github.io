@@ -176,24 +176,21 @@ defaults:
 ### 实现指定 update 和自动 update 两种 update 时间方法
 
 按照如下方式修改 `_layouts/post.html` 文件
-
-> ```html
->       
->       <!-- manual update date -->
->       {% if page.updated and page.updated != page.date %}
->         <span>
->           {{ site.data.locales[lang].post.updated }}
->           {% include datetime.html date=page.updated tooltip=true lang=lang %}
->         </span>
->       <!-- lastmod date -->
->       {% elsif page.last_modified_at and page.last_modified_at != page.date %}
->         <span>
->           {{ site.data.locales[lang].post.updated }}
->           {% include datetime.html date=page.last_modified_at tooltip=true lang=lang %}
->         </span>
->       {% endif %}
-> ```
->
+```html
+      <!-- manual update date -->
+      {% if page.updated and page.updated != page.date %}
+        <span>
+          {{ site.data.locales[lang].post.updated }}
+          {% include datetime.html date=page.updated tooltip=true lang=lang %}
+        </span>
+      <!-- lastmod date -->
+      {% elsif page.last_modified_at and page.last_modified_at != page.date %}
+        <span>
+          {{ site.data.locales[lang].post.updated }}
+          {% include datetime.html date=page.last_modified_at tooltip=true lang=lang %}
+        </span>
+      {% endif %}
+```
 
 ### 实现自动 update 时间在非 _post 文件夹工作的方法
 
