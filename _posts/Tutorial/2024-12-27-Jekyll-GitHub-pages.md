@@ -84,20 +84,21 @@ rbenv install <ruby_version>
 ```
 
 3. 安装 node，参考 [安装教程](https://nodejs.org/en/download)
-```bash
-# recommend to use fnm
-# Download and install fnm:
-curl -o- https://fnm.vercel.app/install | bash
 
-# Download and install Node.js:
-fnm install 22
+    ```bash
+    # recommend to use fnm
+    # Download and install fnm:
+    curl -o- https://fnm.vercel.app/install | bash
 
-# Verify the Node.js version:
-node -v # Should print "v22.14.0".
+    # Download and install Node.js:
+    fnm install 22
 
-# Verify npm version:
-npm -v # Should print "10.9.2".
-```
+    # Verify the Node.js version:
+    node -v # Should print "v22.14.0".
+
+    # Verify npm version:
+    npm -v # Should print "10.9.2".
+    ```
 
    
 
