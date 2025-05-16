@@ -1,8 +1,8 @@
 ---
 title: AI tokamak tutorial
 author: chgwan
-date: 2024-12-27 00:34:00 +0800
-updated: 2025-05-15
+# date: 2024-12-27 00:34:00 +0800
+# updated: 2025-05-15
 tags: [Tutorial]
 media_subpath: "/assets/img/commons"
 ---
