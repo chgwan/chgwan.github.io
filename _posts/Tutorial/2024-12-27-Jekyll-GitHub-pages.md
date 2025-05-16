@@ -161,17 +161,16 @@ defaults:
               
   ```
 
-> 参考 [链接](https://github.com/gjtorikian/html-proofer?tab=readme-ov-file#using-on-the-command-line)，寻找 htmlproofer command line 用法
+- 参考 [链接](https://github.com/gjtorikian/html-proofer?tab=readme-ov-file#using-on-the-command-line)，寻找 htmlproofer command line 用法
 
-> 因为修改了 `.github/workflows/pages-deploy.yml` 文件，故也要修改 `tools/test.sh` 用以保持一致
-> 
-> ```bash
->     # --no-enforce-https 为新加部分
->     bundle exec htmlproofer "$SITE_DIR" \
->       --no-enforce-https \
->       --disable-external \
->       --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
-> ```
+- 因为修改了 `.github/workflows/pages-deploy.yml` 文件，故也要修改 `tools/test.sh` 用以保持一致
+```bash
+    # --no-enforce-https 为新加部分
+    bundle exec htmlproofer "$SITE_DIR" \
+      --no-enforce-https \
+      --disable-external \
+      --ignore-urls "/^http:\/\/127.0.0.1/,/^http:\/\/0.0.0.0/,/^http:\/\/localhost/"
+```
 
 ### 实现指定 update 和自动 update 两种 update 时间方法
 
