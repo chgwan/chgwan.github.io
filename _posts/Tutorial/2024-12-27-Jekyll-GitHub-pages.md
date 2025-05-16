@@ -77,7 +77,6 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 ```
 2. 用 rbenv 重新安装 ruby，建议版本号高于 3.2
-
 ```bash
 # list all available envs can be installed 
 rbenv install -l
@@ -85,21 +84,20 @@ rbenv install <ruby_version>
 ```
 
 3. 安装 node，参考 [安装教程](https://nodejs.org/en/download)
+```bash
+# recommend to use fnm
+# Download and install fnm:
+curl -o- https://fnm.vercel.app/install | bash
 
-   ```bash
-   # recommend to use fnm
-   # Download and install fnm:
-   curl -o- https://fnm.vercel.app/install | bash
-   
-   # Download and install Node.js:
-   fnm install 22
-   
-   # Verify the Node.js version:
-   node -v # Should print "v22.14.0".
-   
-   # Verify npm version:
-   npm -v # Should print "10.9.2".
-   ```
+# Download and install Node.js:
+fnm install 22
+
+# Verify the Node.js version:
+node -v # Should print "v22.14.0".
+
+# Verify npm version:
+npm -v # Should print "10.9.2".
+```
 
    
 
@@ -197,11 +195,33 @@ defaults:
 > ```
 >
 
+### 实现自动 update 时间在非 _post 文件夹工作的方法
+
+按照如下方式修改 `_plugins/posts-lastmod-hook.rb` 脚本
+```ruby
+Jekyll::Hooks.register [:documents,:posts], :post_init do |post|
+  # Skip drafts and static files
+  next unless post.respond_to?(:collection)
+  # for the root of _post be triged twice.
+  next if post.data['lastmod_checked']
+
+  commit_num = `git rev-list --count HEAD "#{ post.path }"`
+
+  if commit_num.to_i > 1
+    lastmod_date = `git log -1 --pretty="%ad" --date=iso "#{ post.path }"`.strip
+    unless lastmod_date.empty?
+      post.data['lastmod_checked'] = true
+      post.data['last_modified_at'] = lastmod_date
+    end
+  end
+end
+```
+
 ## 快速部署
 
 ```bash
 git clone git@github.com:chgwan/chgwan.github.io.git
-# 需要先安装Gems, ruby 等, 安装方法如下安装方法
+# 需要先安装Gems, ruby, node 等, 安装方法如下安装方法
 cd chgwan.github.io
 bundle install
 ```
