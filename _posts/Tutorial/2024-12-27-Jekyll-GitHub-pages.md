@@ -14,8 +14,8 @@ render_with_liquid: false
 - [安装 Jekyll](https://jekyllrb.com/docs/installation/ubuntu/)
 - [Chrispy theme](https://github.com/cotes2020/jekyll-theme-chirpy)
 - [Chrispy theme getting start](https://chirpy.cotes.page/posts/getting-started/) 
-
-## 安装 Jekyll 等 <span id="jump"> </span>
+## 全新安装
+### 安装 Jekyll 等 <span id="jump"> </span>
 ```bash
 sudo apt-get install ruby-full build-essential zlib1g-dev
 ## add to bashrc the Gems
@@ -28,7 +28,7 @@ source ~/.bashrc
 gem install jekyll bundler
 ```
 
-## Fork [Chrispy theme](https://github.com/cotes2020/jekyll-theme-chirpy)
+### Fork [Chrispy theme](https://github.com/cotes2020/jekyll-theme-chirpy)
 
 1. Fork chrispy theme 重命名为 <username>.github.io
 
@@ -61,25 +61,33 @@ gem install jekyll bundler
    bash tools/test.sh  # 本地构建检查比Github action 要快，而且方便
    ```
 
-## 常见问题处理
+### 常见问题处理
 
 Q: 仅出现 --- layout: home # Index page --- jekyll chrispy
 
 A: 大概率是没有执行 `bash tools/init.sh`
 
-## 迁移到其他设备
+## 复制已有远程仓到其他设备
 ### 配置环境
 1. 安装 rbenv
 ```bash
+sudo apt install rbenv
 # add the following statements in .bashrc
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 ```
 2. 用 rbenv 重新安装 ruby，建议版本号高于 3.2
 
+```bash
+# list all available envs can be installed 
+rbenv install -l
+rbenv install <ruby_version>
+```
+
 3. 安装 node，参考 [安装教程](https://nodejs.org/en/download)
 
    ```bash
+   # recommend to use fnm
    # Download and install fnm:
    curl -o- https://fnm.vercel.app/install | bash
    
@@ -97,7 +105,7 @@ eval "$(rbenv init -)"
 
 4. 回到 [安装 Jekyll](#jump)
 
-5. git clone git@github.com: <username>/<username>.github.io.git
+5. `git clone git@github.com:<username>/<username>.github.io.git`
 
 6. `cd <the folder>; bundle install`
 
