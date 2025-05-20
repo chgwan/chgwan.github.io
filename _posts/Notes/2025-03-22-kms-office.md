@@ -79,3 +79,17 @@ setup.exe /configure config.xml
 ## 🔑 Step 5: Activate Visio
 
 If you're part of an organization or school, they may provide an activation tool. Alternatively, you can use [activation_method](#jump)
+
+
+## Online KMS host address:
+
+[参考列表](https://github.com/ShadowsLunarfox/kms-server-list/blob/main/README.md)
+
+```bash
+# server test
+telnet <server_addr> 1688
+```
+
+## Windows product key
+
+[参考列表](https://gist.github.com/rvrsh3ll/0810c6ed60e44cf7932e4fbae25880df#kms-client-product-keys-1)
