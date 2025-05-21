@@ -16,6 +16,7 @@ render_with_liquid: false
 - [Chrispy theme getting start](https://chirpy.cotes.page/posts/getting-started/) 
 ## 全新安装
 ### 安装 Jekyll 等 <span id="jump"> </span>
+
 ```bash
 sudo apt-get install ruby-full build-essential zlib1g-dev
 ## add to bashrc the Gems
