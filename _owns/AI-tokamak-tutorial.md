@@ -74,6 +74,13 @@ _lyx 版本转换_
 - 基本流程：论文初稿 &rarr; 专利 &rarr; 软著&rarr; 投稿
 - 所有论文全都用我的账号投稿，这样我能最快的和编辑沟通。
 
+#### 论文撰写其他需要注意的细节
+
+- 不要中英文标点混排，因为半角和全角符号的处理方式不一样，容易出现很奇怪的错误。比较容易出错的有：中文:"（）", 和英文 "(),", 即括号，逗号，句号，引号。
+- `~ 是 \sim 而不是直接敲 ~`
+- `.bib` 文件， Key 最好以 author-FirstName.capitalize+year, 姓首字母大写 + 年份，如果重复的话，即后面缀上 a,b,c 用以区别。即 `Wan2025c` 这种格式
+- 最好每个参考文献都有 doi，没有 doi 的时候最好有 url，而且**只能出现一个链接**，doi 优先，没有 doi 再选择其他链接。
+
 ### 论文致谢
 这个部分非常重要，关系到科研项目是否能顺利结项。
 
@@ -187,6 +194,17 @@ _lyx 版本转换_
   doi = {10.1088/1741-4326/adc7c9},
   urldate = {2025-04-02},
   copyright = {All rights reserved}
+}
+@article{Wang2025c,
+  title = {Time Series Extrinsic Regression for Reconstructing Missing Electron Temperature in Tokamak},
+  author = {Wang, Minglong and Wan, Chenguang and Lu, Jingjing and Yu, Zhi and Xiao, Bingjia and Li, Yanlong and He, Xiaoxue and Luo, Zhengping and Yuan, Q P and Hu, Yemin and Li, Jiangang},
+  year = {2025},
+  month = may,
+  journal = {Nuclear Fusion},
+  issn = {0029-5515, 1741-4326},
+  doi = {10.1088/1741-4326/addb5f},
+  urldate = {2025-05-22},
+  copyright = {https://creativecommons.org/licenses/by/4.0/}
 }
 
 ```
