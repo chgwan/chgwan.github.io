@@ -27,13 +27,16 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 
 ### 其他事项
 - 瀚海的存储是收费的，所以建议及时清理不用的文件，特别是训练完毕之后无用的模型文件
+- 不允许在登录节点运行大代码
+- 不允许直接`ssh`到计算节点进行计算，必须通过slurm登录
   
 ## 特别服务器，计算资源非常充足
 
 ### 开通方法
 
 1. 生成 rsa key 对，给公钥发给 chgwan
-2. `ssh -i ./id_rsa -p 60001 -J chenguang.wan@8.219.98.78 chenguan@aspire2antu.nscc.sg`
+2. ` ssh -i -o "ProxyJump=chenguang.wan@8.219.98.78:60001" chenguan@aspire2antu.nscc.sg`
+
 
 ### 使用方法
 1. 由于 NSCC 的设置无法使用基于 ray 的自动调优，所以修改至基于 optuna 的调优，具体使用方法见 `$HOME/Papers/WestD0/v2/run_model_dist.py` 中的 `tune` 操作。其他操作请同样参见该脚本。
@@ -44,6 +47,7 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 1. `userhome` 目录有 quota 限制，所以**除代码和配置文件外**的所有数据都需要存储于 `userhome/DATABASE` 文件夹而不能直接放在 home 的根目录。
 2. 不建议使用 `userhome/DATABASE` 文件夹存储代码，因为这个文件夹属于数据文件夹，读取速度有限，所以代码应该存在 home 目录，该文件夹用以保存数据，可以创建一个个人数据文件夹给所有数据都放在该文件夹，然后通过符号链接的方式实现不同的项目数据均保存于该处。
 3. 总结来说：代码放 `userhome/` 下自己的文件夹中，数据和模型等文件保存至 `userhome/DATABASE` 下自己的文件夹中
+4. **不允许**在登录节点运行大代码，单次运行代码要≤2个cpu核，最好只用1个核。该服务器**可以用vscode**，具体配置方案请自行搜索。
    
 
 
