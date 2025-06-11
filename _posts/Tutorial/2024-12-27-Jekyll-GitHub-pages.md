@@ -18,6 +18,7 @@ render_with_liquid: false
 ### 安装 Jekyll 等 <span id="jump"> </span>
 
 ```bash
+# only use for fast experience
 sudo apt-get install ruby-full build-essential zlib1g-dev
 ## add to bashrc the Gems
 echo '# Install Ruby Gems to ~/gems' >> ~/.bashrc 
@@ -103,7 +104,19 @@ rbenv install <ruby_version>
 
    
 
-4. 回到 [安装 Jekyll](#jump)
+4. 安装 Jekyll 等
+```bash 
+rbenv versions # should be something like 3.2.2
+
+# if not
+rbenv global <version_gt_3.2>
+rbenv rehash
+ruby -v # should be ruby 3.4.2
+
+## install jekyll and bundler
+gem install jekyll bundler
+
+```
 
 5. `git clone git@github.com:<username>/<username>.github.io.git`
 
