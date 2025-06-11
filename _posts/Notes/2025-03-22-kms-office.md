@@ -84,6 +84,7 @@ If you're part of an organization or school, they may provide an activation tool
 ## Online KMS host address:
 
 [参考列表](https://github.com/ShadowsLunarfox/kms-server-list/blob/main/README.md)
+[KMS server online list](https://www.kms.pub/rank.html)
 
 ```bash
 # server test
