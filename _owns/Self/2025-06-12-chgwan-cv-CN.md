@@ -1,8 +1,8 @@
 ---
 title: 万晨光个人简历
 author: chgwan
-date: 2025-05-01
-updated: 2024-05-08
+date: 2025-06-12
+# updated: 2024-05-08
 # tags: [Tutorial, Jekyll]
 # render_with_liquid: false
 # layout: cv
