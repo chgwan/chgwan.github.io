@@ -192,7 +192,7 @@ media_subpath: "/assets/img/portraits"
 1. E. Gao, **C. Wan \***, *et al.* Bayesian Neural Networks for Predicting Tokamak Energy Confinement Time with Uncertainty Quantification, *submitted to Nucl. Fusion (R1 小修，已返回)*
 3. **C. Wan**, *et al.* Machine learning prediction of plasma behavior from discharge configurations on WEST, *submitted to Nucl. Fusion*
 
-## 项目经历
+<!-- ## 项目经历
 ---
 
 1. 中国博士后科学基金会，博士后创新人才支持计划，BX20230371，托卡马克放电建模的深度学习集成模型研究，2023.04 ~ 2025.04，68万元，在研，**主持**
@@ -205,7 +205,7 @@ media_subpath: "/assets/img/portraits"
 8. ZZB，XX专项XX项目，2024.02 ~ 2027.02, 123 万元，在研，**主持**
 9. 国家科学技术部，国家磁约束聚变能发展研究专项，2018YFE0304102，Alpha粒子密度和能谱分布的集成建模研究，2018.12 ~ 2023.11，350万元，结项，参与
 10. 国家大科学工程，CRAFT项目子课题，CR211005，CRAFT集成数值建模和数据分析系统框架开发，2019.09 ~ 2025.05，300万元，在研，参与
-11. 国家大科学工程，CRAFT总控课题，2018-000052-73-01-001228，2019.09 ~ 2025.05，3969万元，在研，参与
+11. 国家大科学工程，CRAFT总控课题，2018-000052-73-01-001228，2019.09 ~ 2025.05，3969万元，在研，参与 -->
 
 ## 奖励
 
