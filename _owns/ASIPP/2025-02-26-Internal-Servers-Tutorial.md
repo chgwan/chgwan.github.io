@@ -38,7 +38,7 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 
 ### 开通和登录
 1. 生成 rsa key 对，给公钥发给 chgwan，开通完会提供相应的 ip 和 port
-2. **NSCC 登录：**` ssh -i <your_private_key> -J chenguang.wan@<ip_addr>:port chenguan@aspire2antu.nscc.sg`
+2. **NSCC 登录：**` ssh -i <your_private_key> -J chenguang.wan@<ip_addr>:port chenguan@aspire2antu.nscc.sg` 或者 `ssh -o "ProxyCommand ssh -i <your_private_key> -W %h:%p publicuser@<ip_addr> -p <port>" -i <your_private_key> chenguan@aspire2antu.nscc.sg` 前者不行的时候就试试后者。
 3. **sgGPU 登录：**`ssh chenguang.wan@<ip_addr>:<port>`
 
 ### sgGPU使用方法
