@@ -37,9 +37,9 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 2. **sgGPU**  NTU A100 服务器    **4\*A100**，每个A100 80GB内存
 
 ### 开通和登录
-1. 生成 rsa key 对，给公钥发给 chgwan
-2. **NSCC：**` ssh -i <your_private_key> -J chenguang.wan@8.219.98.78:60001 chenguan@aspire2antu.nscc.sg`
-3. **sgGPU：**`ssh chenguang.wan@8.219.98.78:60001`
+1. 生成 rsa key 对，给公钥发给 chgwan，开通完会提供相应的 ip 和 port
+2. **NSCC 登录：**` ssh -i <your_private_key> -J chenguang.wan@<ip_addr>:port chenguan@aspire2antu.nscc.sg`
+3. **sgGPU 登录：**`ssh chenguang.wan@<ip_addr>:<port>`
 
 ### sgGPU使用方法
 使用方法类似于135,108，**唯一的区别是**`userhome` 目录有 quota 限制，所以**除代码和配置文件外**的所有数据都需要存储于 `userhome/DATABASE` 文件夹而不能直接放在 home 的根目录。
