@@ -42,7 +42,7 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 3. **sgGPU 登录：**`ssh chenguang.wan@<ip_addr>:<port>`
 
 ### sgGPU使用方法
-使用方法类似于135,108，**唯一的区别是**`userhome` 目录有 quota 限制，所以**除代码和配置文件外**的所有数据都需要存储于 `userhome/DATABASE` 文件夹而不能直接放在 home 的根目录。
+使用方法类似于135,108，**唯一的区别是**`userhome` 目录有 quota 限制，所以**除代码和配置文件外**的所有数据都需要存储于 `userhome/DATABASE` 文件夹而不能直接放在 home 的根目录。**可以用vscode**
 
 ### NSCC使用方法
 1. 由于 NSCC 的设置无法使用基于 ray 的自动调优，所以修改至基于 optuna 的调优，具体使用方法见 `$HOME/Papers/WestD0/v2/run_model_dist.py` 中的 `tune` 操作。其他操作请同样参见该脚本。
