@@ -15,17 +15,17 @@ media_subpath: "/assets/img/commons"
 ## Python 项目规范
 ### 命名规范
 
-| 类型       | 惯例                       | 备注                           |
-| ---------- | -------------------------- | ------------------------------ |
-| 包和模块   | lower_with_under           |                                |
-| 类         | CapWords                   |                                |
-| 文件夹名   | CapWords                   |                                |
-| 文件名     | capWords /capWrods_<intro> | 一般用 capWords，_表示补充说明 |
-| 常量       | CAPS_WITH_UNDER            |                                |
-| 实例       | lower_with_under           |                                |
-| 方法与功能 | lower_with_under ()        |                                |
-| 变量       | lower_with_under           |                                |
-| 私有变量   | _start                     |                                |
+| 类型       | 惯例                | 备注                           |
+| ---------- | ------------------- | ------------------------------ |
+| 包和模块   | lower_with_under    |                                |
+| 类         | CapWords            |                                |
+| 文件夹名   | CapWords            |                                |
+| 文件名     | lower_with_under    | 一般用 capWords，_表示补充说明 |
+| 常量       | CAPS_WITH_UNDER     |                                |
+| 实例       | lower_with_under    |                                |
+| 方法与功能 | lower_with_under () |                                |
+| 变量       | lower_with_under    |                                |
+| 私有变量   | _start              |                                |
 
 ### 函数文档规范
 主要参考 pyTorch 项目的相关规范，[Transformer例子链接](https://github.com/pytorch/pytorch/blob/v2.6.0/torch/nn/modules/transformer.py#L57)
