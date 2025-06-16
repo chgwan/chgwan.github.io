@@ -11,7 +11,8 @@ media_subpath: "/assets/img/commons"
 - **软件著作权**：500 每篇
 - **发明专利**：2000 每项；实用新型：500每项
 - **论文**：影响因子 * 1000 + 其他奖励（视论文级别而定），NF总计为~8000
-- 以上所说奖励第一单位，需为等离子体物理研究所，也就是说如果非等所为第一单位，奖励不一定能发放到手，供参考
+- 以上所说奖励标准，是满足**等离子体物理研究所为第一单位**的情况下
+- 非等所为第一单位，奖励需要酌情而定，官方没有奖励。
 
 ## 教材和书本
 
@@ -29,6 +30,12 @@ media_subpath: "/assets/img/commons"
 - HDF5，matplotlib，numpy， torch，sql 的熟练运用
 - 熟读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)，之后再提问，特别注意**不着编边际的问题**。
 
+### 代码和配置类问题解决方案
+1. 百度，Google，GPT全都搞一遍，特别是要注意给问题翻译成英文去搜一搜
+2. 测试多种网络环境，不同账号是否有问题
+3. 提供可能的问题来源，比如log等。比如最小复现方法。
+4. 总结来说：先自己尝试解决，解决不了，就给问题化简到别人能最小复现的版本，然后再提问。
+
 ## 代码开发规范
 - 工具链：Conda + Pytorch + Python > 3.9 (推荐3.11)
 - 代码风格见 [开发规范](../development-styles)
@@ -43,11 +50,19 @@ media_subpath: "/assets/img/commons"
 
 ### 论文署名
 
-**论文署名还能署错，那就是真不动脑子，下面署名一个标点符号都不能错**
+**下面署名一个标点符号都不能错**
 
 中文名：中国科学院合肥物质科学研究院等离子体物理研究所，合肥 230031，中国
 
 英文名：Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences, Hefei 230031, China
+
+中文名：中国科学技术大学，合肥 230026，中国
+
+英文名：University of Science and Technology of China, Hefei 230026, China
+
+
+**满足毕业条件后，建议将署名的第一单位改为合肥物质科学研究院**，这样的话，不仅可以拿到科研奖励，对于未来的职业发展也有帮助。
+
 
 ### 软件和 LyX 模板等
 
