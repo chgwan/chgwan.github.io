@@ -60,9 +60,25 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 
 ## 135 和 108
 
+### 135
+
 **135** 4 卡 3090，ip: 202.127.205.186，目前该服务器用于新手同学的练习
 
+### 108
+
 **108** 4 卡 P100，ip：202.127.205.135，目前该服务器用于数据库映射支持，大家能在别的服务器访问 `DATABASE` 的**硬件支持**，所以非常不建议在该服务器运行网络密集型脚本。
+
+由于 108 是 Centos 7 系统，目前 vscode 已经不支持直接访问太老的服务器。现在新增加了一个 hack 方法，使得 108 可以连接 vsocde。粘贴登录 108 服务器的 terminal，粘贴并执行下列命令，即可实现vscode直接连接，**只需要执行一次**。
+
+```bash
+cat << 'EOF' >> ~/.bashrc
+export VSCODE_SERVER_CUSTOM_GLIBC_LINKER=/home/share/sysroot/lib/ld-linux-x86-64.so.2
+export VSCODE_SERVER_CUSTOM_GLIBC_PATH=/home/share/sysroot/usr/lib:/home/share/sysroot/lib
+export VSCODE_SERVER_PATCHELF_PATH=/home/share/sysroot/usr/bin/patchelf
+EOF
+
+source ~/.bashrc
+```
 
 ### 特别命令
 
