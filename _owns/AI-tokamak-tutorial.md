@@ -62,7 +62,6 @@ media_subpath: "/assets/img/commons"
 
 英文名：University of Science and Technology of China, Hefei 230026, China
 
-
 **满足毕业条件后，建议将署名的第一单位改为合肥物质科学研究院**，这样的话，不仅可以拿到科研奖励，对于未来的职业发展也有帮助。
 
 
@@ -87,7 +86,7 @@ _lyx 版本转换_
 
 - 投稿之前一定要让"Chenguang Wan@chenguang.wan@ipp.ac.cn"确认作者列表，这个十分重要！！！
 - 如果合适的话，在论文投稿之前，最好写一个 **专利和软著**
-- 论文投稿之前，需要在 pinboard 上 **公示**，[参考](../paper-sub-procedure)
+- 论文投稿之前，需要在 pinboard 上 **公示**，[公示方法参考](../paper-sub-procedure)
 - 基本流程：论文初稿 &rarr; 专利 &rarr; 软著&rarr; 投稿
 - 所有论文全都用我的账号投稿，这样我能最快的和编辑沟通。（惨痛经验可以详询Minglong Wang）
 
