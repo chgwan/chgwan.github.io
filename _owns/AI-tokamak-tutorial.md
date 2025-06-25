@@ -6,6 +6,11 @@ author: chgwan
 tags: [Tutorial]
 media_subpath: "/assets/img/commons"
 ---
+
+## 研究方向
+
+AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。[详情参见](https://scholar.google.com/citations?user=ncURiLEAAAAJ&hl=en)。
+
 ## 奖励标准
 
 - **软件著作权**：500 每篇
@@ -24,7 +29,7 @@ media_subpath: "/assets/img/commons"
 
 ## 预备知识
 
-- Linux 和 GIT 的基本操作，其中不掌握任何Linux基础知识的
+- Linux 和 GIT 的基本操作，其中不掌握任何Linux基础知识的，可以先用 WSL2 熟悉。
   - 特别是 `LIBRARY_PATH, LD_LIBRARY_PATH, PATH, INCLUDE, MANPATH`，这5个环境变量的使用方法
 - 机器学习模型搭建的基本操作，最低要求熟练跑通Torch官方 [DistributedDataParallel](https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html) 中的"nccl"和"gloo"即GPU和CPU训练后端。
 - HDF5，matplotlib，numpy， torch，sql 的熟练运用
@@ -225,9 +230,9 @@ _lyx 版本转换_
 
 ```
 
-## **其他说明**
+## 其他说明
 
-- 如果有部分链接，你无法打开说明你不是小组成员，这部分内容不共享
+- 如果有部分链接无法打开，如果你不是小组成员，这部分内容不共享。如果你是小组成员，请联系 chgwan 加入到小组内部共享列表。
 - RSS订阅列表
   - [合肥物质科学研究院科研规划处](https://politepol.com/fd/iYjG8cdjXr5m.xml)
   - [等离子体所通知](https://politepol.com/fd/iTZb41hW1tqT.xml)
