@@ -17,16 +17,16 @@ media_subpath: "/assets/img/commons"
 ## 教材和书本
 
 - 磁约束等离子体实验物理
-- 托卡马克第四版，清华大学出版社
+- 托卡马克第四版，清华大学出版社，王文浩译
 - Dive into deep learning - author Mu Li
 - 强化学习 - EasyRL https://datawhalechina.github.io/easy-rl
 - https://www.deeplearningbook.org/  MIT  deep learning book
 
 ## 预备知识
 
-- Linux 的基本操作
+- Linux 和 GIT 的基本操作，其中不掌握任何Linux基础知识的
   - 特别是 `LIBRARY_PATH, LD_LIBRARY_PATH, PATH, INCLUDE, MANPATH`，这5个环境变量的使用方法
-- 机器学习模型搭建的基本操作
+- 机器学习模型搭建的基本操作，最低要求熟练跑通Torch官方 [DistributedDataParallel](https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html) 中的"nccl"和"gloo"即GPU和CPU训练后端。
 - HDF5，matplotlib，numpy， torch，sql 的熟练运用
 - 熟读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)，之后再提问，特别注意**不着编边际的问题**。
 
@@ -36,15 +36,17 @@ media_subpath: "/assets/img/commons"
 3. 提供可能的问题来源，比如log等。比如最小复现方法。
 4. 总结来说：先自己尝试解决，解决不了，就给问题化简到别人能最小复现的版本，然后再提问。
 
-## 代码开发规范
-- 工具链：Conda + Pytorch + Python > 3.9 (推荐3.11)
-- 代码风格见 [开发规范](../development-styles)
+## 代码开发
+- 工具链：Conda + Pytorch ( >= 2.4 推荐 latest stable version ) + Python >= 3.9 (推荐3.12)，目前 Conda 对于组织已经不是免费的了，所以会逐步迁移至Mamba，[Mamba的安装](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html)
+- 数据库目前是基于 HDF5 的内部数据库
+- 代码风格见 [开发规范](../development-styles)。
+- 内部private_modules包，有很多常用的数据操作方法，请不要分享。
 
 ## EAST的数据使用和相关的数据库位置
 
 1. **请不要用 python 脚本读取MDS+数据库**。虽然我们内部的有相对应的数据读取方法，但是这个会影响到 EAST 正常实验的进行。如果需要使用，请一定要征得 chenguang.wan 的同意
 2. 数据库位置 `/gpfs/mds_data/DataBase`，如果你想要的数据没有。请联系 chenguang.wan 或 minglong.wang
-3. 数据库所有的数据请不要进行除读数据外的任何操作。误删会影响**所有人的工作**
+3. 数据库所有的数据请不要进行除读数据外的任何操作。**误删**会影响**所有人的工作**
 
 ## 论文撰写和文献管理相关
 
@@ -87,7 +89,7 @@ _lyx 版本转换_
 - 如果合适的话，在论文投稿之前，最好写一个 **专利和软著**
 - 论文投稿之前，需要在 pinboard 上 **公示**，[参考](../paper-sub-procedure)
 - 基本流程：论文初稿 &rarr; 专利 &rarr; 软著&rarr; 投稿
-- 所有论文全都用我的账号投稿，这样我能最快的和编辑沟通。
+- 所有论文全都用我的账号投稿，这样我能最快的和编辑沟通。（惨痛经验可以详询Minglong Wang）
 
 #### 论文撰写其他需要注意的细节
 
