@@ -117,30 +117,35 @@ _lyx 版本转换_
 
 ### 可投期刊推荐
 
+#### 一区 TOP 类可投
 1. Nature Machine Intelligence: 这个比较简单，目测是很容易拿下的子刊
 2. Nature Physics
 3. Nature Energy
 4. Nature Communications
-5. Communications Physics
+5. Communications Physics：该期刊一般是 Nature Communication 投不中的选择
 6. Cell Reports Physical Science
-7. Nuclear Fusion
+7. Nuclear Fusion，其中有 Nuclear Fusion Letter，Letter 属于 NF 中比较重要的文章。
 8. Nature Machine Intelligence
 9. The Innovation (Cell Press)
 10. Journal of Fusion Energy
+11. Science Advance：和 NC 类似
 
-### 二区期刊可投
+#### 二区期刊可投
 
 1. Nuclear Materials and Energy
 2. NUCLEAR ENGINEERING AND DESIGN
 3. PPCF
 
-### 可投水刊列表
+#### 纯 AI 领域
+- NeurIPS, AI for Science Workshop
+
+#### 可投水刊列表
 
 1. IEEE Transactions on Nuclear Science
 2. Fusion Engineering and Design
 3. IEEE Transactions on Plasma Science
 
-## 推荐审稿人列表
+#### 推荐审稿人列表
 
 [不宜公开内容，列表见链接](https://kdocs.cn/l/cewDvJxZMyPX)
 
