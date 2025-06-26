@@ -127,7 +127,7 @@ source ~/.bashrc
 
 1. 登录到新神马
 2. 创建并激活**python 3.11**环境，例 `conda create -n torch python==3.11`, 其中numpy版本号需小于2.0，即1.X 版本，目前是推荐1.26.x，可自行决定版本
-3. `cp -r /public/home/chenguang_wan/DATABASE/torch_2.4.1_dcu/* ~`
+3. `cp -r /data/share/chenguang_wan/torch_2.4.1_dcu/* ~`
 4. `ssh shenmagpu381` 或者 `ssh shenmagpu382`
 5. `module use .modulefiles`, ps这个可以写到 `.bashrc` 中，这样可以不每次都打该命令
 6. `module load mydtk/dtk-25.04`
