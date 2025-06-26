@@ -114,9 +114,10 @@ source ~/.bashrc
 ## 新神马DCU使用教程
 **内部使用，不许分享**
 
-官方链接：https://www.scnet.cn/help/docs/mainsite/ai/
+- 官方链接：https://www.scnet.cn/help/docs/mainsite/ai/
 <!-- 其他有用参考：https://www.cnblogs.com/zhihh/p/18489338/Chengdu_HPC_Usage_Record -->
-不提供除跑通 benchmark 代码外的其他任何支持，包括不限于 vscode 登录，是否支持免密等。这种东西请自行搜索，运维不归我管
+
+- chgwan不提供除跑通 benchmark 代码外的其他任何支持，包括不限于 vscode 登录，是否支持免密等。这种东西请自行搜索，不要打扰 !!
 
 ### 常用命令
 
@@ -125,11 +126,11 @@ source ~/.bashrc
 ### 具体教程
 
 1. 登录到新神马
-2. 创建并激活**python 3.11**环境，例`conda create -n torch python==3.11`, 其中numpy版本号需小于2.0，即1.X 版本，目前是推荐1.26.x，可自行决定版本
-3. `cp /public/home/chenguang_wan/DATABASE/torch_2.4.1_dcu/* ~`
-4. ` ssh shenmagpu381` 或者 `ssh shenmagpu382 `
+2. 创建并激活**python 3.11**环境，例 `conda create -n torch python==3.11`, 其中numpy版本号需小于2.0，即1.X 版本，目前是推荐1.26.x，可自行决定版本
+3. `cp -r /public/home/chenguang_wan/DATABASE/torch_2.4.1_dcu/* ~`
+4. `ssh shenmagpu381` 或者 `ssh shenmagpu382`
 5. `module use .modulefiles`, ps这个可以写到 `.bashrc` 中，这样可以不每次都打该命令
 6. `module load mydtk/dtk-25.04`
-7. `cd dcu_whl`, `pip install -y *.whl` : 到 `dcu_whl`  文件夹中安装所有的 whl
+7. `cd dcu_whl`, `pip install -y *.whl` : 到 `dcu_whl`  文件夹中安装所有的 `*.whl`
 8. 测试torch是否能工作 `python torch_benchmark.py`
 
