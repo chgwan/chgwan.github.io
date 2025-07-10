@@ -234,6 +234,20 @@ _lyx 版本转换_
   urldate = {2025-05-22},
   copyright = {https://creativecommons.org/licenses/by/4.0/}
 }
+@article{Gao2025,
+  title = {Bayesian {{Neural Networks}} for {{Predicting Tokamak Energy Confinement Time}} with {{Uncertainty Quantification}}},
+  author = {Gao, Enliang and Wan, Chenguang and Hu, Youjun and Wang, Minglong and Lu, Jingjing and Qu, Zhisong and Wen, Xinghao and Huang, Jia and Chen, Ying and Guo, Heru and Luo, Zhengping and Yu, Zhi and Liu, Xiaojuan and Yuan, Q P and Li, Jiangang},
+  year = {2025},
+  month = jul,
+  journal = {Nuclear Fusion},
+  volume = {65},
+  number = {08},
+  pages = {084001},
+  issn = {0029-5515, 1741-4326},
+  doi = {10.1088/1741-4326/ade8fd},
+  urldate = {2025-06-28},
+  copyright = {https://creativecommons.org/licenses/by/4.0/},
+}
 
 ```
 
