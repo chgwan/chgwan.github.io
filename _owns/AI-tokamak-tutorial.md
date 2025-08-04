@@ -19,6 +19,24 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 - 以上所说奖励标准，是满足**等离子体物理研究所为第一单位**的情况下
 - 非等所为第一单位，奖励需要酌情而定，官方没有奖励。
 
+### 奖励标准 2025-07-30 更新版
+
+从组内同学处获悉，等所科研奖励停止发放。故我们只能按照组内标准给大家发少量的奖励了。下列奖励需满足**万晨光为通讯作者或第一作者**。
+
+标准如下（**非等所为第一单位则折半奖励**）：
+
+| 成果名称                                     | 奖励           | 备注 |
+| -------------------------------------------- | -------------- | ---- |
+| 软件著作权                                   | 100            |      |
+| 发明专利                                     | 400            |      |
+| 实用新型                                     | 100            |      |
+| Nuclear Fusion                               | 1000           |      |
+| Nature 子刊                                  | 5000           |      |
+| 其他论文                                     | 影响因子 * 200 |      |
+| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      |
+
+
+
 ## 教材和书本
 
 - 磁约束等离子体实验物理
@@ -155,101 +173,7 @@ _lyx 版本转换_
 
 ### 论文中建议给下列论文，全都引用一遍
 
-```bib
-@article{Wan2021,
-  title = {Experiment Data-Driven Modeling of Tokamak Discharge in EAST},
-  author = {Wan, Chenguang and Yu, Zhi and Wang, Feng and Liu, Xiaojuan and Li, Jiangang},
-  year = {2021},
-  month = jun,
-  journal = {Nuclear Fusion},
-  volume = {61},
-  number = {6},
-  pages = {066015},
-  issn = {0029-5515},
-  doi = {10.1088/1741-4326/abf419}
-}
-
-@article{Wan2022,
-  title = {EAST Discharge Prediction without Integrating Simulation Results},
-  author = {Wan, Chenguang and Yu, Zhi and Pau, Alessandro and Liu, Xiaojuan and Li, Jiangang},
-  year = {2022},
-  month = dec,
-  journal = {Nuclear Fusion},
-  volume = {62},
-  number = {12},
-  pages = {126060},
-  publisher = {IOP Publishing},
-  issn = {17414326},
-  doi = {10.1088/1741-4326/ac9c1a},
-  copyright = {All rights reserved}
-}
-
-@article{Wan2023,
-  title = {A Machine-Learning-Based Tool for Last Closed-Flux Surface Reconstruction on Tokamaks},
-  author = {Wan, Chenguang and Yu, Zhi and Pau, Alessandro and Sauter, Olivier and Liu, Xiaojuan and Yuan, Qiping and Li, Jiangang},
-  year = {2023},
-  month = may,
-  journal = {Nuclear Fusion},
-  volume = {63},
-  number = {5},
-  pages = {056019},
-  issn = {0029-5515},
-  doi = {10.1088/1741-4326/acbfcc}
-}
-
-@article{Wan2024,
-  title = {Predict the Last Closed-Flux Surface Evolution without Physical Simulation},
-  author = {Wan, Chenguang and Bai, Shuhang and Yu, Zhi and Yuan, Qiping and Huang, Yao and Liu, Xiaojuan and Hu, Yemin and Li, Jiangang},
-  year = {2024},
-  month = feb,
-  journal = {Nuclear Fusion},
-  volume = {64},
-  number = {2},
-  pages = {026014},
-  issn = {0029-5515},
-  doi = {10.1088/1741-4326/ad171f}
-}
-
-@article{Wan2025,
-  title = {A High-Fidelity Surrogate Model for the Ion Temperature Gradient ({{ITG}}) Instability Using a Small Expensive Simulation Dataset},
-  author = {Wan, Chenguang and Cho, YoungWoo and Qu, Zhisong and Camenen, Yann and Varennes, Robin and Lim, Kyungtak and Li, Kunpeng and Li, Jiangang and Li, Yanlong and Garbet, Xavier},
-  year = {2025},
-  month = apr,
-  journal = {Nuclear Fusion},
-  number = {65},
-  pages = {054001},
-  issn = {0029-5515, 1741-4326},
-  doi = {10.1088/1741-4326/adc7c9},
-  urldate = {2025-04-02},
-  copyright = {All rights reserved}
-}
-@article{Wang2025c,
-  title = {Time Series Extrinsic Regression for Reconstructing Missing Electron Temperature in Tokamak},
-  author = {Wang, Minglong and Wan, Chenguang and Lu, Jingjing and Yu, Zhi and Xiao, Bingjia and Li, Yanlong and He, Xiaoxue and Luo, Zhengping and Yuan, Q P and Hu, Yemin and Li, Jiangang},
-  year = {2025},
-  month = may,
-  journal = {Nuclear Fusion},
-  issn = {0029-5515, 1741-4326},
-  doi = {10.1088/1741-4326/addb5f},
-  urldate = {2025-05-22},
-  copyright = {https://creativecommons.org/licenses/by/4.0/}
-}
-@article{Gao2025,
-  title = {Bayesian {{Neural Networks}} for {{Predicting Tokamak Energy Confinement Time}} with {{Uncertainty Quantification}}},
-  author = {Gao, Enliang and Wan, Chenguang and Hu, Youjun and Wang, Minglong and Lu, Jingjing and Qu, Zhisong and Wen, Xinghao and Huang, Jia and Chen, Ying and Guo, Heru and Luo, Zhengping and Yu, Zhi and Liu, Xiaojuan and Yuan, Q P and Li, Jiangang},
-  year = {2025},
-  month = jul,
-  journal = {Nuclear Fusion},
-  volume = {65},
-  number = {08},
-  pages = {084001},
-  issn = {0029-5515, 1741-4326},
-  doi = {10.1088/1741-4326/ade8fd},
-  urldate = {2025-06-28},
-  copyright = {https://creativecommons.org/licenses/by/4.0/},
-}
-
-```
+[Recommended citations](/assets/codes/bib/recommended_citations.bib)
 
 ## 其他说明
 
