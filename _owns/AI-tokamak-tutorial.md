@@ -27,7 +27,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 
 等所原有标准 / 4，其中 NF 为 2000 元，Nature 子刊为 20000 元。
 
-<!-- | 成果名称                                     | 奖励           | 备注 |
+| <!--                                         | 成果名称       | 奖励 | 备注 |
 | -------------------------------------------- | -------------- | ---- |
 | 软件著作权                                   | 100            |      |
 | 发明专利                                     | 400            |      |
@@ -35,7 +35,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 | Nuclear Fusion                               | 1000           |      |
 | Nature 子刊                                  | 50000          |      |
 | 其他论文                                     | 影响因子 * 200 |      |
-| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      | -->
+| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      | -->  |
 
 
 
@@ -51,7 +51,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 
 - Linux 和 GIT 的基本操作，其中不掌握任何Linux基础知识的，可以先用 WSL2 熟悉。
   - 特别是 `LIBRARY_PATH, LD_LIBRARY_PATH, PATH, INCLUDE, MANPATH`，这5个环境变量的使用方法
-- 机器学习模型搭建的基本操作，最低要求熟练跑通Torch官方 [DistributedDataParallel](https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html) 中的"nccl"和"gloo"即GPU和CPU训练后端。
+- 机器学习模型搭建的基本操作，最低要求熟练跑通Torch官方 [DistributedDataParallel](https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html) 中的 "nccl" 和 "gloo" 即 GPU 和 CPU 的训练后端。
 - HDF5，matplotlib，numpy， torch，sql 的熟练运用
 - 熟读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)，之后再提问，特别注意**不着编边际的问题**。
 
