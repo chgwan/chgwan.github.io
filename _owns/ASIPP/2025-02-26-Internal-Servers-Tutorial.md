@@ -58,7 +58,7 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 
 
 
-## 135 和 108
+## ~~135 和 108 （已失效）~~
 
 ### 135
 
@@ -89,7 +89,7 @@ source ~/.bashrc
 `mount-108-db`: 挂载 108 数据库 /gpfs/mds_data 到 135 上，使用方法见运行命令提示
 
 
-## 194，189，161
+## ~~194，189，161（已失效）访问随时可能中断~~
 
 ### 服务器简介
 
@@ -110,8 +110,8 @@ source ~/.bashrc
 
 环境可以自己创建，也可以用共享环境 torch `conda env create -f torch.yml`
 
-
 ## 新神马DCU使用教程
+
 **内部使用，不许分享**
 
 - 官方链接：https://www.scnet.cn/help/docs/mainsite/ai/
@@ -124,6 +124,8 @@ source ~/.bashrc
 
 `lscpu`, `rocm-smi`, `hy-smi` 
 
+`ssh <username>@202.127.205.70 -p 6021`
+
 
 ### 具体 DCU 教程
 
@@ -132,10 +134,29 @@ source ~/.bashrc
 3. 安装 numpy 且其需小于2.0，即1.X 版本，目前是推荐1.26.x，可自行决定版本。
 4. `cp -r /data/share/chenguang_wan/torch_2.4.1_dcu/* ~`
 5. `ssh shenmagpu381` 或者 `ssh shenmagpu382`
-6. `module use .modulefiles`, ps这个可以写到 `.bashrc` 中，这样可以不每次都打该命令
+6. `module use .modulefiles`, ps：这个可以写到 `.bashrc` 中，这样可以不每次都打该命令
 7. `module load mydtk/dtk-25.04`
-8. `cd dcu_whl`, `pip install -y *.whl` : 到 `dcu_whl`  文件夹中安装所有的 `*.whl`
+8. `cd dcu_whl`, `pip install *.whl` ：切换到 `dcu_whl`  文件夹中安装所有的 `*.whl`
 9. 测试torch是否能工作 `python torch_benchmark.py`
 
 ### DCU 其他支持
 DCU 其他安装环境支持： https://cancon.hpccube.com:65024/4/main
+
+### DCU 网络环境 hacking 方案，请不要分享，该方法仅为了方便使用，官方不支持
+
+执行下列命令，出现ip则为有网络，其他服务请自行搜索如何设置代理服务器。
+``` bash
+# set internet access in dcu node. 
+export http_proxy="socks5h://localhost:7070"
+export https_proxy="socks5h://localhost:7070"
+curl ifconfig.me
+```
+
+
+## 新神马小集群
+
+登录ip：202.127.205.186, port 5074
+所有人home目录限制大小为 3T，所有文件都可以放在 home 下面。
+
+### TODOs
+- [ ] 数据访问
