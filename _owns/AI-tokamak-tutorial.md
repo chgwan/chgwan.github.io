@@ -25,7 +25,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 
 标准如下（**非等所为第一单位则折半奖励**）：
 
-- 等所原有标准除以4，其中 NF 为 2000 元，Nature 子刊为 20000 元，正刊估计是一事一议了，估计在 50w 以上。
+- 等所原有标准除以 4，其中 NF 为 2000 元，Nature 子刊为 20000 元，正刊估计是一事一议了，估计在 50w 以上。
 - 其他工作，主要包括采购，报账等。年终统一发放，酌情而定。
 
 <!-- | 成果名称       | 奖励 | 备注 |
@@ -91,6 +91,8 @@ TODO:位置需要更新
 英文名：University of Science and Technology of China, Hefei 230026, China
 
 **满足毕业条件后，建议将署名的第一单位改为合肥物质科学研究院**，这样的话，不仅可以拿到科研奖励，对于未来的职业发展也有帮助。
+
+用到EAST数据，需要在作者名列表中**加上 EAST team**, 其中 EAST team 的 affiliation 是 Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences, Hefei 230031, China
 
 
 ### 软件和 LyX 模板等
