@@ -61,7 +61,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 - [ ] 咨询刘晓娟老师，开通新神马和老神马账号，特别是要开通新神马 DCU 权限
 - [ ] EAST 账号 - 王枫老师管理 
 - [ ] 加入小组 [WPS 共享资料库](https://kdocs.cn/join/gl3pii5?f=101) 
-- [ ] 生成 ed25519 算法的 ssh 公钥，并上传到`共享资料库/Storage/ssh`，命名方式为 `<yourname>_pub_key`
+- [ ] 生成 ed25519 算法的 ssh 公钥， 上传到`共享资料库/Storage/ssh`，并重命名为 `<yourname>_pub_key`
   > 生成方法 `ssh-keygen -t ed25519 -C "<yourname>"` 
 
 ### 代码和配置类问题解决方案
