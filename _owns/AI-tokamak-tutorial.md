@@ -28,7 +28,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 - 等所原有标准除以 4，其中 NF 为 2000 元，Nature 子刊为 20000 元，正刊估计是一事一议了，估计在 50w 以上。
 - 其他工作，主要包括采购，报账等。年终统一发放，酌情而定。
 
-<!-- | 成果名称       | 奖励 | 备注 |
+| <!--                                         | 成果名称       | 奖励 | 备注 |
 | -------------------------------------------- | -------------- | ---- |
 | 软件著作权                                   | 100            |      |
 | 发明专利                                     | 400            |      |
@@ -36,9 +36,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 | Nuclear Fusion                               | 1000           |      |
 | Nature 子刊                                  | 50000          |      |
 | 其他论文                                     | 影响因子 * 200 |      |
-| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      | -->
-
-
+| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      | -->  |
 
 ## 教材和书本
 
@@ -50,11 +48,20 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 
 ## 预备知识
 
-- Linux 和 GIT 的基本操作，其中不掌握任何Linux基础知识的，可以先用 WSL2 熟悉。
+### 基础知识
+- Linux 和 GIT 的基本操作，其中不掌握任何Linux基础知识的，可以先用 WSL2 熟悉。特别是其中 **ssh 公钥和私玥**的使用方法
   - 特别是 `LIBRARY_PATH, LD_LIBRARY_PATH, PATH, INCLUDE, MANPATH`，这5个环境变量的使用方法
 - 机器学习模型搭建的基本操作，最低要求熟练跑通Torch官方 [DistributedDataParallel](https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html) 中的 "nccl" 和 "gloo" 即 GPU 和 CPU 的训练后端。
 - HDF5，matplotlib，numpy， torch，sql 的熟练运用
 - 熟读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)，之后再提问，特别注意**不着编边际的问题**。
+
+### 账号开通列表
+- [ ] 等离子体物理研究所邮箱
+- [ ] 咨询刘晓娟老师，开通新神马和老神马账号，特别是要开通新神马 DCU 权限
+- [ ] EAST 账号 - 王枫老师管理 
+- [ ] 加入小组 [WPS 共享资料库](https://kdocs.cn/join/gl3pii5?f=101) 
+- [ ] 生成 ed25519 算法的 ssh 公钥，并上传到`共享资料库/Storage/ssh`，命名方式为 `<yourname>_pub_key`
+  > 生成方法 `ssh-keygen -t ed25519 -C "<yourname>"` 
 
 ### 代码和配置类问题解决方案
 1. 百度，Google，GPT全都搞一遍，特别是要注意给问题翻译成英文去搜一搜
@@ -74,7 +81,9 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 2. 数据库位置 `/gpfs/mds_data/DataBase`，这个是基于 HDF5 的数据库，支持多进程的读写。如果你想要的数据没有，请联系 chenguang.wan 或 minglong.wang
 3. 数据库所有的数据请不要进行除读数据外的任何操作。**误删**会影响**所有人的工作**
 
-TODO:位置需要更新
+### 数据库使用方法
+1. 新神马服务器数据`/data/share/chenguang_wan/DataBase`
+
 
 ## 论文撰写和文献管理相关
 
@@ -131,11 +140,8 @@ _lyx 版本转换_
 这个部分非常重要，关系到科研项目是否能顺利结项。
 
 1. 如果用到EAST数据需要添加下列语句：
-
     > We thank the staff members at EAST in Hefei (https://cstr.cn/31130.02.EAST ), for providing technical support and assistance in data collection and analysis.
-
 2. 其次对于所有在本论文中帮助过你的人，但是不在论文作者中，需要在致谢部分给出
-
 3. 项目致谢，这部分需要让 chenguang.wan@ipp.ac.cn 确认
 
 ### 可投期刊推荐
@@ -161,6 +167,7 @@ _lyx 版本转换_
 
 #### 纯 AI 领域
 - NeurIPS, AI for Science Workshop
+- ICLR，ICML，AAAI， AI for Science
 
 #### 可投水刊列表
 
@@ -172,9 +179,6 @@ _lyx 版本转换_
 
 [不宜公开内容，列表见链接](https://kdocs.cn/l/cewDvJxZMyPX)
 
-## 小组共享资料
-
-[金山网盘协作](https://kdocs.cn/join/gxxq4mo)
 
 ### 论文中建议给下列论文，全都引用一遍
 
@@ -183,7 +187,7 @@ _lyx 版本转换_
 ## 其他说明
 
 - 如果有部分链接无法打开，如果你不是小组成员，这部分内容不共享。如果你是小组成员，请联系 chgwan 加入到小组内部共享列表, 加入之前麻烦给 wps 用户名改成**真实姓名**，用以方便追踪。
-- RSS订阅列表
+- RSS订阅列表，方便及时追踪最新通知
   - [合肥物质科学研究院科研规划处](https://politepol.com/fd/iYjG8cdjXr5m.xml)
   - [等离子体所通知](https://politepol.com/fd/iTZb41hW1tqT.xml)
   - [合肥物质科学研究院研究生处](https://politepol.com/fd/MfAI440x47sF.xml)
