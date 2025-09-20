@@ -89,7 +89,7 @@ source ~/.bashrc
 `mount-108-db`: 挂载 108 数据库 /gpfs/mds_data 到 135 上，使用方法见运行命令提示
 
 
-## ~~194，189，161（已失效）访问随时可能中断~~
+## 194，189，161访问随时可能中断
 
 ### 服务器简介
 
@@ -139,8 +139,27 @@ source ~/.bashrc
 8. `cd dcu_whl`, `pip install *.whl` ：切换到 `dcu_whl`  文件夹中安装所有的 `*.whl`
 9. 测试torch是否能工作 `python torch_benchmark.py`
 
+### DCU flashAttn 支持
+```bash
+pip install triton
+# install flashAttn
+git clone git@github.com:Dao-AILab/flash-attention.git
+cd flash-attention
+FLASH_ATTENTION_TRITON_AMD_ENABLE="TRUE" python setup.py install
+```
+```python
+# using
+import os
+os.environ['FLASH_ATTENTION_TRITON_AMD_ENABLE']='TRUE'
+os.environ['FLASH_ATTENTION_TRITON_AMD_AUTOTUNE']='TRUE' # comment out, if the code can not work
+from flash_attn import flash_attn_qkvpacked_func, flash_attn_func
+```
+
 ### DCU 其他支持
-DCU 其他安装环境支持： https://cancon.hpccube.com:65024/4/main
+- 2025-09-20：DCU 安装的是基于 AMD，ROCm的技术方案，ROCm 版本为 `6.3.25211`， 目前大多数框架均支持 ROCm, 其中以 OpenAI, triton 为基础蓝本，可以在此技术上调试
+- AMD 模型加速: https://rocm.docs.amd.com/en/latest/how-to/rocm-for-ai/inference-optimization/model-acceleration-libraries.html
+- DCU 其他安装环境支持： https://cancon.hpccube.com:65024/4/main
+- 最后请大家**多多尝试**，如果非 DCU 版 PyTorch 官方 API 问题，一般均有对应的解决方案，不要一味等待，更不要武断的下结论。
 
 ### DCU 网络环境 hacking 方案，请不要分享，该方法仅为了方便使用，官方不支持
 
@@ -155,8 +174,10 @@ curl ifconfig.me
 
 ## 新神马小集群
 
-登录ip：202.127.205.186, port 5074
-所有人home目录限制大小为 3T，所有文件都可以放在 home 下面。
+- 登录ip：202.127.205.186, port 5074 
+- 所有人home目录限制大小为 3T，所有文件都可以放在 home 下面。
+- 目前数据盘 `/gpfs` 容易掉，待解决 
+
 
 ### TODOs
 - [ ] 数据访问
