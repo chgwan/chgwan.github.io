@@ -140,6 +140,7 @@ source ~/.bashrc
 9. 测试torch是否能工作 `python torch_benchmark.py`
 
 ### DCU flashAttn 支持
+**安装方法：**
 ```bash
 pip install triton
 # install flashAttn
@@ -147,12 +148,13 @@ git clone git@github.com:Dao-AILab/flash-attention.git
 cd flash-attention
 FLASH_ATTENTION_TRITON_AMD_ENABLE="TRUE" python setup.py install
 ```
+**python 代码块**
 ```python
 # using
 import os
 os.environ['FLASH_ATTENTION_TRITON_AMD_ENABLE']='TRUE'
 os.environ['FLASH_ATTENTION_TRITON_AMD_AUTOTUNE']='TRUE' # comment out, if the code can not work
-from flash_attn import flash_attn_qkvpacked_func, flash_attn_func
+from flash_attn import flash_attn_qkvpacked_func, flash_attn_func # no warnings and errors
 ```
 
 ### DCU 其他支持
