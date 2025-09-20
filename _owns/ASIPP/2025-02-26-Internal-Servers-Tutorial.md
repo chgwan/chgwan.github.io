@@ -140,7 +140,7 @@ source ~/.bashrc
 9. 测试torch是否能工作 `python torch_benchmark.py`
 
 ### DCU flashAttn 支持
-**安装方法：**
+**安装方法**
 ```bash
 pip install triton
 # install flashAttn
