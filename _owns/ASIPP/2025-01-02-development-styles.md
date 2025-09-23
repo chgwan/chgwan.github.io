@@ -13,19 +13,20 @@ media_subpath: "/assets/img/commons"
 可以使用 chgwan 编写的 hooks 来进行规范化提交用法参考：https://github.com/chgwan/conventional_commits/tree/main
 
 ## Python 项目规范
-### 命名规范
+### 命名规范，直接参考pytorch, GitHub repo
+| 类型       | 惯例                          | 备注                           |
+| ---------- | ----------------------------- | ------------------------------ |
+| 包和模块   | lower_with_under              |                                |
+| 类         | CapWords                      |                                |
+| 文件夹名   | CapWords                      | 本人常用规范，可以不遵循       | 
+| 文件名     | cap_words / cap_wrods_<intro> | 一般用cap_words，_表示补充说明 |
+| 常量       | CAPS_WITH_UNDER               |                                |
+| 实例       | lower_with_under              |                                |
+| 方法与功能 | lower_with_under()            |                                |
+| 变量       | lower_with_under              |                                |
+| 私有变量   | _start                        | 以下划线开头                   |
 
-| 类型       | 惯例                | 备注                           |
-| ---------- | ------------------- | ------------------------------ |
-| 包和模块   | lower_with_under    |                                |
-| 类         | CapWords            |                                |
-| 文件夹名   | CapWords            |                                |
-| 文件名     | lower_with_under    | 一般用 capWords，_表示补充说明 |
-| 常量       | CAPS_WITH_UNDER     |                                |
-| 实例       | lower_with_under    |                                |
-| 方法与功能 | lower_with_under () |                                |
-| 变量       | lower_with_under    |                                |
-| 私有变量   | _start              |                                |
+- 补充说明：文件夹规和GitHub常用规范不一致，1.和Windows系统相匹配。 2. 以 \_ 区分容易让文件名过长
 
 ### 函数文档规范
 主要参考 pyTorch 项目的相关规范，[Transformer例子链接](https://github.com/pytorch/pytorch/blob/v2.6.0/torch/nn/modules/transformer.py#L57)
