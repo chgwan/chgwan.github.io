@@ -18,7 +18,7 @@ media_subpath: "/assets/img/commons"
 | ---------- | ----------------------------- | ------------------------------ |
 | 包和模块   | lower_with_under              |                                |
 | 类         | CapWords                      |                                |
-| 文件夹名   | CapWords                      | 本人常用规范，可以不遵循       | 
+| 文件夹名   | CapWords                      | 本人常用规范，可以不遵循       |
 | 文件名     | cap_words / cap_wrods_<intro> | 一般用cap_words，_表示补充说明 |
 | 常量       | CAPS_WITH_UNDER               |                                |
 | 实例       | lower_with_under              |                                |
@@ -27,6 +27,7 @@ media_subpath: "/assets/img/commons"
 | 私有变量   | _start                        | 以下划线开头                   |
 
 - 补充说明：文件夹规和GitHub常用规范不一致，1.和Windows系统相匹配。 2. 以 \_ 区分容易让文件名过长
+- 子 project **代码类**，和包合模块的命名一致, 即 lower_with_under.
 
 ### 函数文档规范
 主要参考 pyTorch 项目的相关规范，[Transformer例子链接](https://github.com/pytorch/pytorch/blob/v2.6.0/torch/nn/modules/transformer.py#L57)
