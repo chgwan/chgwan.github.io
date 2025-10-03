@@ -34,7 +34,7 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 
 ### 服务器简介
 1. **NSCC：**sg超算中心服务器，由很多**A100**的计算节点，每个A100 40GB内存，可以通过不同脚本实现不同数量的A100调用，每个节点节点最多4个A100
-2. **sgGPU**  NTU A100 服务器    **4\*A100**，每个A100 80GB内存
+2. **sgGPU**  NTU H200 和 A100 服务器，**4\*H200 + 4\*A100**，每个A100 80GB内存，H200 140GB内存
 
 ### 开通和登录
 1. 生成 rsa key 对，给公钥发给 chgwan，开通完会提供相应的 ip 和 port
@@ -58,7 +58,7 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 
 
 
-## 135 和 108
+## ~~135 和 108 （已失效）~~
 
 ### 135
 
@@ -68,7 +68,7 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 
 **108** 4 卡 P100，ip：202.127.205.135，目前该服务器用于数据库映射支持，大家能在别的服务器访问 `DATABASE` 的**硬件支持**，所以非常不建议在该服务器运行网络密集型脚本。
 
-由于 108 是 Centos 7 系统，目前 vscode 已经不支持直接访问太老的服务器。现在新增加了一个 hack 方法，使得 108 可以连接 vsocde。粘贴登录 108 服务器的 terminal，粘贴并执行下列命令，即可实现vscode直接连接，**只需要执行一次**。
+由于 108 是 Centos 7 系统，目前 vscode 已经不支持直接访问太老的服务器。现在新增加了一个 hack 方法，使得 108 可以连接 vscode。登录 108 服务器的 terminal，粘贴并执行下列命令，即可实现vscode直接连接，**只需要执行一次**。
 
 ```bash
 cat << 'EOF' >> ~/.bashrc
@@ -89,7 +89,7 @@ source ~/.bashrc
 `mount-108-db`: 挂载 108 数据库 /gpfs/mds_data 到 135 上，使用方法见运行命令提示
 
 
-## 194，189，161
+## 194，189，161访问随时可能中断
 
 ### 服务器简介
 
@@ -110,3 +110,78 @@ source ~/.bashrc
 
 环境可以自己创建，也可以用共享环境 torch `conda env create -f torch.yml`
 
+## 新神马DCU使用教程
+
+**内部使用，不许分享**
+
+- 官方链接：https://www.scnet.cn/help/docs/mainsite/ai/
+<!-- 其他有用参考：https://www.cnblogs.com/zhihh/p/18489338/Chengdu_HPC_Usage_Record -->
+<!-- 用户需要在 render 用户组才可以使用 dcu，所以需要先咨询管理员给用户加在 render 组 -->
+
+- chgwan 不提供除跑通 benchmark 代码外的其他任何支持，包括不限于 vscode 登录，是否支持免密等。这种东西请自行搜索 !!
+- 数据库位置： `/data/share/chenguang_wan/DataBase`, 只读权限
+### 常用命令
+
+`lscpu`, `rocm-smi`, `hy-smi` 
+
+`ssh <username>@202.127.205.70 -p 6021`
+
+
+### 具体 DCU 教程
+1. 联系 chgwan 开通对应的DCU权限
+2. 登录到新神马DCU 381/382
+3. 创建并激活 **python 3.11** 环境，例 `conda create -n torch python==3.11`, 
+4. 安装 numpy 且其需小于2.0，即1.X 版本，目前是推荐1.26.x，可自行决定版本。
+5. `cp -r /data/share/chenguang_wan/torch_2.4.1_dcu/* ~`
+6. `ssh shenmagpu381` 或者 `ssh shenmagpu382`
+7. `module use .modulefiles`, ps：这个可以写到 `.bashrc` 中，这样可以不每次都打该命令
+8. `module load mydtk/dtk-25.04`
+9. `cd dcu_whl`, `pip install *.whl` ：切换到 `dcu_whl`  文件夹中安装所有的 `*.whl`
+10. 测试torch是否能工作 `python torch_benchmark.py`
+
+### DCU flashAttn 支持
+**安装方法**
+```bash
+pip install triton
+# install flashAttn
+git clone git@github.com:Dao-AILab/flash-attention.git
+cd flash-attention
+FLASH_ATTENTION_TRITON_AMD_ENABLE="TRUE" python setup.py install
+```
+**python 代码块测试**
+```python
+# using
+import os
+os.environ['FLASH_ATTENTION_TRITON_AMD_ENABLE']='TRUE'
+os.environ['FLASH_ATTENTION_TRITON_AMD_AUTOTUNE']='TRUE' # comment out, if the code can not work
+from flash_attn import flash_attn_qkvpacked_func, flash_attn_func # no warnings and errors
+```
+
+### DCU 其他支持
+- 2025-09-20：DCU 安装的是基于 AMD，ROCm的技术方案，ROCm 版本为 `6.3.25211`， 目前大多数框架均支持 ROCm, 其中以 OpenAI, triton 为基础蓝本，可以在此技术基础上调试
+- AMD 模型加速: https://rocm.docs.amd.com/en/latest/how-to/rocm-for-ai/inference-optimization/model-acceleration-libraries.html
+- DCU 其他安装环境支持： https://cancon.hpccube.com:65024/4/main
+- 最后请大家**多多尝试**，如果非 DCU 版 PyTorch 官方 API 问题，一般均有对应的解决方案，不要一味等待，更不要武断的下结论。
+
+### DCU 网络环境 hacking 方案，请不要分享，该方法仅为了方便使用，官方不支持
+
+执行下列命令，出现ip则为有网络，其他服务请自行搜索如何设置代理服务器。
+``` bash
+# set internet access in dcu node. 
+export http_proxy="socks5h://localhost:7070"
+export https_proxy="socks5h://localhost:7070"
+curl ifconfig.me
+```
+
+## 新神马小集群
+
+- 登录ip：202.127.205.186, port 5074 
+- 所有人home目录限制大小为 3T，所有文件都可以放在 home 下面。
+- 目前数据盘 `/gpfs` 容易掉，待解决 
+
+
+### TODOs
+- [ ] 数据访问
+
+## 一些建议：
+- conda / mamba: Do not install anything into the `base` environment as this might break your installation

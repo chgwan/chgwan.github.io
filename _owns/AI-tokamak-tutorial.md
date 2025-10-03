@@ -1,34 +1,68 @@
 ---
 title: AI tokamak tutorial
 author: chgwan
-# date: 2024-12-27 00:34:00 +0800
+date: 2024-12-27 00:34:00 +0800
 # updated: 2025-05-15
 tags: [Tutorial]
 media_subpath: "/assets/img/commons"
 ---
+
+## 研究方向
+
+AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。[详情参见](https://scholar.google.com/citations?user=ncURiLEAAAAJ&hl=en)。
+
 ## 奖励标准
 
 - **软件著作权**：500 每篇
 - **发明专利**：2000 每项；实用新型：500每项
-- **论文**：影响因子 * 1000 + 其他奖励（视论文级别而定），NF总计为~8000
+- **论文**：影响因子 * 1000 + 其他奖励（视论文级别而定），NF总计为 ~4000
 - 以上所说奖励标准，是满足**等离子体物理研究所为第一单位**的情况下
 - 非等所为第一单位，奖励需要酌情而定，官方没有奖励。
+
+### 奖励标准 2025-07-30 更新版
+
+从组内同学处获悉，等所科研奖励停止发放。故我们只能按照组内标准给大家发少量的奖励了。下列奖励需满足**万晨光为通讯作者或第一作者**。
+
+标准如下（**非等所为第一单位则折半奖励**）：
+
+- 等所原有标准除以 4，新标准为: NF 为 1000 元，Nature 子刊为 10000 元，正刊估计是一事一议了，估计在 50w 以上。其他论文按照影响因子和分区进行奖励。
+- 其他工作，主要包括采购，报账等。年终统一发放，酌情而定。
+
+<!-- 
+|                                              | 成果名称       | 奖励 | 备注 |
+| -------------------------------------------- | -------------- | ---- |
+| 软件著作权                                   | 100            |      |
+| 发明专利                                     | 400            |      |
+| 实用新型                                     | 100            |      |
+| Nuclear Fusion                               | 1000           |      |
+| Nature 子刊                                  | 50000          |      |
+| 其他论文                                     | 影响因子 * 200 |      |
+| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      |      | --> |
 
 ## 教材和书本
 
 - 磁约束等离子体实验物理
-- 托卡马克第四版，清华大学出版社
+- 托卡马克第四版，清华大学出版社，王文浩译
 - Dive into deep learning - author Mu Li
 - 强化学习 - EasyRL https://datawhalechina.github.io/easy-rl
 - https://www.deeplearningbook.org/  MIT  deep learning book
 
 ## 预备知识
 
-- Linux 的基本操作
+### 基础知识
+- Linux 和 GIT 的基本操作，其中不掌握任何Linux基础知识的，可以先用 WSL2 熟悉。特别是其中 **ssh 公钥和私玥**的使用方法
   - 特别是 `LIBRARY_PATH, LD_LIBRARY_PATH, PATH, INCLUDE, MANPATH`，这5个环境变量的使用方法
-- 机器学习模型搭建的基本操作
+- 机器学习模型搭建的基本操作，最低要求熟练跑通Torch官方 [DistributedDataParallel](https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html) 中的 "nccl" 和 "gloo" 即 GPU 和 CPU 的训练后端。
 - HDF5，matplotlib，numpy， torch，sql 的熟练运用
 - 熟读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)，之后再提问，特别注意**不着编边际的问题**。
+
+### 账号开通列表
+- [ ] 等离子体物理研究所邮箱
+- [ ] 咨询刘晓娟老师，开通新神马和老神马账号，特别是要开通新神马 DCU 权限
+- [ ] EAST 账号 - 王枫老师管理 
+- [ ] 加入小组 [WPS 共享资料库](https://kdocs.cn/join/gl3pii5?f=101) 
+- [ ] 生成 ed25519 算法的 ssh 公钥， 上传到`共享资料库/Storage/ssh`，并重命名为 `<yourname>_pub_key`
+  > 生成方法 `ssh-keygen -t ed25519 -C "<yourname>"` 
 
 ### 代码和配置类问题解决方案
 1. 百度，Google，GPT全都搞一遍，特别是要注意给问题翻译成英文去搜一搜
@@ -36,15 +70,21 @@ media_subpath: "/assets/img/commons"
 3. 提供可能的问题来源，比如log等。比如最小复现方法。
 4. 总结来说：先自己尝试解决，解决不了，就给问题化简到别人能最小复现的版本，然后再提问。
 
-## 代码开发规范
-- 工具链：Conda + Pytorch + Python > 3.9 (推荐3.11)
-- 代码风格见 [开发规范](../development-styles)
+## 代码开发
+- 工具链：Conda + Pytorch ( >= 2.4 推荐 latest stable version ) + Python >= 3.9 (推荐3.12)，目前 Conda 对于组织已经不是免费的了，所以会逐步迁移至Mamba，[Mamba的安装](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html)
+- 数据库目前是基于 HDF5 的内部数据库
+- 代码风格见 [开发规范](../development-styles)。
+- 内部private_modules包，有很多常用的数据操作方法，请不要分享。
 
 ## EAST的数据使用和相关的数据库位置
 
 1. **请不要用 python 脚本读取MDS+数据库**。虽然我们内部的有相对应的数据读取方法，但是这个会影响到 EAST 正常实验的进行。如果需要使用，请一定要征得 chenguang.wan 的同意
-2. 数据库位置 `/gpfs/mds_data/DataBase`，如果你想要的数据没有。请联系 chenguang.wan 或 minglong.wang
-3. 数据库所有的数据请不要进行除读数据外的任何操作。误删会影响**所有人的工作**
+2. 数据库位置 `/gpfs/mds_data/DataBase`，这个是基于 HDF5 的数据库，支持多进程的读写。如果你想要的数据没有，请联系 chenguang.wan 或 minglong.wang
+3. 数据库所有的数据请不要进行除读数据外的任何操作。**误删**会影响**所有人的工作**
+
+### 数据库使用方法
+1. 新神马服务器数据`/data/share/chenguang_wan/DataBase`
+
 
 ## 论文撰写和文献管理相关
 
@@ -60,8 +100,9 @@ media_subpath: "/assets/img/commons"
 
 英文名：University of Science and Technology of China, Hefei 230026, China
 
-
 **满足毕业条件后，建议将署名的第一单位改为合肥物质科学研究院**，这样的话，不仅可以拿到科研奖励，对于未来的职业发展也有帮助。
+
+用到EAST数据，需要在作者名列表中**加上 EAST team**, 其中 EAST team 的 affiliation 是 Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences, Hefei 230031, China
 
 
 ### 软件和 LyX 模板等
@@ -85,9 +126,9 @@ _lyx 版本转换_
 
 - 投稿之前一定要让"Chenguang Wan@chenguang.wan@ipp.ac.cn"确认作者列表，这个十分重要！！！
 - 如果合适的话，在论文投稿之前，最好写一个 **专利和软著**
-- 论文投稿之前，需要在 pinboard 上 **公示**，[参考](../paper-sub-procedure)
-- 基本流程：论文初稿 &rarr; 专利 &rarr; 软著&rarr; 投稿
-- 所有论文全都用我的账号投稿，这样我能最快的和编辑沟通。
+- 论文投稿之前，需要在 pinboard 上 **公示**，[公示方法参考](../paper-sub-procedure)
+- 基本流程：论文初稿 &rarr; 专利 &rarr; 软著&rarr; 投稿，专利的申请日要在论文发表日之前。
+- 所有论文全都用我的账号投稿，这样我能最快的和编辑沟通。（惨痛经验可以详询Minglong Wang）
 
 #### 论文撰写其他需要注意的细节
 
@@ -100,134 +141,54 @@ _lyx 版本转换_
 这个部分非常重要，关系到科研项目是否能顺利结项。
 
 1. 如果用到EAST数据需要添加下列语句：
-
     > We thank the staff members at EAST in Hefei (https://cstr.cn/31130.02.EAST ), for providing technical support and assistance in data collection and analysis.
-
 2. 其次对于所有在本论文中帮助过你的人，但是不在论文作者中，需要在致谢部分给出
-
 3. 项目致谢，这部分需要让 chenguang.wan@ipp.ac.cn 确认
 
 ### 可投期刊推荐
 
+#### 一区 TOP 类可投
 1. Nature Machine Intelligence: 这个比较简单，目测是很容易拿下的子刊
 2. Nature Physics
 3. Nature Energy
 4. Nature Communications
-5. Communications Physics
+5. Communications Physics：该期刊一般是 Nature Communication 投不中的选择
 6. Cell Reports Physical Science
-7. Nuclear Fusion
+7. Nuclear Fusion，其中有 Nuclear Fusion Letter，Letter 属于 NF 中比较重要的文章。
 8. Nature Machine Intelligence
 9. The Innovation (Cell Press)
 10. Journal of Fusion Energy
+11. Science Advance：和 NC 类似
 
-### 二区期刊可投
+#### 二区期刊可投
 
 1. Nuclear Materials and Energy
 2. NUCLEAR ENGINEERING AND DESIGN
 3. PPCF
 
-### 可投水刊列表
+#### 纯 AI 领域
+- NeurIPS, AI for Science Workshop
+- ICLR，ICML，AAAI， AI for Science
+
+#### 可投水刊列表
 
 1. IEEE Transactions on Nuclear Science
 2. Fusion Engineering and Design
 3. IEEE Transactions on Plasma Science
 
-## 推荐审稿人列表
+#### 推荐审稿人列表
 
 [不宜公开内容，列表见链接](https://kdocs.cn/l/cewDvJxZMyPX)
 
-## 小组共享资料
-
-[金山网盘协作](https://kdocs.cn/join/gxxq4mo)
 
 ### 论文中建议给下列论文，全都引用一遍
 
-```bib
-@article{Wan2021,
-  title = {Experiment Data-Driven Modeling of Tokamak Discharge in EAST},
-  author = {Wan, Chenguang and Yu, Zhi and Wang, Feng and Liu, Xiaojuan and Li, Jiangang},
-  year = {2021},
-  month = jun,
-  journal = {Nuclear Fusion},
-  volume = {61},
-  number = {6},
-  pages = {066015},
-  issn = {0029-5515},
-  doi = {10.1088/1741-4326/abf419}
-}
+[Recommended citations](/assets/codes/bib/recommended_citations.bib)
 
-@article{Wan2022,
-  title = {EAST Discharge Prediction without Integrating Simulation Results},
-  author = {Wan, Chenguang and Yu, Zhi and Pau, Alessandro and Liu, Xiaojuan and Li, Jiangang},
-  year = {2022},
-  month = dec,
-  journal = {Nuclear Fusion},
-  volume = {62},
-  number = {12},
-  pages = {126060},
-  publisher = {IOP Publishing},
-  issn = {17414326},
-  doi = {10.1088/1741-4326/ac9c1a},
-  copyright = {All rights reserved}
-}
+## 其他说明
 
-@article{Wan2023,
-  title = {A Machine-Learning-Based Tool for Last Closed-Flux Surface Reconstruction on Tokamaks},
-  author = {Wan, Chenguang and Yu, Zhi and Pau, Alessandro and Sauter, Olivier and Liu, Xiaojuan and Yuan, Qiping and Li, Jiangang},
-  year = {2023},
-  month = may,
-  journal = {Nuclear Fusion},
-  volume = {63},
-  number = {5},
-  pages = {056019},
-  issn = {0029-5515},
-  doi = {10.1088/1741-4326/acbfcc}
-}
-
-@article{Wan2024,
-  title = {Predict the Last Closed-Flux Surface Evolution without Physical Simulation},
-  author = {Wan, Chenguang and Bai, Shuhang and Yu, Zhi and Yuan, Qiping and Huang, Yao and Liu, Xiaojuan and Hu, Yemin and Li, Jiangang},
-  year = {2024},
-  month = feb,
-  journal = {Nuclear Fusion},
-  volume = {64},
-  number = {2},
-  pages = {026014},
-  issn = {0029-5515},
-  doi = {10.1088/1741-4326/ad171f}
-}
-
-@article{Wan2025,
-  title = {A High-Fidelity Surrogate Model for the Ion Temperature Gradient ({{ITG}}) Instability Using a Small Expensive Simulation Dataset},
-  author = {Wan, Chenguang and Cho, YoungWoo and Qu, Zhisong and Camenen, Yann and Varennes, Robin and Lim, Kyungtak and Li, Kunpeng and Li, Jiangang and Li, Yanlong and Garbet, Xavier},
-  year = {2025},
-  month = apr,
-  journal = {Nuclear Fusion},
-  number = {65},
-  pages = {054001},
-  issn = {0029-5515, 1741-4326},
-  doi = {10.1088/1741-4326/adc7c9},
-  urldate = {2025-04-02},
-  copyright = {All rights reserved}
-}
-@article{Wang2025c,
-  title = {Time Series Extrinsic Regression for Reconstructing Missing Electron Temperature in Tokamak},
-  author = {Wang, Minglong and Wan, Chenguang and Lu, Jingjing and Yu, Zhi and Xiao, Bingjia and Li, Yanlong and He, Xiaoxue and Luo, Zhengping and Yuan, Q P and Hu, Yemin and Li, Jiangang},
-  year = {2025},
-  month = may,
-  journal = {Nuclear Fusion},
-  issn = {0029-5515, 1741-4326},
-  doi = {10.1088/1741-4326/addb5f},
-  urldate = {2025-05-22},
-  copyright = {https://creativecommons.org/licenses/by/4.0/}
-}
-
-```
-
-## **其他说明**
-
-- 如果有部分链接，你无法打开说明你不是小组成员，这部分内容不共享
-- RSS订阅列表
+- 如果有部分链接无法打开，如果你不是小组成员，这部分内容不共享。如果你是小组成员，请联系 chgwan 加入到小组内部共享列表, 加入之前麻烦给 wps 用户名改成**真实姓名**，用以方便追踪。
+- RSS订阅列表，方便及时追踪最新通知
   - [合肥物质科学研究院科研规划处](https://politepol.com/fd/iYjG8cdjXr5m.xml)
   - [等离子体所通知](https://politepol.com/fd/iTZb41hW1tqT.xml)
   - [合肥物质科学研究院研究生处](https://politepol.com/fd/MfAI440x47sF.xml)
