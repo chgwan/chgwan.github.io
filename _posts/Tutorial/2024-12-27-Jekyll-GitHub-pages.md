@@ -72,18 +72,18 @@ A: 大概率是没有执行 `bash tools/init.sh`
 ## 复制已有远程仓到其他设备
 ### 配置环境
 1. 安装 rbenv
-```bash
-sudo apt install rbenv
-# add the following statements in .bashrc
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-```
+    ```bash
+    sudo apt install rbenv
+    # add the following statements in .bashrc
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+    ```
 2. 用 rbenv 重新安装 ruby，建议版本号高于 3.2
-```bash
-# list all available envs can be installed 
-rbenv install -l
-rbenv install <ruby_version>
-```
+    ```bash
+    # list all available envs can be installed 
+    rbenv install -l
+    rbenv install <ruby_version>
+    ```
 
 3. 安装 node，参考 [安装教程](https://nodejs.org/en/download)
 
@@ -102,21 +102,18 @@ rbenv install <ruby_version>
     npm -v # Should print "10.9.2".
     ```
 
-   
-
 4. 安装 Jekyll 等
-```bash 
-rbenv versions # should be something like 3.2.2
+    ```bash 
+    rbenv versions # should be something like 3.2.2
 
-# if not
-rbenv global <version_gt_3.2>
-rbenv rehash
-ruby -v # should be ruby 3.4.2
+    # if not
+    rbenv global <version_gt_3.2>
+    rbenv rehash
+    ruby -v # should be ruby 3.4.2
 
-## install jekyll and bundler
-gem install jekyll bundler
-
-```
+    ## install jekyll and bundler
+    gem install jekyll bundler
+    ```
 
 5. `git clone git@github.com:<username>/<username>.github.io.git`
 
