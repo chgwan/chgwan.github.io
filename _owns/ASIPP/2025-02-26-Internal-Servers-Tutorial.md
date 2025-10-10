@@ -89,11 +89,12 @@ source ~/.bashrc
 `mount-108-db`: 挂载 108 数据库 /gpfs/mds_data 到 135 上，使用方法见运行命令提示
 
 
-## 194，189，161访问随时可能中断
+## 194，189，161，目前可以继续使用
 
 ### 服务器简介
 
-密码：grouptokai1=  账号：cgwan
+<!-- grouptokai1=  -->
+账号名：cgwan, 密码请联系: chgwan
 
 **194**  八卡 3090，ip: 202.127.204.194 
 
@@ -128,11 +129,11 @@ source ~/.bashrc
 
 
 ### 具体 DCU 教程
-1. 联系 chgwan 开通对应的DCU权限
+1. 联系 chgwan 开通对应的DCU权限, 或者使用公共账号
 2. 登录到新神马DCU 381/382
 3. 创建并激活 **python 3.11** 环境，例 `conda create -n torch python==3.11`, 
 4. 安装 numpy 且其需小于2.0，即1.X 版本，目前是推荐1.26.x，可自行决定版本。
-5. `cp -r /data/share/chenguang_wan/torch_2.4.1_dcu/* ~`
+5. `cp -r /data/share/chenguang_wan/Backups/torch_2.4.1_dcu/* ~`
 6. `ssh shenmagpu381` 或者 `ssh shenmagpu382`
 7. `module use .modulefiles`, ps：这个可以写到 `.bashrc` 中，这样可以不每次都打该命令
 8. `module load mydtk/dtk-25.04`
