@@ -53,6 +53,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 ## 预备知识
 
 ### 基础知识
+- 使用 Google，Chat-GPT 等，具备顺畅访问 Google 和 Chat-GPT 的能力
 - Linux 和 GIT 的基本操作，其中不掌握任何Linux基础知识的，可以先用 WSL2 熟悉。特别是其中 **ssh 公钥和私玥**的使用方法
   - 特别是 `LIBRARY_PATH, LD_LIBRARY_PATH, PATH, INCLUDE, MANPATH`，这5个环境变量的使用方法
   - 所谓WSL，即 Windows Subsystem for Linux 官方安装教程：https://learn.microsoft.com/en-us/windows/wsl/install
