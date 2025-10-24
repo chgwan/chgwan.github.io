@@ -11,22 +11,22 @@ media_subpath: "/assets/img/commons"
 
 AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。[详情参见](https://scholar.google.com/citations?user=ncURiLEAAAAJ&hl=en)。
 
-## 奖励标准
+<!-- ## 奖励标准
 
 - **软件著作权**：500 每篇
 - **发明专利**：2000 每项；实用新型：500每项
 - **论文**：影响因子 * 1000 + 其他奖励（视论文级别而定），NF总计为 ~4000
 - 以上所说奖励标准，是满足**等离子体物理研究所为第一单位**的情况下
-- 非等所为第一单位，奖励需要酌情而定，官方没有奖励。
+- 非等所为第一单位，奖励需要酌情而定，官方没有奖励。 -->
 
-### 奖励标准 2025-07-30 更新版
+<!-- ### 奖励标准 2025-07-30 更新版
 
 从组内同学处获悉，等所科研奖励停止发放。故我们只能按照组内标准给大家发少量的奖励了。下列奖励需满足**万晨光为通讯作者或第一作者**。
 
 标准如下（**非等所为第一单位则折半奖励**）：
 
 - 等所原有标准除以 4，新标准为: NF 为 1000 元，Nature 子刊为 10000 元，正刊估计是一事一议了，估计在 50w 以上。其他论文按照影响因子和分区进行奖励。
-- 其他工作，主要包括采购，报账等。年终统一发放，酌情而定。
+- 其他工作，主要包括采购，报账等。年终统一发放，酌情而定。 -->
 
 <!-- 
 |                                              | 成果名称       | 奖励 | 备注 |
@@ -37,24 +37,29 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 | Nuclear Fusion                               | 1000           |      |
 | Nature 子刊                                  | 50000          |      |
 | 其他论文                                     | 影响因子 * 200 |      |
-| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      |      | --> |
+| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      |      | --> 
 
 ## 教材和书本
+**下列课程不分先后顺序：**
 
 - 磁约束等离子体实验物理
 - 托卡马克第四版，清华大学出版社，王文浩译
 - Dive into deep learning - author Mu Li
+- B站视频，跟着李沐学AI - author Mu Li https://space.bilibili.com/1567748478
 - 强化学习 - EasyRL https://datawhalechina.github.io/easy-rl
 - https://www.deeplearningbook.org/  MIT  deep learning book
+- 吴恩达机器学习课程，https://space.bilibili.com/3493134768016008
 
 ## 预备知识
 
 ### 基础知识
 - Linux 和 GIT 的基本操作，其中不掌握任何Linux基础知识的，可以先用 WSL2 熟悉。特别是其中 **ssh 公钥和私玥**的使用方法
   - 特别是 `LIBRARY_PATH, LD_LIBRARY_PATH, PATH, INCLUDE, MANPATH`，这5个环境变量的使用方法
+  - 所谓WSL，即 Windows Subsystem for Linux 官方安装教程：https://learn.microsoft.com/en-us/windows/wsl/install
 - 机器学习模型搭建的基本操作，最低要求熟练跑通Torch官方 [DistributedDataParallel](https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html) 中的 "nccl" 和 "gloo" 即 GPU 和 CPU 的训练后端。
 - HDF5，matplotlib，numpy， torch，sql 的熟练运用
 - 熟读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)，之后再提问，特别注意**不着编边际的问题**。
+  - 简单而言，先中文搜索，然后英文搜索，先 deepseek，然后 chat-GPT 全部都搜一遍，如果还是无法解决再在群里提问
 
 ### 账号开通列表
 - [ ] 等离子体物理研究所邮箱
