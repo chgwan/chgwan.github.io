@@ -15,6 +15,8 @@ media_subpath: "/assets/img/commons"
 ## Python 项目规范
 ## 开发风格
 ### 命名规范，直接参考pytorch, GitHub repo
+<!-- This empty line below can not be deleted. -->
+
 | 类型       | 惯例                          | 备注                           |
 | ---------- | ----------------------------- | ------------------------------ |
 | 包和模块   | lower_with_under              |                                |

@@ -171,25 +171,27 @@ media_subpath: "/assets/img/portraits"
 
 ---
 
-1. M. Wang, **C. Wan \***, *et al*., Time series extrinsic regression for reconstructing missing electron temperature in tokamak, *Nucl. Fusion*, 2025  **65** 7 076008, doi: [10.1088/1741-4326/addb5f](https://doi.org/10.1088/1741-4326/addb5f).
-2. **C. Wan** *et al.*, A high-fidelity surrogate model for the ion temperature gradient (ITG) instability using a small expensive simulation dataset, *Nucl. Fusion*, 2025 **65** 054001, [doi: 10.1088/1741-4326/adc7c9](https://doi.org/10.1088/1741-4326/adc7c9).
-3. J. Huang <sup>#</sup>, **C. Wan <sup>#</sup> \*** *et al.*,, Development of real-time density profile inversion with deep neural network model for multi-bands X-mode polarization reflectometer on EAST, *Plasma Phys. Control. Fusion,* 2025 67, 055002, [doi: 10.1088/1361-6587/adc830](https://doi.org/10.1088/1361-6587/adc830).
-4. **C. Wan \***, *et al.* Predict the last closed-flux surface evolution without physical simulation. *Nucl. Fusion* 2024 **64** 026014, [doi: 10.1088/1741-4326/ad171f](https://doi.org/10.1088/1741-4326/ad171f).
-5. **C. Wan \***, *et al.* A machine-learning-based tool for last closed-flux surface reconstruction on tokamaks. 2023 *Nuclear Fusion* **63**, 056019, [doi: 10.1088/1741-4326/acbfcc](https://doi.org/10.1088/1741-4326/acbfcc).
-6. **C. Wan \***, *et al.* EAST discharge prediction without integrating simulation results. 2022 *Nucl. Fusion* **62** 126060, [doi: 10.1088/1741-4326/ac9c1a](https://doi.org/10.1088/1741-4326/ac9c1a).
-7. **C. Wan \***, *et al.* A Robust and Fast Data Management System for Machine-Learning Research of Tokamaks. 2022 *IEEE Transactions on Plasma Science* **50** 4980-4986, [doi: 10.1109/TPS.2022.3223732](https://doi.org/10.1109/TPS.2022.3223732).
-8. **C. Wan**, *et al.* Experiment data-driven modeling of tokamak discharge in EAST. 2021 *Nucl. Fusion* **61** 066015, [doi: 10.1088/1741-4326/abf419](https://doi.org/10.1088/1741-4326/abf419).
-9. X. Deng, **C. Wan \***, *et al.* Open-Switch Fault Diagnosis of Three-Phase PWM Converter Systems for Magnet Power Supply on EAST. *IEEE Transactions on Power Electronics* 2023 **38** 1064-1078, [doi: 10.1109/TPEL.2022.3194113](https://doi.org/10.1109/TPEL.2022.3194113).
-10. C. Su, **C. Wan \***, *et al.*, Interaction AI with Retrieval-enhanced Generation for Knowledge Retrieval in EAST, in 2024 3rd International Conference on Data Analytics, *Computing and Artificial Intelligence (ICDACAI)*, Zakopane, Poland: IEEE, Oct. 2024 965-969, [doi: 10.1109/ICDACAI65086.2024.00181](https://doi.org/10.1109/ICDACAI65086.2024.00181).
-11. B. Cheng, **C. Wan \***, *et al.*, PCC-Trans: a time series feature selection and model framework for tokamak discharge process in EAST, in *International Conference on Image, Signal Processing, and Pattern Recognition (ISPP 2024)*,  Guangzhou, China: SPIE, Jun. 2024 236. [doi: 10.1117/12.3034112](https://doi.org/10.1117/12.3034112).
-12. S. Bai, **C. Wan \***, *et al.*, Integrated Data-Driven and Physics-Driven Multi-Module Magnetic Equilibrium Calculation and Analysis Tool, in 2024 7th *International Conference on Advanced Algorithms and Control Engineering (ICAACE)*, Shanghai, China: IEEE, Mar. 2024 786-791. [doi: 10.1109/ICAACE61206.2024.10549744](https://doi.org/10.1109/ICAACE61206.2024.10549744).
+1. M. Wang, **C. Wan \***, *et al*., Time series extrinsic regression for reconstructing missing electron temperature in tokamak, *Nucl. Fusion*, 2025  **65** 7 076008, doi: [10.1088/1741-4326/addb5f](https://doi.org/10.1088/1741-4326/addb5f). Citation: 2 IF: 4.0
+2. E. Gao <sup>#</sup>, **C. Wan <sup>#</sup> \***, *et al*., Bayesian Neural Networks for Predicting Tokamak Energy Confinement Time with Uncertainty Quantification, Nucl. Fusion, 2025  **65** 08 084001, doi: 10.1088/1741-4326/ade8fd(https://doi.org/10.1088/1741-4326/ade8fd). Citation: 1 IF: 4.0
+3. **C. Wan** *et al.*, A high-fidelity surrogate model for the ion temperature gradient (ITG) instability using a small expensive simulation dataset, *Nucl. Fusion*, 2025 **65** 054001, [doi: 10.1088/1741-4326/adc7c9](https://doi.org/10.1088/1741-4326/adc7c9). Citation: 3 IF: 4.0
+4. J. Huang <sup>#</sup>, **C. Wan <sup>#</sup> \*** *et al.*,, Development of real-time density profile inversion with deep neural network model for multi-bands X-mode polarization reflectometer on EAST, *Plasma Phys. Control. Fusion,* 2025 67, 055002, [doi: 10.1088/1361-6587/adc830](https://doi.org/10.1088/1361-6587/adc830). Citation: 1 IF: 2.3
+5. **C. Wan \***, *et al.* Predict the last closed-flux surface evolution without physical simulation. *Nucl. Fusion* 2024 **64** 026014, [doi: 10.1088/1741-4326/ad171f](https://doi.org/10.1088/1741-4326/ad171f). Citation: 9 IF: 4.0
+6. **C. Wan \***, *et al.* A machine-learning-based tool for last closed-flux surface reconstruction on tokamaks. 2023 *Nuclear Fusion* **63**, 056019, [doi: 10.1088/1741-4326/acbfcc](https://doi.org/10.1088/1741-4326/acbfcc). Citation: 31 IF: 4.0
+7. **C. Wan \***, *et al.* EAST discharge prediction without integrating simulation results. 2022 *Nucl. Fusion* **62** 126060, [doi: 10.1088/1741-4326/ac9c1a](https://doi.org/10.1088/1741-4326/ac9c1a).Citation: 21 IF: 4.0
+8. **C. Wan \***, *et al.* A Robust and Fast Data Management System for Machine-Learning Research of Tokamaks. 2022 *IEEE Transactions on Plasma Science* **50** 4980-4986, [doi: 10.1109/TPS.2022.3223732](https://doi.org/10.1109/TPS.2022.3223732). Citation: 5 IF: 1.5
+9. **C. Wan**, *et al.* Experiment data-driven modeling of tokamak discharge in EAST. 2021 *Nucl. Fusion* **61** 066015, [doi: 10.1088/1741-4326/abf419](https://doi.org/10.1088/1741-4326/abf419). Citation: 28 IF: 4.0 
+10. X. Deng, **C. Wan \***, *et al.* Open-Switch Fault Diagnosis of Three-Phase PWM Converter Systems for Magnet Power Supply on EAST. *IEEE Transactions on Power Electronics* 2023 **38** 1064-1078, [doi: 10.1109/TPEL.2022.3194113](https://doi.org/10.1109/TPEL.2022.3194113). Citation: 28 IF: 6.5
+11. C. Su, **C. Wan \***, *et al.*, Interaction AI with Retrieval-enhanced Generation for Knowledge Retrieval in EAST, in 2024 3rd International Conference on Data Analytics, *Computing and Artificial Intelligence (ICDACAI)*, Zakopane, Poland: IEEE, Oct. 2024 965-969, [doi: 10.1109/ICDACAI65086.2024.00181](https://doi.org/10.1109/ICDACAI65086.2024.00181). Citation: 0, IF: N/A
+12. B. Cheng, **C. Wan \***, *et al.*, PCC-Trans: a time series feature selection and model framework for tokamak discharge process in EAST, in *International Conference on Image, Signal Processing, and Pattern Recognition (ISPP 2024)*,  Guangzhou, China: SPIE, Jun. 2024 236. [doi: 10.1117/12.3034112](https://doi.org/10.1117/12.3034112). Citation: 0, IF: N/A
+13. S. Bai, **C. Wan \***, *et al.*, Integrated Data-Driven and Physics-Driven Multi-Module Magnetic Equilibrium Calculation and Analysis Tool, in 2024 7th *International Conference on Advanced Algorithms and Control Engineering (ICAACE)*, Shanghai, China: IEEE, Mar. 2024 786-791. [doi: 10.1109/ICAACE61206.2024.10549744](https://doi.org/10.1109/ICAACE61206.2024.10549744). Citation: 0, IF: N/A
 
 ## WORKING PAPERS
 
 ---
 
-1. **C. Wan**, *et al.* Bayesian Neural Networks for Predicting Tokamak Energy Confinement Time with Uncertainty Quantification, *submitted to Nucl. Fusion (R1)*
-3. **C. Wan**, *et al.* Machine learning prediction of plasma behavior from discharge configurations on WEST, *submitted to Nucl. Fusion*
+1. **C. Wan**, *et al.* Machine learning prediction of plasma behavior from discharge configurations on WEST, *submitted to Nucl. Fusion*
+2. T. Wang, **C. Wan**, *et al.* Plasma-behavior–informed noise compensation and transient disturbance shielding quench detection in superconducting tokamaks, *submitted to Nucl. Fusion*
+3. Y. Feng <sup>#</sup>, J. Huang <sup>#</sup>, **C. Wan <sup>#</sup> \***, *et al.* Fast end-to-end plasma density profile reconstruction from microwave reflectometer data on EAST, *submitted to Nucl. Fusion*
 
 ## PROJECTS
 
@@ -216,7 +218,7 @@ media_subpath: "/assets/img/portraits"
 
 ---
 
-- **Good**: Python, PyTorch, HDF5, MongoDB, Linux, LaTeX, Machine learning, Database build and management  
+- **Good**: Database build and management, Tokamak Control, AI for Fusion
 - **Modest**: C/C++, Web, Docker
 
 Online CV: [https://chgwan.github.io/posts/owns/chgwan-cv](https://chgwan.github.io/posts/owns/chgwan-cv)

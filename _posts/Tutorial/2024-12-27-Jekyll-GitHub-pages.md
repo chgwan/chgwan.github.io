@@ -236,3 +236,5 @@ bundle install
 
 [安装方法](#jump)
 
+## 其他注意事项
+1. 当 list 和 code block 在一起使用时，render 会可能会出现问题，建议参考本文件的 code block in list 进行部署。
