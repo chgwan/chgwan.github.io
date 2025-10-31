@@ -37,9 +37,9 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 2. **sgGPU**  NTU H200 和 A100 服务器，**4\*H200 + 4\*A100**，每个A100 80GB内存，H200 140GB内存
 
 ### 开通和登录
-1. 生成 rsa key 对，给公钥发给 chgwan，开通完会提供相应的 ip 和 port
-2. **NSCC 登录：**` ssh -i <your_private_key> -J chenguang.wan@<ip_addr>:port chenguan@aspire2antu.nscc.sg` 或者 `ssh -o "ProxyCommand ssh -i <your_private_key> -W %h:%p publicuser@<ip_addr> -p <port>" -i <your_private_key> chenguan@aspire2antu.nscc.sg` 前者不行的时候就试试后者。
-3. **sgGPU 登录：**`ssh chenguang.wan@<ip_addr>:<port>`
+1. 生成 ed2519 key 对，给公钥发给 chgwan，开通完会提供相应的 ip 和 port
+2. **NSCC 登录：**: 登录方式在开通完成后会告知
+3. **sgGPU 登录：**
 
 ### sgGPU使用方法
 使用方法类似于135,108，**唯一的区别是**`userhome` 目录有 quota 限制，所以**除代码和配置文件外**的所有数据都需要存储于 `userhome/DATABASE` 文件夹而不能直接放在 home 的根目录。**可以用vscode**
@@ -54,9 +54,6 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 2. 不建议使用 `userhome/DATABASE` 文件夹存储代码，因为这个文件夹属于数据文件夹，读取速度有限，所以代码应该存在 home 目录，该文件夹用以保存数据，可以创建一个个人数据文件夹给所有数据都放在该文件夹，然后通过符号链接的方式实现不同的项目数据均保存于该处。
 3. 总结来说：代码放 `userhome/` 下自己的文件夹中，数据和模型等文件保存至 `userhome/DATABASE` 下自己的文件夹中
 4. **不允许在登录节点运行大代码，单次运行代码要≤2个cpu核，最好只用1个核。如果运行时间小于5分钟，也可以短暂的使用64核运行。**该服务器**可以用vscode**，具体配置方案请自行搜索。
-   
-
-
 
 ## ~~135 和 108 （已失效）~~
 
@@ -89,27 +86,29 @@ source ~/.bashrc
 `mount-108-db`: 挂载 108 数据库 /gpfs/mds_data 到 135 上，使用方法见运行命令提示
 
 
-## 194，189，161，目前可以继续使用
+## 189，161，目前可以继续使用
 
 ### 服务器简介
 
 <!-- grouptokai1=  -->
-账号名：cgwan, 密码请联系: chgwan
+账号名：cgwan, 登录请联系: chgwan
 
-**194**  八卡 3090，ip: 202.127.204.194 
+**194** 已下线，永远不会恢复
+<!-- **194**  八卡 3090，ip: 202.127.204.194  -->
 
-**161** 单卡 A800，ip: 202.127.205.161 不支持数据挂载，待升级
+**161** 单卡 A800，ip: 202.127.205.161： 长久支持
 
 **189**  双卡 A800，ip: 202.127.204.189
 
 ### 数据共享，共享账号
 
-数据位置：`/data/ASIPP/cgwan/DATABASE`，或者通过调用环境变量 "DATABASE_PATH" 来实现多个服务器的代码统一。如果没有该文件夹，即需要自己传输数据，因为该服务器不支持数据挂载。
+数据位置：`$HOME/DATABASE`，或者通过调用环境变量 "DATABASE_PATH" 来实现多个服务器的代码统一。
 
 其他用法类似于 135 和 108，但是由于是共享账号，请大家使用的时候，不要一个人创建多个文件夹，
 每个人都自己创建单独的文件夹，所有操作都在自己的文件夹内进行。除非必要一般不要修改 `.bashrc` 文件。
 
-环境可以自己创建，也可以用共享环境 torch `conda env create -f torch.yml`
+环境可以自己创建，也可以用共享环境 torch
+<!-- `conda env create -f torch.yml` -->
 
 ## 新神马DCU使用教程
 
