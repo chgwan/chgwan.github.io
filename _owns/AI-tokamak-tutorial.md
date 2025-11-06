@@ -62,12 +62,12 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 - 熟读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)，之后再提问，特别注意**不着编边际的问题**。
   - 简单而言，先中文搜索，然后英文搜索，先 deepseek，然后 chat-GPT 全部都搜一遍，如果还是无法解决再在群里提问
 
-### 账号开通列表
+### 账号开通列表 <span id="open_accounts"> </span>
 - [ ] 等离子体物理研究所邮箱
 - [ ] 咨询刘晓娟老师，开通新神马和老神马账号，特别是要开通新神马 DCU 权限
 - [ ] EAST 账号 - 王枫老师管理 
 - [ ] 加入小组 [WPS 共享资料库](https://kdocs.cn/join/gl3pii5?f=101) 
-- [ ] 生成 ed25519 算法的 ssh 公钥， 上传到`共享资料库/Storage/ssh`，并重命名为 `<yourname>_pub_key`
+- [ ] 生成 ed25519 算法的 ssh 公钥， 上传到`共享资料库/Storage/ssh/组内公钥.docx`
   > 生成方法 `ssh-keygen -t ed25519 -C "<yourname>"` 
 
 ### 代码和配置类问题解决方案
@@ -76,8 +76,19 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 3. 提供可能的问题来源，比如log等。比如最小复现方法。
 4. 总结来说：先自己尝试解决，解决不了，就给问题化简到别人能最小复现的版本，然后再提问。
 
+### 常用链接
+**链接打不开**
+   1. 缺乏相关账号，请回到[开通账号](#open_accounts)
+   2. 没有在内网，请使用 vpn, 或者 WebVPN
+
+**常用链接**
+- http://202.127.204.41:8080/udaclient/ 一个 web 版的图形化 EAST 参数访问用户端
+- http://202.127.205.54/wiki/index.php/Fundamental_parameters_(signal_name) EAST 常用物理参数列表
+- https://vpn.hfcas.ac.cn/ 合肥物质科学研究院 WebVPN
+
+
 ## 代码开发
-- 工具链：Conda + Pytorch ( >= 2.4 推荐 latest stable version ) + Python >= 3.9 (推荐3.12)，目前 Conda 对于组织已经不是免费的了，所以会逐步迁移至Mamba，[Mamba的安装](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html)
+- 工具链：Conda + Pytorch ( >= 2.4 推荐 latest stable version ) + Python >= 3.9 (推荐3.12)。PS：目前 Conda 对于组织已经不是免费的了，后续会逐步迁移至Mamba，[Mamba的安装](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html)
 - 数据库目前是基于 HDF5 的内部数据库
 - 代码风格见 [开发规范](../development-styles)。
 - 内部private_modules包，有很多常用的数据操作方法，请不要分享。
