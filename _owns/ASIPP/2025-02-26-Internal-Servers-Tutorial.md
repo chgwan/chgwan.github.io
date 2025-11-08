@@ -60,8 +60,9 @@ Host NSCC
 ```
 
 ### sgGPU使用方法
-1. 使用方法类似于135,108，**唯一的区别是**`userhome` 目录有 quota 限制，所以**除代码和配置文件外**的所有数据都需要存储于 `userhome/DATABASE` 文件夹而不能直接放在 home 的根目录。**可以用vscode**, 直接登录那就是 H100 服务器
-2. 其中 A100 服务器基于 slurm 的提交方式,  
+1. 创建个人文件夹，不要修改 `~/.bashrc`
+2. 使用方法类似于135,108，DCU等自有服务器。**唯一的区别是** `userhome` 目录有 quota 限制，所以**除代码和配置文件外**的所有数据都需要存储于 `userhome/DATABASE` 文件夹而不能直接放在 home 的根目录。**可以用vscode**, 直接登录那就是 H100 服务器
+3. 其中 A100 服务器基于 slurm 的提交方式,  
 
     Sample PBS Script can be found at /usr/local/templates/. Feel free to copy any scripts to your directory and modify them as you wish. 
 
@@ -70,13 +71,13 @@ Host NSCC
 
     To copy the sample submission scripts into your directory
     `cp /usr/local/templates/lammps.pbs  .`
-3. Submission of Job (assuming matlab.pbs is your submission script) `qsub matlab.pbs`
-4. View Job State for the Cluster `qstat`
-5. View my own jobs  `qstat -u $USER`
-6. View Of Job Details `qstat -f JobID`
-7. Kill Job `qdel JobID`
-8. Check for Available Nodes `pbsnodes -aSj`
-9. Launching an interactive mode (See Image 6). You should get a node issue to you. `qsub -I -l select=1:ncpus=8:mpiprocs=8 -l walltime=04:00:00 -P cradle -q qcradle`
+4. Submission of Job (assuming matlab.pbs is your submission script) `qsub matlab.pbs`
+5. View Job State for the Cluster `qstat`
+6. View my own jobs  `qstat -u $USER`
+7. View Of Job Details `qstat -f JobID`
+8. Kill Job `qdel JobID`
+9. Check for Available Nodes `pbsnodes -aSj`
+10. Launching an interactive mode (See Image 6). You should get a node issue to you. `qsub -I -l select=1:ncpus=8:mpiprocs=8 -l walltime=04:00:00 -P cradle -q qcradle`
 
 ### 注意事项
 1. 在直接登录的服务器 H100 最好不要用超过 2 个卡，因为这个也是一堆人用。
