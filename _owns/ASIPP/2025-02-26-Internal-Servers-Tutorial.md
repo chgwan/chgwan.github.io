@@ -30,7 +30,7 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 - 不允许在登录节点运行大代码
 - 不允许直接`ssh`到计算节点进行计算，必须通过slurm登录
   
-## 海外特别服务器，计算资源非常充足
+## 海外特别服务器，计算资源充足
 
 ### 服务器简介
 1. **NSCC：**sg超算中心服务器，由很多**A100**的计算节点，每个A100 40GB内存，可以通过不同脚本实现不同数量的A100调用，每个节点节点最多4个A100
@@ -38,8 +38,26 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 
 ### 开通和登录
 1. 生成 ed2519 key 对，给公钥发给 chgwan，开通完会提供相应的 ip 和 port
-2. **NSCC 登录：**: 登录方式在开通完成后会告知
-3. **sgGPU 登录：**
+2. **NSCC 登录：** `ssh -J publicuser@8.219.98.78:40000,chenguang.wan@127.0.0.1:60001  chenguan@aspire2antu.nscc.sg`
+3. **sgGPU 登录：** `ssh -J "publicuser@8.219.98.78:40000" -p 60001 chenguang.wan@127.0.0.1`
+---
+配置文件使用，给下列内容，写在自己的 `.ssh/config` 配置文件的末尾
+```sshconfig
+Host PublicJump
+    HostName 8.219.98.78
+    Port 40000
+    User publicuser
+Host sgGPU
+    HostName 127.0.0.1
+    Port 60001
+    User chenguang.wan
+    ProxyJump PublicJump 
+Host NSCC
+    HostName aspire2antu.nscc.sg
+    Port 22
+    User chenguan
+    ProxyJump sgGPU
+```
 
 ### sgGPU使用方法
 使用方法类似于135,108，**唯一的区别是**`userhome` 目录有 quota 限制，所以**除代码和配置文件外**的所有数据都需要存储于 `userhome/DATABASE` 文件夹而不能直接放在 home 的根目录。**可以用vscode**
@@ -53,7 +71,8 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 1. `userhome` 目录有 quota 限制，所以**除代码和配置文件外**的所有数据都需要存储于 `userhome/DATABASE` 文件夹而不能直接放在 home 的根目录。
 2. 不建议使用 `userhome/DATABASE` 文件夹存储代码，因为这个文件夹属于数据文件夹，读取速度有限，所以代码应该存在 home 目录，该文件夹用以保存数据，可以创建一个个人数据文件夹给所有数据都放在该文件夹，然后通过符号链接的方式实现不同的项目数据均保存于该处。
 3. 总结来说：代码放 `userhome/` 下自己的文件夹中，数据和模型等文件保存至 `userhome/DATABASE` 下自己的文件夹中
-4. **不允许在登录节点运行大代码，单次运行代码要≤2个cpu核，最好只用1个核。如果运行时间小于5分钟，也可以短暂的使用64核运行。**该服务器**可以用vscode**，具体配置方案请自行搜索。
+4. **不允许在登录节点运行大代码，单次运行代码要≤2个cpu核。**该服务器**可以用vscode**。
+5. 可以用 `qsub_I ` 或者 `qsub_I 2` 实现代码的交互式运行，唯一需要注意的是，如果退出 Terminal 则代码自动终止运行。所以这种方式非常适合于调试代码。
 
 ## ~~135 和 108 （已失效）~~
 
