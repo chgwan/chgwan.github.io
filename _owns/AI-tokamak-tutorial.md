@@ -85,13 +85,15 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 - http://202.127.204.41:8080/udaclient/ 一个 web 版的图形化 EAST 参数访问用户端
 - http://202.127.205.54/wiki/index.php/Fundamental_parameters_(signal_name) EAST 常用物理参数列表
 - https://vpn.hfcas.ac.cn/ 合肥物质科学研究院 WebVPN
+- Fusion Wiki https://wiki.fusion.ciemat.es/wiki/Main_Page，是一些基本的tokamak 概念定义
+- Fusion 术语表 https://euro-fusion.org/services/eurofusion-glossary/，基本的托卡马克术语列表
 
 
 ## 代码开发
 - 工具链：Conda + Pytorch ( >= 2.4 推荐 latest stable version ) + Python >= 3.9 (推荐3.12)。PS：目前 Conda 对于组织已经不是免费的了，后续会逐步迁移至Mamba，[Mamba的安装](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html)
 - 数据库目前是基于 HDF5 的内部数据库
 - 代码风格见 [开发规范](../development-styles)。
-- 内部private_modules包，有很多常用的数据操作方法，请不要分享。
+- 内部 private_modules 包，有很多常用的数据操作方法，请不要分享。具体使用方法可以咨询王明龙
 
 ## EAST的数据使用和相关的数据库位置
 
