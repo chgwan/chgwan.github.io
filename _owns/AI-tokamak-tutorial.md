@@ -58,7 +58,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 - 机器学习模型搭建的基本操作，最低要求熟练跑通Torch官方 [DistributedDataParallel](https://docs.pytorch.org/tutorials/intermediate/ddp_tutorial.html) 中的 "nccl" 和 "gloo" 即 GPU 和 CPU 的训练后端。
 - HDF5，matplotlib，numpy， torch，sql 的熟练运用
 - 熟读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)，之后再提问，特别注意**不着编边际的问题**。
-  - 简单而言，先中文搜索，然后英文搜索，先 deepseek，然后 chat-GPT 全部都搜一遍，如果还是无法解决再在群里提问
+- 简单而言，先中文搜索，然后英文搜索，deepseek chat-GPT，claude 等全部都搜一遍。如果还是无法解决再在群里提问，或者找师兄师姐们，**最后再去问老师**。
 
 ### 账号开通列表 <span id="open_accounts"> </span>
 - [ ] 等离子体物理研究所邮箱
@@ -72,7 +72,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 1. 百度，Google，GPT全都搞一遍，特别是要注意给问题翻译成英文去搜一搜
 2. 测试多种网络环境，不同账号是否有问题
 3. 提供可能的问题来源，比如log等。比如最小复现方法。
-4. 总结来说：先自己尝试解决，解决不了，就给问题化简到别人能最小复现的版本，然后再提问。
+4. 总结来说：先自己尝试解决，解决不了，就给问题化简到别人能最小复现的版本，然后再提问。提问的话，先尝试找师兄师姐等同学，然后再找老师。
 
 ### 常用链接
 **链接打不开**
@@ -135,7 +135,8 @@ _lyx 版本转换_
 
 - IOP 模板安装方法 https://www.cnblogs.com/freedom-wan/p/13429879.html
 - Nuclear Fusion 相关 lyx 模板，请基于该模板进行撰写，该模板的格式更加优美，能让审稿人看的更爽，下载链接  https://www.kdocs.cn/l/ccj2tevnX0Tl
-- 如果喜欢 latex overleaf, 建议使用 **中科科技云** overleaf 共享网站 https://sharelatex.cstcloud.cn/project
+- 所有的图片，除非没有 pdf 版本的图片，否则的话**全都使用 pdf 矢量图**。
+- 如果喜欢 latex overleaf, 建议使用 **中科科技云** overleaf 共享网站 https://sharelatex.cstcloud.cn/project, 这个无法追踪修改不建议
 - 其他格式 一般按照 Nuclear Fusion 格式，特别注意文献引用和图表引用
 - 最好保证自己的**英文论文能用 pdflatex 编译不出错**，这样才是各类英文期刊比较容易通过的格式
 
@@ -209,3 +210,4 @@ _lyx 版本转换_
   - [合肥物质科学研究院科研规划处](https://politepol.com/fd/iYjG8cdjXr5m.xml)
   - [等离子体所通知](https://politepol.com/fd/iTZb41hW1tqT.xml)
   - [合肥物质科学研究院研究生处](https://politepol.com/fd/MfAI440x47sF.xml)
+- 所有组内同学，**必须按照一周一次的频率**发送周总结报告，具体方式参见组群。
