@@ -47,6 +47,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 - 强化学习 - EasyRL https://datawhalechina.github.io/easy-rl
 - https://www.deeplearningbook.org/  MIT  deep learning book
 - 吴恩达机器学习课程，https://space.bilibili.com/3493134768016008
+- 时间序列分析, https://www.math.pku.edu.cn/teachers/lidf/course/atsa/atsanotes/html/_atsanotes/index.html 
 
 ## 预备知识
 
