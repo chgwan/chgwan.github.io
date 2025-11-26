@@ -214,6 +214,10 @@ _lyx 版本转换_
 
 [Recommended citations](/assets/codes/bib/recommended_citations.bib)
 
+## 管理要求
+- 所有组内同学，**必须按照一周一次的频率**发送周总结报告，具体方式参见组群
+- **请保证邮件畅通**，在手机上安装相应的邮件程序。因为在学术上很多事情的通知都是通过邮件的，如果不能及时检查邮件可能会错过重要信息。PS: 中科院邮件客户端[设置教程](https://help.cstnet.cn/changjianwenti/youjianshoufa/kehuduan.htm)
+
 ## 其他说明
 
 - 如果有部分链接无法打开，如果你不是小组成员，这部分内容不共享。如果你是小组成员，请联系 chgwan 加入到小组内部共享列表, 加入之前麻烦给 wps 用户名改成**真实姓名**，用以方便追踪。
@@ -221,4 +225,3 @@ _lyx 版本转换_
   - [合肥物质科学研究院科研规划处](https://politepol.com/fd/iYjG8cdjXr5m.xml)
   - [等离子体所通知](https://politepol.com/fd/iTZb41hW1tqT.xml)
   - [合肥物质科学研究院研究生处](https://politepol.com/fd/MfAI440x47sF.xml)
-- 所有组内同学，**必须按照一周一次的频率**发送周总结报告，具体方式参见组群。
