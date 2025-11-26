@@ -146,7 +146,7 @@ _lyx 版本转换_
 
 ### 论文排版技巧
 - 所有的图片，除非没有 pdf 版本的图片，否则的话**全都使用 pdf 矢量图**。
-- 如果喜欢 latex overleaf, 建议使用 **中科科技云** overleaf 共享网站 https://sharelatex.cstcloud.cn/project, 这个无法追踪修改不建议
+- 如果喜欢 latex overleaf, 建议使用 **中科科技云** overleaf 共享网站 https://sharelatex.cstcloud.cn/project, **这个无法追踪修改不建议**，如果想要我给改论文最终还是需要 LyX 格式的论文.
 - 其他格式 一般按照 Nuclear Fusion 格式，特别注意文献引用和图表引用
 - 最好保证自己的**英文论文能用 pdflatex 编译不出错**，这样才是各类英文期刊比较容易通过的格式
 
