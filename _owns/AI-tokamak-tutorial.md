@@ -141,8 +141,10 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 ![lyx_convert](lyx_convert.png)
 _lyx 版本转换_
 
-- IOP 模板安装方法 https://www.cnblogs.com/freedom-wan/p/13429879.html
+- IOP 模板下载位置：https://www.kdocs.cn/l/cbc9uJBTrkSa，IOP 模板安装方法 https://www.cnblogs.com/freedom-wan/p/13429879.html
 - Nuclear Fusion 相关 lyx 模板，请基于该模板进行撰写，该模板的格式更加优美，能让审稿人看的更爽，下载链接  https://www.kdocs.cn/l/ccj2tevnX0Tl
+
+### 论文排版技巧
 - 所有的图片，除非没有 pdf 版本的图片，否则的话**全都使用 pdf 矢量图**。
 - 如果喜欢 latex overleaf, 建议使用 **中科科技云** overleaf 共享网站 https://sharelatex.cstcloud.cn/project, 这个无法追踪修改不建议
 - 其他格式 一般按照 Nuclear Fusion 格式，特别注意文献引用和图表引用
@@ -154,7 +156,7 @@ _lyx 版本转换_
 - 如果合适的话，在论文投稿之前，最好写一个 **专利和软著**
 - 论文投稿之前，需要在 pinboard 上 **公示**，[公示方法参考](../paper-sub-procedure)
 - 基本流程：论文初稿 &rarr; 专利 &rarr; 软著&rarr; 投稿，专利的申请日要在论文发表日之前。
-- 所有论文全都用我的账号投稿，这样我能最快的和编辑沟通。（惨痛经验可以详询Minglong Wang）
+- 所有论文全都用我的账号投稿，这样我能最快的和编辑沟通。（惨痛经验可以详询 Minglong Wang）
 
 #### 论文撰写其他需要注意的细节
 
