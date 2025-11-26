@@ -4,6 +4,32 @@ author: chgwan
 tags: [Tutorial, Note]
 media_subpath: "/assets/img/commons"
 --- 
+## 在外网登录内网服务器的方式
+
+### 固定 IP 服务器两台
+- 南京服务器：146.56.207.178，该服务器用以支持国内服务器跳转
+- 新加坡服务器：43.160.201.253, 该服务器用以支持海外服务器跳转
+
+### ASIPP内网服务器通用登录方式
+1. 生成 ed2519 key 对，给公钥发给 chgwan
+2. 添加下列语句到 `~/.ssh/config` 末尾，对于 Windows 用户也有类似的文件，请自行搜索。
+```sshconfig
+Host PublicJump1
+    HostName 146.56.207.178
+    Port 40000
+    User publicuser
+Host PublicJump2
+    HostName 127.0.0.1
+    Port 60002
+    User publicuser
+    ProxyJump PublicJump1 
+```
+3. 登录到 ASIPP 内网服务器  `ssh -J PublicJump2 <username>@<ip> -p port`
+
+### 登录海外服务器
+
+不同服务器不同方式不同，具体服务器见下文
+
 ## USTC 瀚海
 ### 使用入门
 参考瀚海 22 [使用手册](https://scc.ustc.edu.cn/389/list.htm?from=kdocs_link)
@@ -28,7 +54,7 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 ### 其他事项
 - 瀚海的存储是收费的，所以建议及时清理不用的文件，特别是训练完毕之后无用的模型文件
 - 不允许在登录节点运行大代码
-- 不允许直接`ssh`到计算节点进行计算，必须通过slurm登录
+- 不允许直接 `ssh` 到计算节点进行计算，必须通过slurm登录
   
 ## 海外特别服务器，计算资源充足
 
@@ -38,13 +64,13 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 
 ### 开通和登录
 1. 生成 ed2519 key 对，给公钥发给 chgwan，开通完会提供相应的 ip 和 port
-2. **NSCC 登录：** `ssh -J publicuser@8.219.98.78:40000,chenguang.wan@127.0.0.1:60001  chenguan@aspire2antu.nscc.sg`
-3. **sgGPU 登录：** `ssh -J "publicuser@8.219.98.78:40000" -p 60001 chenguang.wan@127.0.0.1`
+2. **NSCC 登录：** `ssh -J publicuser@43.160.201.253:40000,chenguang.wan@127.0.0.1:60001  chenguan@<private_domain>`
+3. **sgGPU 登录：** `ssh -J "publicuser@43.160.201.253:40000" -p 60001 chenguang.wan@127.0.0.1`
 ---
 配置文件使用，给下列内容，写在自己的 `.ssh/config` 配置文件的末尾
 ```sshconfig
 Host PublicJump
-    HostName 8.219.98.78
+    HostName 43.160.201.253
     Port 40000
     User publicuser
 Host sgGPU
