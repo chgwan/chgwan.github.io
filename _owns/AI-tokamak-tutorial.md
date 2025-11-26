@@ -216,7 +216,7 @@ _lyx 版本转换_
 
 ## 管理要求
 - 所有组内同学，**必须按照一周一次的频率**发送周总结报告，具体方式参见组群
-- **请保证邮件畅通**，在手机上安装相应的邮件程序。因为在学术上很多事情的通知都是通过邮件的，如果不能及时检查邮件可能会错过重要信息。PS: 中科院邮件客户端[设置教程](https://help.cstnet.cn/changjianwenti/youjianshoufa/kehuduan.htm)
+- **保持邮件畅通**，在手机上安装相应的邮件程序。包括论文、会议等学术活动的通知大多使用邮件。PS: 中科院邮件客户端[设置教程](https://help.cstnet.cn/changjianwenti/youjianshoufa/kehuduan.htm)
 
 ## 其他说明
 
