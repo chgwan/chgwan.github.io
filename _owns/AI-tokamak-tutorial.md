@@ -91,6 +91,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 **常用链接**
 - http://202.127.204.41:8080/udaclient/ 一个 web 版的图形化 EAST 参数访问用户端
 - http://202.127.205.54/wiki/index.php/Fundamental_parameters_(signal_name) EAST 常用物理参数列表
+- http://202.127.205.15:1080/ EAST logbook
 - https://vpn.hfcas.ac.cn/ 合肥物质科学研究院 WebVPN
 - Fusion Wiki https://wiki.fusion.ciemat.es/wiki/Main_Page，是一些基本的tokamak 概念定义
 - Fusion 术语表 https://euro-fusion.org/services/eurofusion-glossary/，基本的托卡马克术语列表
