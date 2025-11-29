@@ -62,7 +62,7 @@ source ~/.bashrc
 ## Install Vscode-server without Internet
 You can install the VS Code Server offline using one of the following three methods:
 
-1. **Copy from WSL:** Copy the directory from the WSL environment: `~/.vscode-server/bin/<COMMIT_ID> → cli/servers/Stable-<COMMIT_ID>/server`
+1. **Copy from WSL:** Copy the directory from the WSL environment: `~/.vscode-server/bin/<COMMIT_ID> → ~/.vscode-server/cli/servers/Stable-<COMMIT_ID>/server`
 
 
 2. **Copy from Another Server:** Transfer the corresponding VS Code Server folder from a machine that already has it installed:
