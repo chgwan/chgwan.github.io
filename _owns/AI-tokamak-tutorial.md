@@ -70,9 +70,9 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 - 如果花了 5 天以上的时间搞不定，那就还是去问问人。
 
 ### 账号开通列表 <span id="open_accounts"> </span>
-- [ ] 等离子体物理研究所邮箱
-- [ ] 咨询刘晓娟老师，开通新神马和老神马账号，特别是要开通新神马 DCU 权限
-- [ ] EAST 账号 - 王枫老师管理 
+- [ ] 等离子体物理研究所邮箱 - 询问自己室的秘书
+- [ ] 开通新神马和老神马账号，特别是要开通新神马 DCU 权限 - 刘晓娟老师负责
+- [ ] EAST 账号 [Link](http://eastapp.ipp.ac.cn/eam/index.php) - 王枫老师管理 
 - [ ] 加入小组 [WPS 共享资料库](https://kdocs.cn/join/gl3pii5?f=101) 
 - [ ] 生成 ed25519 算法的 ssh 公钥， 上传到`共享资料库/Storage/ssh/组内公钥.docx`
   > 生成方法 `ssh-keygen -t ed25519 -C "<yourname>"` 
