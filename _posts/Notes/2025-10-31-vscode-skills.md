@@ -69,4 +69,4 @@ You can install the VS Code Server offline using one of the following three meth
 `~/.vscode-server/cli/servers/Stable-<COMMIT_ID>`
 Place it in the same location on the target (restricted) server.
 
-1. **Install from Local Package:** Download the offline installer [here](/assets/codes/offline_vscode_install/) `bash vscode_local2server.sh`
+1. **Install from Local Package:** Download the offline installer [here](https://github.com/chgwan/chgwan.github.io/tree/gh-pages/assets/codes/offline_vscode_install) `bash vscode_local2server.sh`
