@@ -50,7 +50,7 @@ media_subpath: "/assets/img/commons"
         User chgwan
         ProxyJump PublicJump1
     ```
-    ssh HanHai
+    随后执行 `ssh HanHai`
 
 ### Slurm 的使用提交
 ```bash
