@@ -38,7 +38,7 @@ media_subpath: "/assets/img/commons"
 
 ### 登录方式
 1. 在 ASIPP 的时候，可以直连。
-2. 岛外连接， 在 `.ssh/config` 中添加
+2. 岛外连接， 在 `.ssh/config` 中添加下列代码，随后执行 `ssh HanHai`
     ```bash
     Host PublicJump1
         HostName 146.56.207.178
@@ -50,9 +50,9 @@ media_subpath: "/assets/img/commons"
         User chgwan
         ProxyJump PublicJump1
     ```
-    随后执行 `ssh HanHai`
 
 ### Slurm 的使用提交
+
 ```bash
 # the below submit
 sbatch --job-name=ert-dist --gres=gpu:8 -n64 -N1 slurm_sub.sh --script=<script-path> --config=<config_path>
