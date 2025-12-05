@@ -69,15 +69,22 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 ---
 配置文件使用，给下列内容，写在自己的 `.ssh/config` 配置文件的末尾
 ```sshconfig
-Host PublicJump
-    HostName 43.160.201.253
+Host PublicJump1
+    HostName 146.56.207.178
     Port 40000
     User publicuser
+
+Host PublicJump2
+    HostName 127.0.0.1
+    Port 50000
+    User publicuser
+
 Host sgGPU
     HostName 127.0.0.1
     Port 60001
     User chenguang.wan
-    ProxyJump PublicJump 
+    ProxyJump PublicJump2 
+
 Host NSCC
     HostName aspire2antu.nscc.sg
     Port 22
@@ -189,7 +196,7 @@ source ~/.bashrc
 - 数据库位置： `/data/share/chenguang_wan/DataBase`, 只读权限
 ### 常用命令
 
-`lscpu`, `rocm-smi`, `hy-smi` 
+`lscpu`, `rocm-smi`, `hy-smi`, `hy-smi --showpids`
 
 `ssh <username>@202.127.205.70 -p 6021`
 
