@@ -68,7 +68,8 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 3. **sgGPU 登录：** `ssh -J "publicuser@43.160.201.253:40000" -p 60001 chenguang.wan@127.0.0.1`
 ---
 配置文件使用，给下列内容，写在自己的 `.ssh/config` 配置文件的末尾
-```sshconfig
+
+```bash
 Host PublicJump1
     HostName 146.56.207.178
     Port 40000
@@ -92,38 +93,34 @@ Host NSCC
     ProxyJump sgGPU
 ```
 
-### sgGPU使用方法
+### sgGPU使用方法 H100 卡
 1. 创建个人文件夹，不要修改 `~/.bashrc`
-2. 使用方法类似于135,108，DCU等自有服务器。**唯一的区别是** `userhome` 目录有 quota 限制，所以**除代码和配置文件外**的所有数据都需要存储于 `userhome/DATABASE` 文件夹而不能直接放在 home 的根目录。**可以用vscode**, 直接登录那就是 H100 服务器
-3. 其中 A100 服务器基于 slurm 的提交方式,  
+2. 使用方法类似于135,108，DCU等自有服务器。**唯一的区别是** `userhome` 目录有 quota 限制，所以**除代码和配置文件外**的所有数据都需要存储于 `userhome/DATABASE` 文件夹而不能直接放在 home 的根目录。**可以用vscode**, 该服务器可以访问三个不同的父物体：1. 直接登录完毕便是 H100 服务器 2. 登录到 A100 见下文 A100， 该服务器与本服务器为直接连接，共享
 
-    Sample PBS Script can be found at /usr/local/templates/. Feel free to copy any scripts to your directory and modify them as you wish. 
-
-    You can list the submission script
-    `ls -l /usr/local/templates/*.pbs`
-
-    To copy the sample submission scripts into your directory
-    `cp /usr/local/templates/lammps.pbs  .`
-4. Submission of Job (assuming matlab.pbs is your submission script) `qsub matlab.pbs`
-5. View Job State for the Cluster `qstat`
-6. View my own jobs  `qstat -u $USER`
-7. View Of Job Details `qstat -f JobID`
-8. Kill Job `qdel JobID`
-9. Check for Available Nodes `pbsnodes -aSj`
-10. Launching an interactive mode (See Image 6). You should get a node issue to you. `qsub -I -l select=1:ncpus=8:mpiprocs=8 -l walltime=04:00:00 -P cradle -q qcradle`
-
-### 注意事项
+#### 注意事项
 1. 在直接登录的服务器 H100 最好不要用超过 2 个卡，因为这个也是一堆人用。
-2. 在 slurm 管理的 A100 使用无任何限制，可以用全部的 4 个卡，如果没人用的话。
+2. 在 slurm 管理的 A100 使用无任何限制，可以用全部的 4 个卡。
 
-### NSCC使用方法
+### A100 基于 Slurm 的提交方式，可认为类似于瀚海
+1. Sample PBS scripts are available at `/usr/local/templates/`. Copy any script to your directory and modify as needed.
+2. List submission scripts: `ls -l /usr/local/templates/*.pbs`
+3. Copy a sample script: `cp /usr/local/templates/lammps.pbs .`
+4. Submit a job: `qsub matlab.pbs`
+5. Check job status: `qstat`
+6. View your jobs: `qstat -u $USER`
+7. View job details: `qstat -f JobID`
+8. Kill a job: `qdel JobID`
+9. Check available nodes: `pbsnodes -aSj`
+10. Launch interactive mode: `qsub -I -l select=1:ncpus=8:mpiprocs=8 -l walltime=04:00:00 -P cradle -q qcradle`
+
+### NSCC 基于 Torque 资源管理， A100 卡
 1. 使用的 Torque 资源管理器的，类似于老神马
 2. 可以用 `qsub_I ` 或者 `qsub_I 2` 实现代码的交互式运行，唯一需要注意的是，如果退出 Terminal 则代码自动终止运行。所以这种方式非常适合于调试代码。
 3. 由于 NSCC 的设置无法使用基于 ray 的自动调优，所以修改至基于 optuna 的调优，具体使用方法见 `$HOME/Papers/WestD0/v2/run_model_dist.py` 中的 `tune` 操作。其他操作请同样参见该脚本。
 4. 提交脚本例子位置 `$HOME/templates`, 其中 gpu 支持的时间为 `walltime` 为 02，24 和 120h，即 `02:00:00, 24:00:00, 120:00:00`，单节点最多支持 4 个 gpu，目前使用的是 A100 * 4， 内存为 **40GB** 和常用的 80GB 不同，使用的时候要考虑是否会超内存
 5. 其他个性化的提交脚本操作见 torque 使用和 https://help.nscc.sg/
    
-### NSCC注意事项
+#### NSCC注意事项
 1. `userhome` 目录有 quota 限制，所以**除代码和配置文件外**的所有数据都需要存储于 `userhome/DATABASE` 文件夹而不能直接放在 home 的根目录。
 2. 不建议使用 `userhome/DATABASE` 文件夹存储代码，因为这个文件夹属于数据文件夹，读取速度有限，所以代码应该存在 home 目录，该文件夹用以保存数据，可以创建一个个人数据文件夹给所有数据都放在该文件夹，然后通过符号链接的方式实现不同的项目数据均保存于该处。
 3. 总结来说：代码放 `userhome/` 下自己的文件夹中，数据和模型等文件保存至 `userhome/DATABASE` 下自己的文件夹中
