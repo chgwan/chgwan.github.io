@@ -6,24 +6,26 @@ media_subpath: "/assets/img/commons"
 --- 
 ## 在外网登录内网服务器的方式
 
-### 固定 IP 服务器两台
+### 固定 IP 服务器
 - 南京服务器：146.56.207.178，该服务器用以支持国内服务器跳转
-- 新加坡服务器：43.160.201.253, 该服务器用以支持海外服务器跳转
+<!-- - 新加坡服务器：43.160.201.253, 该服务器用以支持海外服务器跳转 -->
 
-### ASIPP内网服务器通用登录方式
+### ASIPP 内网服务器通用登录方式
 1. 生成 ed2519 key 对，给公钥发给 chgwan
 2. 添加下列语句到 `~/.ssh/config` 末尾，对于 Windows 用户也有类似的文件，请自行搜索。
-```sshconfig
-Host PublicJump1
-    HostName 146.56.207.178
-    Port 40000
-    User publicuser
-Host PublicJump2
-    HostName 127.0.0.1
-    Port 60002
-    User publicuser
-    ProxyJump PublicJump1 
-```
+   
+    ```bash
+    Host PublicJump1
+        HostName 146.56.207.178
+        Port 40000
+        User publicuser
+    Host PublicJump2
+        HostName 127.0.0.1
+        Port 60002
+        User publicuser
+        ProxyJump PublicJump1 
+    ```
+
 3. 登录到 ASIPP 内网服务器  `ssh -J PublicJump2 <username>@<ip> -p port`
 
 ### 登录海外服务器
@@ -33,6 +35,22 @@ Host PublicJump2
 ## USTC 瀚海
 ### 使用入门
 参考瀚海 22 [使用手册](https://scc.ustc.edu.cn/389/list.htm?from=kdocs_link)
+
+### 登录方式
+1. 在 ASIPP 的时候，可以直连。
+2. 岛外连接， 在 `.ssh/config` 中添加
+    ```bash
+    Host PublicJump1
+        HostName 146.56.207.178
+        Port 40000
+        User publicuser
+    Host HanHai
+        HostName 211.86.151.113
+        # HostName 211.86.151.115
+        User chgwan
+        ProxyJump PublicJump1
+    ```
+    ssh HanHai
 
 ### Slurm 的使用提交
 ```bash
@@ -63,45 +81,48 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 2. **sgGPU**  NTU H200 和 A100 服务器，**4\*H200 + 4\*A100**，每个A100 80GB内存，H200 140GB内存
 
 ### 开通和登录
-1. 生成 ed2519 key 对，给公钥发给 chgwan，开通完会提供相应的 ip 和 port
-2. **NSCC 登录：** `ssh -J publicuser@43.160.201.253:40000,chenguang.wan@127.0.0.1:60001  chenguan@<private_domain>`
-3. **sgGPU 登录：** `ssh -J "publicuser@43.160.201.253:40000" -p 60001 chenguang.wan@127.0.0.1`
----
-配置文件使用，给下列内容，写在自己的 `.ssh/config` 配置文件的末尾
+1. 生成 ed2519 key 对，给公钥发给 chgwan，开通后可直接登录
+2. 给下列内容，写在自己的 `.ssh/config` 配置文件的末尾，如果还是无法登录，可以修改配置文件，使其直接指定 private_key 的位置。
+    ```bash
+    Host PublicJump1
+        HostName 146.56.207.178
+        Port 40000
+        User publicuser
 
-```bash
-Host PublicJump1
-    HostName 146.56.207.178
-    Port 40000
-    User publicuser
+    Host PublicJump2
+        HostName 127.0.0.1
+        Port 50000
+        User publicuser
 
-Host PublicJump2
-    HostName 127.0.0.1
-    Port 50000
-    User publicuser
+    Host sgGPU
+        HostName 127.0.0.1
+        Port 60001
+        User chenguang.wan
+        ProxyJump PublicJump2 
 
-Host sgGPU
-    HostName 127.0.0.1
-    Port 60001
-    User chenguang.wan
-    ProxyJump PublicJump2 
-
-Host NSCC
-    HostName aspire2antu.nscc.sg
-    Port 22
-    User chenguan
-    ProxyJump sgGPU
-```
+    Host NSCC
+        HostName aspire2antu.nscc.sg
+        Port 22
+        User chenguan
+        ProxyJump sgGPU
+    ```
+3. NSCC 登录: `ssh sgGPU`
+4. sgGPU 登录: `ssh NSCC`
 
 ### sgGPU使用方法 H100 卡
-1. 创建个人文件夹，不要修改 `~/.bashrc`
-2. 使用方法类似于135,108，DCU等自有服务器。**唯一的区别是** `userhome` 目录有 quota 限制，所以**除代码和配置文件外**的所有数据都需要存储于 `userhome/DATABASE` 文件夹而不能直接放在 home 的根目录。**可以用vscode**, 该服务器可以访问三个不同的父物体：1. 直接登录完毕便是 H100 服务器 2. 登录到 A100 见下文 A100， 该服务器与本服务器为直接连接，共享
+1. 创建个人文件夹，不要修改 `~/.bashrc`，ss
+2. 使用方法类似于135,108，DCU等自有服务器。**唯一的区别是** `userhome` 目录有 quota 限制，所以**除代码和配置文件外**的所有数据都需要存储于 `userhome/DATABASE` 文件夹而不能直接放在 home 的根目录。
+3. 该服务器**可以用vscode**。
+4. 通过该服务器可以访问三个不同的服务器：
+   1. 直接登录完毕便是 H100 服务器 
+   2. 登录到 A100 见下文 A100 80GB (Sg)， 该服务器与本服务器为直接连接，共享所有的数据访问 
+   3. NSCC 该服务器与本服务器数据不共享。
 
 #### 注意事项
 1. 在直接登录的服务器 H100 最好不要用超过 2 个卡，因为这个也是一堆人用。
 2. 在 slurm 管理的 A100 使用无任何限制，可以用全部的 4 个卡。
 
-### A100 基于 Slurm 的提交方式，可认为类似于瀚海
+### A100 80GB (Sg) 基于 Slurm 的提交方式，可认为类似于瀚海
 1. Sample PBS scripts are available at `/usr/local/templates/`. Copy any script to your directory and modify as needed.
 2. List submission scripts: `ls -l /usr/local/templates/*.pbs`
 3. Copy a sample script: `cp /usr/local/templates/lammps.pbs .`
@@ -126,13 +147,13 @@ Host NSCC
 3. 总结来说：代码放 `userhome/` 下自己的文件夹中，数据和模型等文件保存至 `userhome/DATABASE` 下自己的文件夹中
 4. **不允许在登录节点运行大代码，单次运行代码要≤2个cpu核。**该服务器**可以用vscode**。
 
-## ~~135 和 108 （已失效）~~
+<!-- ## ~~135 和 108 （已失效）~~
 
 ### 135
 
 **135** 4 卡 3090，ip: 202.127.205.186，目前该服务器用于新手同学的练习
 
-### 108
+#### 108
 
 **108** 4 卡 P100，ip：202.127.205.135，目前该服务器用于数据库映射支持，大家能在别的服务器访问 `DATABASE` 的**硬件支持**，所以非常不建议在该服务器运行网络密集型脚本。
 
@@ -146,32 +167,32 @@ export VSCODE_SERVER_PATCHELF_PATH=/home/share/sysroot/usr/bin/patchelf
 EOF
 
 source ~/.bashrc
-```
+``` -->
 
-### 特别命令
+<!-- ### 特别命令
 
 也就是说仅在这两个服务器有，别的服务器都没有的
 
 `clear-gpu`：以管理员身份 clear 所有的 GPU 占用，135 和 108 都有，使用的时候要尊重其他用户，在其他人都不使用的时候才能用这个命令
 
-`mount-108-db`: 挂载 108 数据库 /gpfs/mds_data 到 135 上，使用方法见运行命令提示
+`mount-108-db`: 挂载 108 数据库 /gpfs/mds_data 到 135 上，使用方法见运行命令提示 -->
 
 
-## 189，161，目前可以继续使用
+## ASIPP 服务器
 
-### 服务器简介
+### 189 和 161 服务器简介
 
 <!-- grouptokai1=  -->
 账号名：cgwan, 登录请联系: chgwan
 
-**194** 已下线，永远不会恢复
+<!-- **194** 已下线，永远不会恢复 -->
 <!-- **194**  八卡 3090，ip: 202.127.204.194  -->
 
-**161** 单卡 A800，ip: 202.127.205.161： 长久支持
+**161** 单卡 A800，ip: 202.127.205.161： 长久支持，不支持数据映射，可以用来练手不建议大跑
 
-**189**  双卡 A800，ip: 202.127.204.189
+**189**  双卡 A800，ip: 202.127.204.189：长久支持，已映射数据。
 
-### 数据共享，共享账号
+#### 数据共享，共享账号
 
 数据位置：`$HOME/DATABASE`，或者通过调用环境变量 "DATABASE_PATH" 来实现多个服务器的代码统一。
 
@@ -181,7 +202,7 @@ source ~/.bashrc
 环境可以自己创建，也可以用共享环境 torch
 <!-- `conda env create -f torch.yml` -->
 
-## 新神马DCU使用教程
+### 新神马DCU使用教程
 
 **内部使用，不许分享**
 
@@ -191,14 +212,14 @@ source ~/.bashrc
 
 - chgwan 不提供除跑通 benchmark 代码外的其他任何支持，包括不限于 vscode 登录，是否支持免密等。这种东西请自行搜索 !!
 - 数据库位置： `/data/share/chenguang_wan/DataBase`, 只读权限
-### 常用命令
+#### 常用命令
 
 `lscpu`, `rocm-smi`, `hy-smi`, `hy-smi --showpids`
 
 `ssh <username>@202.127.205.70 -p 6021`
 
 
-### 具体 DCU 教程
+#### 具体 DCU 教程
 1. 联系 chgwan 开通对应的DCU权限, 或者使用公共账号
 2. 登录到新神马DCU 381/382
 3. 创建并激活 **python 3.11** 环境，例 `conda create -n torch python==3.11`, 
@@ -210,7 +231,7 @@ source ~/.bashrc
 9. `cd dcu_whl`, `pip install *.whl` ：切换到 `dcu_whl`  文件夹中安装所有的 `*.whl`
 10. 测试torch是否能工作 `python torch_benchmark.py`
 
-### DCU flashAttn 支持
+#### DCU flashAttn 支持，该方法由于 K100 阉割了部分特性，使得用起来效果不佳
 **安装方法**
 ```bash
 pip install triton
@@ -228,13 +249,13 @@ os.environ['FLASH_ATTENTION_TRITON_AMD_AUTOTUNE']='TRUE' # comment out, if the c
 from flash_attn import flash_attn_qkvpacked_func, flash_attn_func # no warnings and errors
 ```
 
-### DCU 其他支持
+#### DCU 其他支持
 - 2025-09-20：DCU 安装的是基于 AMD，ROCm的技术方案，ROCm 版本为 `6.3.25211`， 目前大多数框架均支持 ROCm, 其中以 OpenAI, triton 为基础蓝本，可以在此技术基础上调试
 - AMD 模型加速: https://rocm.docs.amd.com/en/latest/how-to/rocm-for-ai/inference-optimization/model-acceleration-libraries.html
 - DCU 其他安装环境支持： https://cancon.hpccube.com:65024/4/main
 - 最后请大家**多多尝试**，如果非 DCU 版 PyTorch 官方 API 问题，一般均有对应的解决方案，不要一味等待，更不要武断的下结论。
 
-### DCU 网络环境 hacking 方案，请不要分享，该方法仅为了方便使用，官方不支持
+#### DCU 网络环境 hacking 方案，请不要分享，该方法仅为了方便使用，官方不支持
 
 执行下列命令，出现ip则为有网络，其他服务请自行搜索如何设置代理服务器。
 ``` bash
@@ -244,15 +265,22 @@ export https_proxy="socks5h://localhost:7070"
 curl ifconfig.me
 ```
 
-## 新神马小集群
-
+### 新神马小集群
 - 登录ip：202.127.205.186, port 5074 
-- 所有人home目录限制大小为 3T，所有文件都可以放在 home 下面。
-- 目前数据盘 `/gpfs` 容易掉，待解决 
+- 目前由于网络问题没有解决，暂时只有 P100 * 4 可用
 
+#### 使用要求
+- 本地/home 目录不要超过20GB
+- 安装大程序的目录为 /data/<username>没有就自己创建一个，包括不限于 conda 等，这也是本地盘，总计1.5T，所以每个人一般不要超过200GB
+- 超大数据，放在 /mnt/UsersData/<username> 没有就 自己创建一个，用以存放数据文件
+- 除非必要，否则的话不要重启。很多服务都挂在这个服务器上
+
+<!-- - 所有人home目录限制大小为 3T，所有文件都可以放在 home 下面。 -->
+<!-- - 目前数据盘 `/gpfs` 容易掉，待解决  -->
 
 ### TODOs
-- [ ] 数据访问
+- [x] 数据访问
+- [x] 外网直连 
 
 ## 一些建议：
 - conda / mamba: Do not install anything into the `base` environment as this might break your installation
