@@ -11,7 +11,7 @@ media_subpath: "/assets/img/commons"
 <!-- - 新加坡服务器：43.160.201.253, 该服务器用以支持海外服务器跳转 -->
 
 ### ASIPP 内网服务器通用登录方式
-1. 生成 ed2519 key 对，给公钥发给 chgwan
+1. 生成 ed25519 key 对，给公钥发给 chgwan
 2. 添加下列语句到 `~/.ssh/config` 末尾，对于 Windows 用户也有类似的文件，请自行搜索。
    
     ```bash
@@ -30,7 +30,13 @@ media_subpath: "/assets/img/commons"
 
 ### 登录海外服务器
 
-不同服务器不同方式不同，具体服务器见下文
+- 不同服务器不同方式不同，具体服务器见下文
+
+### ssh key pair 的基本用法
+
+1. 在 HOME 目录运行，`ssh-keygen -t ed25519 -C "<email_addr>"`
+2. 所有设备的 key pair 设置成一致的。即通过复制已生成的 private and public keys 的方法，将不同设备的 key pair 设置成相同的，这样可以避免每个不同设备都需要专门设置一遍 key，技术细节可以自行搜索。
+3. 在非生成 key pair 对的设备上，通过复制粘贴设置 key pair 的时候，在Linux系统下需要设置 `~/.ssh` 和 `~/.ssh/<private_key>` 的权限分别为 700 和 600，Windows 则可以直接复制粘贴。
 
 ## USTC 瀚海
 ### 使用入门
