@@ -36,7 +36,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 | Nuclear Fusion                               | 1000           |      |
 | Nature 子刊                                  | 50000          |      |
 | 其他论文                                     | 影响因子 * 200 |      |
-| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      | -->  
+| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      | -->  |
 
 ## 教材和书本
 
@@ -103,6 +103,20 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 - 数据库目前是基于 HDF5 的内部数据库
 - 代码风格见 [开发规范](../development-styles)。
 - 内部 private_modules 包，有很多常用的数据操作方法，请不要分享。具体使用方法可以咨询王明龙
+
+### MDSplus 数据库读取的简略方法 - Python
+- 安装 https://github.com/MDSplus/mdsthin
+- 参考 GitHub 中的相关教程。其中用 with statement 是推荐方法，因为自动关闭 Connections 可以节省 MDSplus 数据库的 TCP 连接资源。
+  
+```python
+import mdsthin
+c = mdsthin.Connection('mds.ipp.ac.cn')
+with mdsthin.Connection('mds.ipp.ac.cn') as c: # 
+    c.openTree('east', 100000)
+    ip = c.get('\\ipm').data()
+    ...
+    # c.disconnect() will be called automatically
+```
 
 ## EAST的数据使用和相关的数据库位置
 
