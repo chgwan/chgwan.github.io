@@ -96,6 +96,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 - [合肥物质科学研究院 WebVPN](https://vpn.hfcas.ac.cn/)
 - [Fusion Wiki 基本的tokamak 概念定义](https://wiki.fusion.ciemat.es/wiki/Main_Page)
 - [Fusion 术语表](https://euro-fusion.org/services/eurofusion-glossary/)
+- [简单的公用服务器教程](https://www.zhihu.com/question/506241986/answer/3457669268)
 
 
 ## 代码开发
