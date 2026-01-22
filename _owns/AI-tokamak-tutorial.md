@@ -154,6 +154,7 @@ with mdsthin.Connection('mds.ipp.ac.cn') as c: #
   - 使用Better BibTex 插件导出`.bib`文件，其中需要添加自定义配置以实现规范的Citation Keys, 设置 Edit -> Settings -> Better BibTex -> Citation keys和Active citation key formula 均设置为: `auth(0,1,author,false).capitalize+year`
   - 可使用Better Notes 插件实现基于markdown的笔记功能
   - Zotero 可以配置 WebDav / Sync Disk 以实现跨端同步文件和笔记的功能
+  - WebDav 配置可以参考[中国科技云webdav支持](https://kb.cstcloud.cn/team/1904464900890169344/kb/1923253559269396480/read/798915966095333423)
 - 论文撰写 -- 使用 Lyx 2.3.x 版本 + latex 最新版 + IOP 模板，如果以使用高版本的 Lyx 编写文档，可以用高版本自带的导出功能将文档导出成兼容 2.3.x 版本的形式，具体方法见下图
 
 ![lyx_convert](lyx_convert.png)
