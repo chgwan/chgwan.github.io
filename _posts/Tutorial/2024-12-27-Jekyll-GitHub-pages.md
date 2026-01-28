@@ -103,6 +103,7 @@ A: 大概率是没有执行 `bash tools/init.sh`
     ```
 
 4. 安装 Jekyll 等
+   
     ```bash 
     rbenv versions # should be something like 3.2.2
 
@@ -237,4 +238,4 @@ bundle install
 [安装方法](#jump)
 
 ## 其他注意事项
-1. 当 list 和 code block 在一起使用时，render 会可能会出现问题，建议参考本文件的 code block in list 进行部署。
+1. 当 list 和 code block 在一起使用时，render 会可能会出现问题，建议参考本文件的 code block in list 进行部署。主要原则就是在 code block 和 list 之间加上 `return key`
