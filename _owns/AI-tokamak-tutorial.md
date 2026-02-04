@@ -9,7 +9,7 @@ media_subpath: "/assets/img/commons"
 
 ## 研究方向
 
-AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。[详情参见](https://scholar.google.com/citations?user=ncURiLEAAAAJ&hl=en)。
+AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。[参考链接](https://scholar.google.com/citations?user=ncURiLEAAAAJ&hl=en)。
 
 <!-- ## 奖励标准
 - **软件著作权**：500 每篇
@@ -36,7 +36,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 | Nuclear Fusion                               | 1000           |      |
 | Nature 子刊                                  | 50000          |      |
 | 其他论文                                     | 影响因子 * 200 |      |
-| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      | -->  |
+| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      |      | --> |
 
 ## 教材和书本
 
@@ -111,12 +111,19 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
   
 ```python
 import mdsthin
-c = mdsthin.Connection('mds.ipp.ac.cn')
-with mdsthin.Connection('mds.ipp.ac.cn') as c: # 
-    c.openTree('east', 100000)
-    ip = c.get('\\ipm').data()
-    ...
-    # c.disconnect() will be called automatically
+def mdsthin_get(shot, tree_name, node_name, server_name='mds.ipp.ac.cn'):
+    node_name = rf'\{node_name}'
+    with mdsthin.Connection(server_name) as c:
+        c.openTree(tree_name, shot)
+        node_data = c.get(node_name).data()
+        node_time = c.get(f'dim_of({node_name})').data()
+        # c.disconnect() will be called automatically
+    return node_data, node_time
+shot = 100000
+tree_name = 'east'
+node_name = 'ipm'
+server_name = 'mds.ipp.ac.cn'
+mdsthin_get(shot, tree_name, node_name, server_name)
 ```
 
 ## EAST的数据使用和相关的数据库位置
