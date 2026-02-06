@@ -232,7 +232,7 @@ source ~/.bashrc
 3. 创建并激活 **python 3.11** 环境，例 `conda create -n torch python==3.11`, 
 4. 安装 numpy 且其需小于2.0，即1.X 版本，目前是推荐1.26.x，可自行决定版本。
 5. `cp -r /data/share/chenguang_wan/Backups/torch_2.4.1_dcu/* ~`
-6. `ssh shenmagpu381` 或者 `ssh shenmagpu382`
+6. `ssh shenmagpu38[1-3]`，其中 shenmagpu383 为最新的 dcu 
 7. `module use .modulefiles`, ps：这个可以写到 `.bashrc` 中，这样可以不每次都打该命令
 8. `module load mydtk/dtk-25.04.1`
 9. `cd dcu_whl`, `pip install *.whl` ：切换到 `dcu_whl`  文件夹中安装所有的 `*.whl`
