@@ -234,7 +234,7 @@ source ~/.bashrc
 5. `cp -r /data/share/chenguang_wan/Backups/torch_2.4.1_dcu/* ~`
 6. `ssh shenmagpu381` 或者 `ssh shenmagpu382`
 7. `module use .modulefiles`, ps：这个可以写到 `.bashrc` 中，这样可以不每次都打该命令
-8. `module load mydtk/dtk-25.04`
+8. `module load mydtk/dtk-25.04.1`
 9. `cd dcu_whl`, `pip install *.whl` ：切换到 `dcu_whl`  文件夹中安装所有的 `*.whl`
 10. 测试torch是否能工作 `python torch_benchmark.py`
 
