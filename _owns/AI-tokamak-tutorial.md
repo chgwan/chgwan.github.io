@@ -36,7 +36,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 | Nuclear Fusion                               | 1000           |      |
 | Nature 子刊                                  | 50000          |      |
 | 其他论文                                     | 影响因子 * 200 |      |
-| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      |      -->
+| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      | -->  |
 
 ## 教材和书本
 
@@ -100,7 +100,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 
 
 ## 代码开发
-- 工具链：Conda + Pytorch ( >= 2.4 推荐 latest stable version ) + Python >= 3.9 (推荐3.12)。PS：目前 Conda 对于组织已经不是免费的了，后续会逐步迁移至Mamba，[Mamba的安装](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html)
+- 工具链：Conda + Pytorch ( >= 2.4 推荐 latest stable version ) + Python >= 3.9 (推荐3.12)。PS：目前 Conda 对于组织已经不是免费的了，后续会逐步迁移至x [miniforge](https://github.com/conda-forge/miniforge), miniforge 用法和 conda 一样，只是是完全基于开源社区的。
 - 数据库目前是基于 HDF5 的内部数据库
 - 代码风格见 [开发规范](../development-styles)。
 - 内部 private_modules 包，有很多常用的数据操作方法，请不要分享。具体使用方法可以咨询王明龙
