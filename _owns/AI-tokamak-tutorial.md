@@ -98,7 +98,6 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 - [Fusion 术语表](https://euro-fusion.org/services/eurofusion-glossary/)
 - [简单的公用服务器教程](https://www.zhihu.com/question/506241986/answer/3457669268)
 
-
 ## 代码开发
 - 工具链：Conda + Pytorch ( >= 2.4 推荐 latest stable version ) + Python >= 3.9 (推荐3.12)。PS：目前 Conda 对于组织已经不是免费的了，后续会逐步迁移至x [miniforge](https://github.com/conda-forge/miniforge), miniforge 用法和 conda 一样，只是是完全基于开源社区的。
 - 数据库目前是基于 HDF5 的内部数据库
@@ -162,7 +161,7 @@ mdsthin_get(shot, tree_name, node_name, server_name)
   - 可使用Better Notes 插件实现基于markdown的笔记功能
   - Zotero 可以配置 WebDav / Sync Disk 以实现跨端同步文件和笔记的功能
   - WebDav 配置可以参考[中国科技云webdav支持](https://kb.cstcloud.cn/team/1904464900890169344/kb/1923253559269396480/read/798915966095333423)
-- 论文撰写 -- 使用 Lyx 2.3.x 版本 + latex 最新版 + IOP 模板，如果以使用高版本的 Lyx 编写文档，可以用高版本自带的导出功能将文档导出成兼容 2.3.x 版本的形式，具体方法见下图
+- 论文撰写 -- 使用 Lyx 2.4.x 版本 + latex 最新版 + IOP 模板，如果以使用高版本的 Lyx 编写文档，可以用高版本自带的导出功能将文档导出成兼容 2.4.x 版本的形式，具体方法见下图
 
 ![lyx_convert](lyx_convert.png)
 _lyx 版本转换_
