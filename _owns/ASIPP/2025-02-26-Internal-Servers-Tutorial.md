@@ -209,16 +209,20 @@ source ~/.bashrc
 环境可以自己创建，也可以用共享环境 torch
 <!-- `conda env create -f torch.yml` -->
 
-### 新神马DCU使用教程
+### 新神马 DCU 服务器
 
-**内部使用，不许分享**
+- 共计 3 * 8 卡，shenmagpu381 - shenmagpu383
+- 381-382 为 K100 支持高精度 GPU 运算，但是不支持 flash-attn 等
+- 383 为 K100-AI 不支持高精度 GPU，但支持 flash-attn 等
 
+#### 数据介绍 **内部使用，不许分享**
 - 官方链接：https://www.scnet.cn/help/docs/mainsite/ai/
 <!-- 其他有用参考：https://www.cnblogs.com/zhihh/p/18489338/Chengdu_HPC_Usage_Record -->
 <!-- 用户需要在 render 用户组才可以使用 dcu，所以需要先咨询管理员给用户加在 render 组 -->
 - chgwan 不提供除跑通 benchmark 代码外的其他任何支持，包括不限于 vscode 登录，是否支持免密等。这种东西请自行搜索 !!
 - 数据库位置： `/data/share/chenguang_wan/DataBase`, 只读权限
 - 用户需要在 render 组才可以用 dcu，chenguang_wan 组才可以用数据
+
 #### 常用命令
 
 `lscpu`, `rocm-smi`, `hy-smi`, `hy-smi --showpids`
@@ -232,8 +236,8 @@ dcu-smi
 ```
 
 #### 具体 DCU 教程
-1. 联系**刘晓娟老师**，开通对应的DCU权限, 其中主要要给用户加入到 render 组和 chenguang_wan 组，之后才有调用 DCU 的权限。如果没有新神马账号，可使用公共账号。
-2. 登录到新神马DCU 381/382
+1. 联系 **刘晓娟老师**（[lxj@ipp.ac.cn](mailto:lxj@ipp.ac.cn)），开通对应的 DCU 权限，其中主要要给用户加入到 render 组和 chenguang_wan 组，之后才有调用 DCU 的权限。如果没有新神马账号，可使用公共账号。
+2. 登录到新神马DCU 381/382/383
 3. 创建并激活 **python 3.11** 环境，例 `conda create -n torch python==3.11`, 
 4. 安装 numpy 且其需小于2.0，即1.X 版本，目前是推荐1.26.x，可自行决定版本。
 5. `cp -r /data/share/chenguang_wan/Backups/torch_2.4.1_dcu/* ~`
@@ -297,4 +301,5 @@ curl ifconfig.me
 - [x] 外网直连 
 
 ## 一些建议：
-- conda / mamba: Do not install anything into the `base` environment as this might break your installation
+- conda / mamba: Do not install anything into the `base` environment as this might break your installation.
+- use miniforge to instead is a good option.
