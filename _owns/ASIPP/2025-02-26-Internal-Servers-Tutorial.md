@@ -271,6 +271,7 @@ from flash_attn import flash_attn_qkvpacked_func, flash_attn_func # no warnings 
 - 最后请大家**多多尝试**，如果非 DCU 版 PyTorch 官方 API 问题，一般均有对应的解决方案，不要一味等待。
 - 同源文件夹：torch_2.4.1_dtk250401/dcu_whl 支持 flash-attn 和一些其他的 torch 加速方案.
 - jax_0.4.34 为 jax 支持
+- You can find more benchmarks in `/data/share/chenguang_wan/Backups/WanDCU/benchmarks`
 
 #### DCU 网络环境 hacking 方案，请不要分享，该方法仅为了方便使用，官方不支持
 
