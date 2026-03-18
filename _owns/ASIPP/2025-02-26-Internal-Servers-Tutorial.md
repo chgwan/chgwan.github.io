@@ -216,18 +216,23 @@ source ~/.bashrc
 - 官方链接：https://www.scnet.cn/help/docs/mainsite/ai/
 <!-- 其他有用参考：https://www.cnblogs.com/zhihh/p/18489338/Chengdu_HPC_Usage_Record -->
 <!-- 用户需要在 render 用户组才可以使用 dcu，所以需要先咨询管理员给用户加在 render 组 -->
-
 - chgwan 不提供除跑通 benchmark 代码外的其他任何支持，包括不限于 vscode 登录，是否支持免密等。这种东西请自行搜索 !!
 - 数据库位置： `/data/share/chenguang_wan/DataBase`, 只读权限
+- 用户需要在 render 组才可以用 dcu，chenguang_wan 组才可以用数据
 #### 常用命令
 
 `lscpu`, `rocm-smi`, `hy-smi`, `hy-smi --showpids`
 
 `ssh <username>@202.127.205.70 -p 6021`
 
+``` bash
+# simiar to nvidia-smi, a dcu-smi command was developed.
+export PATH=/public/home/chenguang_wan/.local/bin:$PATH
+dcu-smi
+```
 
 #### 具体 DCU 教程
-1. 联系刘晓娟老师，开通对应的DCU权限, 其中主要要给用户加入到 render 组和 chenguang_wan 组，之后才有调用 DCU 的权限。如果没有新神马账号，即可直接使用公共账号。
+1. 联系**刘晓娟老师**，开通对应的DCU权限, 其中主要要给用户加入到 render 组和 chenguang_wan 组，之后才有调用 DCU 的权限。如果没有新神马账号，可使用公共账号。
 2. 登录到新神马DCU 381/382
 3. 创建并激活 **python 3.11** 环境，例 `conda create -n torch python==3.11`, 
 4. 安装 numpy 且其需小于2.0，即1.X 版本，目前是推荐1.26.x，可自行决定版本。
@@ -259,8 +264,10 @@ from flash_attn import flash_attn_qkvpacked_func, flash_attn_func # no warnings 
 #### DCU 其他支持
 - 2025-09-20：DCU 安装的是基于 AMD，ROCm的技术方案，ROCm 版本为 `6.3.25211`， 目前大多数框架均支持 ROCm, 其中以 OpenAI, triton 为基础蓝本，可以在此技术基础上调试
 - AMD 模型加速: https://rocm.docs.amd.com/en/latest/how-to/rocm-for-ai/inference-optimization/model-acceleration-libraries.html
-- DCU 其他安装环境支持： https://cancon.hpccube.com:65024/4/main, 这个为曙光 DCU 的官方解决方案，目前已经支持了 flash-attn 等，如果缺少某些库，可以优先检索这个地方
-- 最后请大家**多多尝试**，如果非 DCU 版 PyTorch 官方 API 问题，一般均有对应的解决方案，不要一味等待，更不要武断的下结论。
+- DCU 其他安装环境支持： https://cancon.hpccube.com:65024/4/main, 这个为曙光 DCU 的官方解决方案，目前**已经支持了** flash-attn 等，如果缺少某些库，可以优先检索这个地方
+- 最后请大家**多多尝试**，如果非 DCU 版 PyTorch 官方 API 问题，一般均有对应的解决方案，不要一味等待。
+- 同源文件夹：torch_2.4.1_dtk250401/dcu_whl 支持 flash-attn 和一些其他的 torch 加速方案.
+- jax_0.4.34 为 jax 支持
 
 #### DCU 网络环境 hacking 方案，请不要分享，该方法仅为了方便使用，官方不支持
 
