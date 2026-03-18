@@ -247,8 +247,7 @@ dcu-smi
 9. `cd dcu_whl`, `pip install *.whl` ：切换到 `dcu_whl`  文件夹中安装所有的 `*.whl`
 10. 测试torch是否能工作 `python torch_benchmark.py`
 
-#### ~~DCU flashAttn 支持，该方法由于 K100 阉割了部分特性，使得用起来效果不佳~~
-**安装方法**
+<!-- **安装方法**
 ```bash
 pip install triton
 # install flashAttn
@@ -263,9 +262,9 @@ import os
 os.environ['FLASH_ATTENTION_TRITON_AMD_ENABLE']='TRUE'
 os.environ['FLASH_ATTENTION_TRITON_AMD_AUTOTUNE']='TRUE' # comment out, if the code can not work
 from flash_attn import flash_attn_qkvpacked_func, flash_attn_func # no warnings and errors
-```
+``` -->
 
-#### DCU 其他支持
+#### DCU 其他模块支持
 - 2025-09-20：DCU 安装的是基于 AMD，ROCm的技术方案，ROCm 版本为 `6.3.25211`， 目前大多数框架均支持 ROCm, 其中以 OpenAI, triton 为基础蓝本，可以在此技术基础上调试
 - AMD 模型加速: https://rocm.docs.amd.com/en/latest/how-to/rocm-for-ai/inference-optimization/model-acceleration-libraries.html
 - DCU 其他安装环境支持： https://cancon.hpccube.com:65024/4/main, 这个为曙光 DCU 的官方解决方案，目前**已经支持了** flash-attn 等，如果缺少某些库，可以优先检索这个地方
