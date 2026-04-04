@@ -278,8 +278,10 @@ from flash_attn import flash_attn_qkvpacked_func, flash_attn_func # no warnings 
 执行下列命令，出现ip则为有网络，其他服务请自行搜索如何设置代理服务器。
 ``` bash
 # set internet access in dcu node. 
-export http_proxy="socks5h://localhost:7070"
-export https_proxy="socks5h://localhost:7070"
+# export http_proxy="socks5h://localhost:7070"
+# export https_proxy="socks5h://localhost:7070"
+export http_proxy="http://localhost:7070"
+export https_proxy="http://localhost:7070"
 curl ifconfig.me
 ```
 
