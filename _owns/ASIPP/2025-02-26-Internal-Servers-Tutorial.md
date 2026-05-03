@@ -302,6 +302,17 @@ curl ifconfig.me
 - [x] 数据访问
 - [x] 外网直连 
 
-## 一些建议：
+## 一些建议
+
+### Anaconda 
+For commercial or large-organization use, avoid Anaconda defaults unless your organization has a license. Please use miniforage instead. refer to https://github.com/conda-forge/miniforge. please also never install anaconda default channels pkgs
+``` bash
+# how to install 
+curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+bash Miniforge3-$(uname)-$(uname -m).sh
+
+# If you dont change default prefix
+source "${HOME}/conda/etc/profile.d/conda.sh"
+conda init
+```
 - conda / mamba: Do not install anything into the `base` environment as this might break your installation.
-- use miniforge to instead is a good option.
