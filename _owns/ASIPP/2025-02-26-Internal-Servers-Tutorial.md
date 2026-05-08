@@ -121,6 +121,7 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
         HostName 127.0.0.1
         Port 50000
         User publicuser
+        ProxyJump PublicJump2
 
     Host sgGPU
         HostName 127.0.0.1
