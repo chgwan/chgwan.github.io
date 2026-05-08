@@ -36,7 +36,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 | Nuclear Fusion                               | 1000           |      |
 | Nature 子刊                                  | 50000          |      |
 | 其他论文                                     | 影响因子 * 200 |      |
-| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      | -->  |
+| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      | -->
 
 ## 教材和书本
 
@@ -57,7 +57,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 ## 预备知识
 
 ### 基础知识
-- 使用 Google，Chat-GPT 等，具备顺畅访问 Google 和 Chat-GPT 的能力
+- 使用 Google，Chat-GPT, Claude 等，具备顺畅访问 Google, Chat-GPT, 和 Claude 的能力，除了对话之外，特别注意 coding 方面的能力。
 - Linux 和 GIT 的基本操作，其中不掌握任何Linux基础知识的，可以先用 WSL2 熟悉。特别是其中 **ssh 公钥和私玥**的使用方法
   - 所谓WSL，即 Windows Subsystem for Linux 官方安装教程：https://learn.microsoft.com/en-us/windows/wsl/install
   - Linux 需要了解 `LIBRARY_PATH, LD_LIBRARY_PATH, PATH, INCLUDE, MANPATH`，这5个环境变量的使用方法
@@ -68,6 +68,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 - 熟读[提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)，之后再提问，特别注意**不着编边际的问题**。
 - 简单而言，先中文搜索，然后英文搜索，deepseek chat-GPT，claude 等全部都搜一遍。如果还是无法解决再在群里提问，或者找师兄师姐们，**最后再去问老师**。
 - 如果花了 5 天以上的时间搞不定，那就还是去问问人。
+
 
 ### 账号开通列表 <span id="open_accounts"> </span>
 - [ ] 等离子体物理研究所邮箱 - 询问自己室的秘书
