@@ -234,7 +234,7 @@ source ~/.bashrc
 
 - 共计 3 * 8 卡，shenmagpu381 - shenmagpu383
 - 381-382 为 K100 支持高精度 GPU 运算，但是不支持 flash-attn 等
-- 383 为 K100-AI 不支持高精度 GPU，但支持 flash-attn 等，除非得到授权。否则不要运行特别长的任务。长任务运行，请**提交到 shenmagpu 节点**进行。
+- 383 为 K100-AI 不支持高精度 GPU，但支持 flash-attn 等，除非得到授权。否则不要运行特别长的任务。长任务运行，请**提交到 shenmagpu 节点**进行.参考命令 `slurm-trun`
 
 #### 数据介绍 **内部使用，不许分享**
 - 官方链接：https://www.scnet.cn/help/docs/mainsite/ai/
@@ -249,7 +249,7 @@ source ~/.bashrc
 `lscpu`, `rocm-smi`, `hy-smi`, `hy-smi --showpids`
 `ssh <username>@202.127.205.70 -p 6021`
 
-**自定义命令:** `duc-smi`, `dcum-smi --no-na`, `slrum-trun`
+**自定义命令:** `duc-smi`, `dcu-smi --no-na`, `slrum-trun`
 ``` bash
 # simiar to nvidia-smi, a dcu-smi command was developed.
 export PATH=/public/home/chenguang_wan/.local/bin:$PATH
