@@ -12,6 +12,8 @@ media_subpath: "/assets/img/commons"
 <!-- - 新加坡服务器：43.160.201.253, 该服务器用以支持海外服务器跳转 -->
 
 ### ASIPP 内网服务器通用登录方式
+
+#### 设置
 1. 生成 ed25519 key 对，给公钥发给 chgwan
 2. 添加下列语句到 `~/.ssh/config` 末尾，对于 Windows 用户也有类似的文件，请自行搜索。
    
@@ -25,11 +27,25 @@ media_subpath: "/assets/img/commons"
         Port 60002
         User publicuser
         ProxyJump PublicJump1 
+    # NewShenma Login
+    Host NSMLogin
+        User <nsm_account>
+        HostName 202.127.205.70
+        Port 6021
+        ProxyJump PublicJump2
+    # DCU debug node login
+    Host DCU383
+        User <nsm_account>
+        HostName shenmagpu383
+        ProxyJump TxToNSM
     ```
 
-3. 登录到 ASIPP 内网服务器  `ssh -J PublicJump2 <username>@<ip> -p port`
+#### 登录
+- 登录到新神马 `ssh NSMLogin`
+- 登录到 shenmagpu383，也就是我们常用的调试服务器 `ssh DCU383`
+- 登录到任意 ASIPP 内网服务器  `ssh -J PublicJump2 <username>@<ip> -p port`
 
-### 登录海外服务器
+### 海外服务器
 
 - 不同服务器不同方式不同，具体服务器见下文
 
@@ -51,11 +67,16 @@ media_subpath: "/assets/img/commons"
         HostName 146.56.207.178
         Port 40000
         User publicuser
+    Host PublicJump2
+        HostName 127.0.0.1
+        Port 60002
+        User publicuser
+        ProxyJump PublicJump1 
     Host HanHai
         HostName 211.86.151.113
         # HostName 211.86.151.115
         User chgwan
-        ProxyJump PublicJump1
+        ProxyJump PublicJump2
     ```
 
 ### Slurm 的使用提交
@@ -79,7 +100,7 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
 ### 其他事项
 - 瀚海的存储是收费的，所以建议及时清理不用的文件，特别是训练完毕之后无用的模型文件
 - 不允许在登录节点运行大代码
-- 不允许直接 `ssh` 到计算节点进行计算，必须通过slurm登录
+- 不允许直接 `ssh` 到计算节点进行计算，必须通过`slurm`登录。除非你能知道你的使用会有什么效果。
   
 ## 海外特别服务器，计算资源充足
 
@@ -96,7 +117,7 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
         Port 40000
         User publicuser
 
-    Host PublicJump2
+    Host PublicJump3
         HostName 127.0.0.1
         Port 50000
         User publicuser
@@ -105,7 +126,7 @@ gpu:8 -n64 修改为 gpu:1 -n8  即为调试模式
         HostName 127.0.0.1
         Port 60001
         User chenguang.wan
-        ProxyJump PublicJump2 
+        ProxyJump PublicJump3 
 
     Host NSCC
         HostName aspire2antu.nscc.sg
@@ -213,7 +234,7 @@ source ~/.bashrc
 
 - 共计 3 * 8 卡，shenmagpu381 - shenmagpu383
 - 381-382 为 K100 支持高精度 GPU 运算，但是不支持 flash-attn 等
-- 383 为 K100-AI 不支持高精度 GPU，但支持 flash-attn 等
+- 383 为 K100-AI 不支持高精度 GPU，但支持 flash-attn 等，除非得到授权。否则不要运行特别长的任务。长任务运行，请**提交到 shenmagpu 节点**进行。
 
 #### 数据介绍 **内部使用，不许分享**
 - 官方链接：https://www.scnet.cn/help/docs/mainsite/ai/
@@ -226,8 +247,9 @@ source ~/.bashrc
 #### 常用命令
 
 `lscpu`, `rocm-smi`, `hy-smi`, `hy-smi --showpids`
-
 `ssh <username>@202.127.205.70 -p 6021`
+
+**自定义命令:** `duc-smi` `dcum-smi --no-na`
 
 ``` bash
 # simiar to nvidia-smi, a dcu-smi command was developed.
