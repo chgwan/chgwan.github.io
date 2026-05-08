@@ -249,8 +249,7 @@ source ~/.bashrc
 `lscpu`, `rocm-smi`, `hy-smi`, `hy-smi --showpids`
 `ssh <username>@202.127.205.70 -p 6021`
 
-**自定义命令:** `duc-smi` `dcum-smi --no-na`
-
+**自定义命令:** `duc-smi`, `dcum-smi --no-na`, `slrum-trun`
 ``` bash
 # simiar to nvidia-smi, a dcu-smi command was developed.
 export PATH=/public/home/chenguang_wan/.local/bin:$PATH
