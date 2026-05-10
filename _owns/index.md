@@ -11,3 +11,4 @@ permalink: /posts/owns/
 - **[ASIPP报销](ASIPP-reimbursement)**
 - **[开发规范](development-styles)**
 - **[内部服务器使用手册](Internal-Servers-Tutorial)**
+- **[Simple Vibe Coding and Connections on NSM](vibe-coding-and-connections)**
