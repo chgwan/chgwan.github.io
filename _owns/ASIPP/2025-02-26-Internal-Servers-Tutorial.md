@@ -253,7 +253,7 @@ source ~/.bashrc
 **自定义命令:** `duc-smi`, `dcu-smi --no-na`, `slrum-trun`
 ``` bash
 # simiar to nvidia-smi, a dcu-smi command was developed.
-export PATH=/public/home/chenguang_wan/.local/bin:$PATH
+export PATH=/public/home/chenguang_wan/bin/NSM:$PATH
 dcu-smi
 ```
 

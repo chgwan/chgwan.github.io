@@ -43,8 +43,8 @@ media_subpath: "/assets/img/commons"
 
 ----
 ### 设置网络代理
-- 保存下列设置到 `proxy.sh`， 然后 `source proxy.sh`，执行该步骤之后。
-- 该代理脚本在DCU节点运行后，DCU节点就会通网。如果部分应用不通网，请手动设置该网络到代理端口。该代理为 http 协议代理。
+- 保存下列设置到 `proxy.sh`， 然后 `source proxy.sh`，
+- 执行上述步骤之后，DCU节点就会通网。如果部分应用不通网，请手动设置该网络到代理端口。该代理为 http 协议代理。
 - 为保证符合法律要求，本网络只可以访问中国的服务器，不要问为什么不能访问 GPT/Anthropic/Google 等问题，该问题请自行解决。
 
 ``` bash
@@ -78,7 +78,7 @@ curl -fsSL https://claude.ai/install.sh | bash
 
 ### Claude Code GLM 配置
 - 修改 `~/.claude/settings.json`， 如果没有的话，请创建该文件。
-- "your_zai_api_key" 请联系 chgwan，该 API 为本组采购。使用该API之前，请自己注册免费账号试用。测试完毕再使用
+- "your_zai_api_key" 请联系 chgwan，该 API 为本组采购。使用该API之前，请自己注册免费账号了解初步用法之后，再使用。
   - 不允许使用 OpenClaw/MaxHermes 等自动化 Agent。如果使用了，后果非常严重。请一定牢记。
   - **不允许分享，更不允许在网络公开。**
 
@@ -116,4 +116,4 @@ curl -fsSL https://claude.ai/install.sh | bash
 
 本部分只是为了提供展示。为了符合法律法规，本教程不提供任何 API 和运行方法。
 
-### Codex
+
