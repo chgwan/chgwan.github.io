@@ -4,7 +4,7 @@ author: chgwan
 tags: [Tutorial, Note]
 media_subpath: "/assets/img/commons"
 --- 
-# 开发风格
+## 开发风格
 **统一组内代码风格规范**。遵循该规范，方便协作和 code review.
 
 ## Git 提交规范

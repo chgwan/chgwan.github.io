@@ -36,7 +36,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 | Nuclear Fusion                               | 1000           |      |
 | Nature 子刊                                  | 50000          |      |
 | 其他论文                                     | 影响因子 * 200 |      |
-| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      | -->
+| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      | -->  |
 
 ## 教材和书本
 
@@ -162,20 +162,21 @@ mdsthin_get(shot, tree_name, node_name, server_name)
   - 可使用Better Notes 插件实现基于markdown的笔记功能
   - Zotero 可以配置 WebDav / Sync Disk 以实现跨端同步文件和笔记的功能
   - WebDav 配置可以参考[中国科技云webdav支持](https://kb.cstcloud.cn/team/1904464900890169344/kb/1923253559269396480/read/798915966095333423)
-- 论文撰写 -- 使用 Lyx 2.4.x 版本 + latex 最新版 + IOP 模板，如果以使用高版本的 Lyx 编写文档，可以用高版本自带的导出功能将文档导出成兼容 2.4.x 版本的形式，具体方法见下图
+- 论文撰写 -- 使用 Lyx 2.5.x 版本 + latex 最新版 + IOP 模板，如果以使用高版本的 Lyx 编写文档，可以用高版本自带的导出功能将文档导出成兼容 2.4.x 版本的形式，具体方法见下图
 
 ![lyx_convert](lyx_convert.png)
 _lyx 版本转换_
 
 - IOP 模板下载位置：https://www.kdocs.cn/l/cbc9uJBTrkSa，IOP 模板安装方法 https://www.cnblogs.com/freedom-wan/p/13429879.html
-- Nuclear Fusion 相关 lyx 模板，请基于该模板进行撰写，该模板的格式更加优美，能让审稿人看的更爽，下载链接  https://www.kdocs.cn/l/ccj2tevnX0Tl
+- Nuclear Fusion 相关 lyx 模板，请**基于该模板进行撰写**，该模板的格式经过本人优化，看起来更加优美，能让审稿人看的更爽，下载链接  https://www.kdocs.cn/l/ccj2tevnX0Tl
 
 ### 论文排版技巧
 - 所有的图片，除非没有 pdf 版本的图片，否则的话**全都使用 pdf 矢量图**。
 - 如果喜欢 latex overleaf, 建议使用 **中国科技云** overleaf 共享网站 https://latex.cstcloud.cn/project。
   - ChatGPT 新 LaTex 工具: [prism.openai.com](https://prism.openai.com/) 支持协作，用起来也很好。
 - 其他格式 一般按照 Nuclear Fusion 格式，特别注意文献引用和图表引用
-- 最好保证自己的**英文论文能用 pdflatex 编译不出错**，这样才是各类英文期刊比较容易通过的格式
+- 最好保证自己的**英文论文能用 pdflatex 编译不出错**，这样才是各类英文期刊比较容易通过的格式。
+- 除非必要否则不要出现 Unicode，特别是 .bib 文件同样不允许出现 Unicode。如果使用的 Zotero，设置方法是 Settings ->  Better BibTex -> {BibLaTex, BibTex, Export BibTex }-> Export unicode as plain-text latex commands.
 
 ### 论文撰写
 
