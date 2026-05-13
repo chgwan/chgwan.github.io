@@ -78,14 +78,27 @@ A: 大概率是没有执行 `bash tools/init.sh`
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
     ```
-2. 用 rbenv 重新安装 ruby，建议版本号高于 3.2
+
+2. 安装 rbenv without root.
+    ```bash
+    git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+    conda activate <your_env>
+    conda install -c conda-forge libstdcxx-ng libgcc-ng
+    
+    # Only set one lib. 
+    export LD_PRELOAD="$CONDA_PREFIX/lib/libstdc++.so.6"
+    ```
+
+3. 用 rbenv 重新安装 ruby，建议版本号高于 3.2
     ```bash
     # list all available envs can be installed 
     rbenv install -l
     rbenv install <ruby_version>
     ```
 
-3. 安装 node，参考 [安装教程](https://nodejs.org/en/download)
+4. 安装 node，参考 [安装教程](https://nodejs.org/en/download)
 
     ```bash
     # recommend to use fnm
@@ -102,7 +115,13 @@ A: 大概率是没有执行 `bash tools/init.sh`
     npm -v # Should print "10.9.2".
     ```
 
-4. 安装 Jekyll 等
+5. node 简单安装方法
+  ```bash
+  conda install -c conda-forge nodejs
+  ```
+
+
+6. 安装 Jekyll 等
    
     ```bash 
     rbenv versions # should be something like 3.2.2
@@ -116,11 +135,11 @@ A: 大概率是没有执行 `bash tools/init.sh`
     gem install jekyll bundler
     ```
 
-5. `git clone git@github.com:<username>/<username>.github.io.git`
+7. `git clone git@github.com:<username>/<username>.github.io.git`
 
-6. `cd <the folder>; bundle install`
+8. `cd <the folder>; bundle install`
 
-7. 测试结果: `tools/test.sh` 
+9. 测试结果: `tools/test.sh` 
 
 ## Tricks
 
