@@ -238,7 +238,13 @@ transfer_2_remote() {
 	else
 		echo "Fail to transfer data"
 		fail_with_exitcode 199
-	fi	
+	fi
+}
+
+do_cleanup() {
+	echo "Cleaning up local download cache..."
+	rm -f "$FLAG" "${TARGET}.server"
+	echo "Cleanup done"
 }
 
 # Execute installation commands on remote server
@@ -266,3 +272,4 @@ transfer_2_remote
 if [ $DID_LOCAL_DOWNLOAD -eq 1 ]; then
 	do_remote_install
 fi
+do_cleanup
