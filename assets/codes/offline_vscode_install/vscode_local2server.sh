@@ -12,20 +12,28 @@ SERVER_TARGET=""
 PLATFORM_DOWNLOAD_PATH="" # auto-detected from remote by get_remote_platform()
 SERVER_DOWNLOAD_PATH="" # auto-detected from remote by get_remote_platform()
 
+KEEP_LOCAL=0
+
 usage() {
-	echo "Usage: $0 [-c COMMIT_ID] [-s SERVER_TARGET] [-q QUALITY] [COMMIT_ID] [SERVER_TARGET]"
+	echo "Usage: $0 [-c COMMIT_ID] [-s SERVER_TARGET] [-q QUALITY] [-k] [COMMIT_ID] [SERVER_TARGET]"
 	echo "  -c COMMIT_ID     vscode commit id (find in vscode client)"
 	echo "  -s SERVER_TARGET ssh target, e.g. user@host"
 	echo "  -q QUALITY       release quality (default: stable)"
+	echo "  -k               keep local download cache (reuse for other servers)"
 	echo "  -h               show this help"
+	echo
+	echo "Reuse the same download across servers, e.g.:"
+	echo "  $0 -k -c COMMIT_ID -s user@host1   # downloads, keeps cache"
+	echo "  $0 -k -c COMMIT_ID -s user@host2   # reuses cache, no re-download"
 }
 
 # Parse command line arguments (flags override the defaults above)
-while getopts "c:s:q:h" opt; do
+while getopts "c:s:q:kh" opt; do
 	case "$opt" in
 		c) COMMIT_ID="$OPTARG" ;;
 		s) SERVER_TARGET="$OPTARG" ;;
 		q) QUALITY="$OPTARG" ;;
+		k) KEEP_LOCAL=1 ;;
 		h) usage; exit 0 ;;
 		*) usage; exit 1 ;;
 	esac
@@ -190,6 +198,12 @@ do_client_download() {
 
 	mkdir -p "${VSCODE_TMP_FOLDER}"
 
+	# Reuse a previously downloaded cache (e.g. when pushing to another server)
+	if [ -f "$FLAG" ] && [ -f "${TARGET}.server" ]; then
+		echo "Cached archives found for commit ${COMMIT_ID}, skipping download"
+		return 0
+	fi
+
 	echo "Downloading from: ${DOWNLOAD_URL}"
 	# Try wget first, then curl as a fallback
 	if command -v wget >/dev/null 2>&1; then
@@ -242,6 +256,12 @@ transfer_2_remote() {
 }
 
 do_cleanup() {
+	if [ "$KEEP_LOCAL" -eq 1 ]; then
+		echo "Keeping local download cache at ${VSCODE_TMP_FOLDER} (-k)"
+		echo "  $FLAG"
+		echo "  ${TARGET}.server"
+		return 0
+	fi
 	echo "Cleaning up local download cache..."
 	rm -f "$FLAG" "${TARGET}.server"
 	echo "Cleanup done"
