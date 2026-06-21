@@ -96,6 +96,10 @@ A: 大概率是没有执行 `bash tools/init.sh`
     # list all available envs can be installed 
     rbenv install -l
     rbenv install <ruby_version>
+    # if still missing install command, the ruby-build plugin is missing
+    mkdir -p "$(rbenv root)"/plugins
+    git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+    # after that you can install by yourself. 
     ```
 
 4. 安装 node，参考 [安装教程](https://nodejs.org/en/download)
