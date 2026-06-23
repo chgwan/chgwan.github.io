@@ -263,7 +263,7 @@ dcu-smi
 3. 创建并激活 **python 3.11** 环境，例 `conda create -n torch python==3.11`, 
 4. 安装 numpy 且其需小于2.0，即1.X 版本，目前是推荐1.26.x，可自行决定版本。
 5. `cp -r /data/share/chenguang_wan/Backups/torch_2.4.1_dcu/* ~`
-6. `ssh shenmagpu38[1-3]`，其中 shenmagpu383 为最新的 dcu 
+6. `ssh shenmagpu38[1-3]`，其中 shenmagpu383 为最新的 dcu, K100-AI
 7. `module use .modulefiles`, ps：这个可以写到 `.bashrc` 中，这样可以不每次都打该命令
 8. `module load mydtk/dtk-25.04.1`
 9. `cd dcu_whl`, `pip install *.whl` ：切换到 `dcu_whl`  文件夹中安装所有的 `*.whl`
@@ -289,13 +289,14 @@ from flash_attn import flash_attn_qkvpacked_func, flash_attn_func # no warnings 
 #### DCU 其他模块支持
 - 2025-09-20：DCU 安装的是基于 AMD，ROCm的技术方案，ROCm 版本为 `6.3.25211`， 目前大多数框架均支持 ROCm, 其中以 OpenAI, triton 为基础蓝本，可以在此技术基础上调试
 - AMD 模型加速: https://rocm.docs.amd.com/en/latest/how-to/rocm-for-ai/inference-optimization/model-acceleration-libraries.html
-- DCU 其他安装环境支持： https://cancon.hpccube.com:65024/4/main, 这个为曙光 DCU 的官方解决方案，目前**已经支持了** flash-attn 等，如果缺少某些库，可以优先检索这个地方
-- 最后请大家**多多尝试**，如果非 DCU 版 PyTorch 官方 API 问题，一般均有对应的解决方案，不要一味等待。
+- DCU 其他安装环境支持： https://download.sourcefind.cn:65024/4/main/, 这个为曙光 DCU 的官方解决方案，目前**已经支持了** flash-attn 等，如果缺少某些库，可以优先检索这个地方
+- 最后请大家**多多尝试**，如果非 DCU 版 PyTorch 官方 API 问题，一般均有对应的解决方案，多用AI和搜索工具。
 - 同源文件夹：torch_2.4.1_dtk250401/dcu_whl 支持 flash-attn 和一些其他的 torch 加速方案.
 - jax_0.4.34 为 jax 支持
 - You can find more benchmarks in `/data/share/chenguang_wan/Backups/WanDCU/benchmarks`
+- 由于网络安全问题，Hacking 方案，不再支持，如果要上外网，请自行测试。
 
-#### DCU 网络环境 hacking 方案，请不要分享，该方法仅为了方便使用，官方不支持
+<!-- #### DCU 网络环境 hacking 方案，请不要分享，该方法仅为了方便使用，官方不支持
 
 执行下列命令，出现ip则为有网络，其他服务请自行搜索如何设置代理服务器。
 ``` bash
@@ -305,7 +306,7 @@ from flash_attn import flash_attn_qkvpacked_func, flash_attn_func # no warnings 
 export http_proxy="http://localhost:7070"
 export https_proxy="http://localhost:7070"
 curl ifconfig.me
-```
+``` -->
 
 ### 新神马小集群
 - 登录ip：202.127.205.186, port 5074 
