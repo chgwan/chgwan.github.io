@@ -48,10 +48,6 @@ if [ -n "$2" ]; then
 	SERVER_TARGET="$2"
 fi
 
-# The install dir uses a capitalized quality (Stable / Insider), while the
-# download URL uses the lowercase form (stable / insider).
-QUALITY_CAP=$(printf '%s' "$QUALITY" | cut -c1 | tr '[:lower:]' '[:upper:]')$(printf '%s' "$QUALITY" | cut -c2-)
-
 # local download
 DID_LOCAL_DOWNLOAD=0
 
@@ -271,11 +267,16 @@ do_cleanup() {
 do_remote_install() {
 	if ssh "$SERVER_TARGET" "
 		cd ~/.vscode-server
+		# CLI launcher binary (used by 'code' tunnels); kept for parity.
 		tar -xzf vscode-cli-${COMMIT_ID}.tar.gz --no-same-owner # add +v
-		mv code code-${COMMIT_ID}
-		mkdir -p cli/servers/${QUALITY_CAP}-${COMMIT_ID}
+		mv -f code code-${COMMIT_ID}
+		# Newer VS Code Remote-SSH loads the server straight from
+		# ~/.vscode-server/bin/<commit>/ . The old cli/servers/Stable-<commit>/server
+		# layout is deprecated; existing dirs are left in place for compatibility.
+		mkdir -p bin
 		tar -xzf vscode-cli-${COMMIT_ID}.tar.gz.server
-		mv vscode-${SERVER_DOWNLOAD_PATH} cli/servers/${QUALITY_CAP}-${COMMIT_ID}/server
+		rm -rf bin/${COMMIT_ID}
+		mv vscode-${SERVER_DOWNLOAD_PATH} bin/${COMMIT_ID}
 	"
 	then echo "success installed ...";
 	else
