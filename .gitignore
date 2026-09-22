@@ -22,4 +22,8 @@ package-lock.json
 !.vscode/extensions.json
 !.vscode/tasks.json
 
+# Secrets
+.env
+.env.*
+
 # Misc
