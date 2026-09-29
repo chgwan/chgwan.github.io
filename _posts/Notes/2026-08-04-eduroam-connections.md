@@ -1,11 +1,18 @@
 ---
-title: eduroam connection in wordwide
+title: eduroam connection worldwide
 author: chgwan
 categories: [Notes]
 tags: [Notes]
 render_with_liquid: false
 ---
 
-reference to: http://eduroam.cstnet.cn/global.jhtml
+## References
 
-每个国家的接入方法有时候都略有区别，需要按照教程设置
+- CN: <http://eduroam.cstnet.cn/global.jhtml>
+- EN: please use a translation tool
+
+## Notes
+
+The connection procedure differs slightly from country to country, so follow the instructions of the institution you are visiting.
+
+- NTU eduroam connection: <https://www.ntu.edu.sg/life-at-ntu/internet-account-and-policy#Content_C066_Col02>
