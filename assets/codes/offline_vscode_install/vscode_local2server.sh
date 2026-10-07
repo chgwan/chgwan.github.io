@@ -1,11 +1,13 @@
 # shellcheck shell=sh
 VSCODE_TMP_FOLDER="/tmp/vscode-server-download"
 
-echo "9d0ba5fd52e6: running"
+# Random per-run id (12 hex chars) used to tag output markers
+UUID=$(od -An -N6 -tx1 /dev/urandom | tr -d ' \n')
+
+echo "${UUID}: running"
 echo "Script executing under PID: $$"
 
 # Configuration
-UUID="9d0ba5fd52e6"
 COMMIT_ID="" # find in vscode client.
 QUALITY="stable"
 SERVER_TARGET=""
