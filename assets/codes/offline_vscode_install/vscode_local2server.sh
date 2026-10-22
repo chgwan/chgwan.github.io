@@ -269,9 +269,13 @@ do_cleanup() {
 do_remote_install() {
 	if ssh "$SERVER_TARGET" "
 		cd ~/.vscode-server
-		# CLI launcher binary (used by 'code' tunnels); kept for parity.
-		tar -xzf vscode-cli-${COMMIT_ID}.tar.gz --no-same-owner # add +v
-		mv -f code code-${COMMIT_ID}
+		# CLI launcher binary, installed as code-<commit> (the name Remote-SSH uses).
+		# Unpack into a scratch dir so an existing ~/.vscode-server/code
+		# (e.g. a user's 'code tunnel' service) is never overwritten.
+		mkdir -p .cli-${COMMIT_ID}
+		tar -xzf vscode-cli-${COMMIT_ID}.tar.gz -C .cli-${COMMIT_ID} --no-same-owner # add +v
+		mv -f .cli-${COMMIT_ID}/code code-${COMMIT_ID}
+		rm -rf .cli-${COMMIT_ID}
 		# Newer VS Code Remote-SSH loads the server straight from
 		# ~/.vscode-server/bin/<commit>/ . The old cli/servers/Stable-<commit>/server
 		# layout is deprecated; existing dirs are left in place for compatibility.
