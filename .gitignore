@@ -27,3 +27,10 @@ package-lock.json
 .env.*
 
 # Misc
+_sass/vendors
+assets/js/dist
+
+# Hidden system files
+*~
+.DS_Store
+Thumbs.db
