@@ -44,6 +44,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 
 - 磁约束等离子体实验物理，科学出版社，王龙
 - 托卡马克第四版，清华大学出版社，王文浩译
+- EAST 装置操作手册 - author EAST Team
 - Dive into deep learning - author Mu Li
 - B站视频，跟着李沐学AI - author Mu Li https://space.bilibili.com/1567748478
 - 强化学习 - EasyRL https://datawhalechina.github.io/easy-rl
@@ -74,7 +75,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 - [ ] 等离子体物理研究所邮箱 - 询问自己室的秘书
 - [ ] 开通新神马和老神马账号，特别是要开通新神马 DCU 权限 - 刘晓娟老师负责
 - [ ] EAST 账号 [Link](http://eastapp.ipp.ac.cn/eam/index.php) - 王枫老师管理 
-- [ ] 加入小组 [WPS 共享资料库](https://kdocs.cn/join/gl3pii5?f=101) 
+- [ ] 加入小组 [WPS 共享资料库](https://kdocs.cn/join/gl3pii5?f=101) - **更改 WPS 用户名至真实姓名之后再申请加入**
 - [ ] 生成 ed25519 算法的 ssh 公钥， 上传到`共享资料库/Storage/ssh/组内公钥.docx`
   > 生成方法 `ssh-keygen -t ed25519 -C "<yourname>"` 
 - [ ] 组内 AI 中转站账号，参考 [Vibe Coding and Connection](../vibe-coding-and-connections/)
@@ -248,7 +249,10 @@ _lyx 版本转换_
 
 ## 其他说明
 
-- 如果有部分链接无法打开，如果你不是小组成员，这部分内容不共享。如果你是小组成员，请联系 chgwan 加入到小组内部共享列表, 加入之前麻烦给 wps 用户名改成**真实姓名**，用以方便追踪。
+- 有部分链接：
+  - 如果你是小组成员，请联系 chgwan 加入到小组内部共享列表, **加入之前请给 wps 用户名改成真实姓名**，用以方便追踪。
+  - 如果你不是小组成员，这部分内容比较私密不共享。
+  
 - RSS订阅列表，方便及时追踪最新通知
   - [合肥物质科学研究院科研规划处](https://politepol.com/fd/iYjG8cdjXr5m.xml)
   - [等离子体所通知](https://politepol.com/fd/iTZb41hW1tqT.xml)
