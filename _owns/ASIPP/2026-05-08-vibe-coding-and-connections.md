@@ -5,38 +5,7 @@ tags: [Tutorial, Note]
 media_subpath: "/assets/img/commons"
 ---
 
-# 简化版 Vibe coding 和新神马连接教程
-
-## 所外登录到所内
-
-### 网络配置
-
-1. 在本机的 `~/.ssh/config` 中加入以下配置，把 `<nsm_account>` 换成自己的新神马账号：
-
-   ```bash
-   Host PublicJump1
-       HostName 146.56.207.178
-       Port 40000
-       User publicuser
-   Host PublicJump2
-       HostName 127.0.0.1
-       Port 60002
-       User publicuser
-       ProxyJump PublicJump1
-   # specific for oversea servers
-   Host PublicJump3
-       HostName 127.0.0.1
-       Port 50000
-       User publicuser
-   # NewShenma Login
-   Host NSMLogin
-       User <nsm_account>
-       HostName 202.127.205.70
-       Port 6021
-       ProxyJump PublicJump2
-   ```
-
-2. 配置完成后，用 `ssh NSMLogin` 即可登录对应节点；VS Code 的 Remote-SSH 也可以直接使用这些 Host。
+# 简化版 Vibe coding 的中转站使用手册
 
 ## 中转站账号
 
@@ -44,16 +13,16 @@ media_subpath: "/assets/img/commons"
 
 ### 基本信息
 
-| 项目 | 值 |
-| --- | --- |
-| Anthropic endpoint | `https://146.56.207.178:58808` |
-| OpenAI endpoint | `https://146.56.207.178:58808/v1` |
-| key | `sk` 开头的字符串，由管理员发放 |
+| 项目               | 值                                |
+| ------------------ | --------------------------------- |
+| Anthropic endpoint | `https://146.56.207.178:58808`    |
+| OpenAI endpoint    | `https://146.56.207.178:58808/v1` |
+| key                | `sk` 开头的字符串，由管理员发放   |
 
 ### 限额
 
 1. 每人每周暂定 $250，如有需要，说明情况后可联系管理员提高。
-2. GLM 相关 API 按半价计费，推荐优先使用智谱的 API：一方面支持国产，另一方面很多任务用不上很复杂的模型。
+2. GLM 相关 API 按半价计费，**推荐优先使用智谱的 API**：一方面支持国产，另一方面很多任务用不上很复杂的模型。
 3. 非必要不要使用 `gpt-6-astra` 和 `claude-fable-5`，这两个模型很贵，可能很快就会用完你的限额。
 4. 用量查看：访问 <https://146.56.207.178:58809>，在 api-key-view 中粘贴个人 key 即可。
 
@@ -67,12 +36,12 @@ curl -H "Authorization: Bearer your_api_key" https://146.56.207.178:58808/v1/mod
 
 截至 2026-09-22，`/v1/models` 返回的 model id 共 50 个，分组如下。**请照抄 id，包括大小写**（GLM 系列大小写不统一，是服务端原样返回的）：
 
-| 分组 | model id |
-| --- | --- |
-| claude | `claude-opus-5`、`claude-opus-4-8`、`claude-opus-4-7`、`claude-opus-4-6`、`claude-opus-4-5-20251101`、`claude-opus-4-1-20250805`、`claude-opus-4-20250514`、`claude-opus`、`claude-sonnet-5`、`claude-sonnet-4-6`、`claude-sonnet-4-5-20250929`、`claude-sonnet-4-20250514`、`claude-3-7-sonnet-20250219`、`claude-haiku-4-5-20251001`、`claude-haiku`、`claude-3-5-haiku-20241022`、`claude-fable-5-1`、`claude-fable-5` |
-| glm | `GLM-4.5`、`GLM-4.5-Air`、`GLM-4.6`、`glm-4.7`、`GLM-5`、`GLM-5-Turbo`、`GLM-5.1`、`glm-5.2`、`glm-5.3`、`glm-5.3[1m]`、`glm-5.3-flash`、`glm-5.3-flash[1m]` |
-| gemini | `gemini-3-flash`、`gemini-3.1-pro-low`、`gemini-3.1-flash-lite`、`gemini-3.1-flash-image`、`gemini-3.5-flash-lite`、`gemini-3.6-flash-high`、`gemini-3.7-flash-high`、`gemini-3.8-flash-high`、`gemini-pro-agent` |
-| gpt / codex | `gpt-6-astra`、`gpt-5.6-sol`、`gpt-5.6-luna`、`gpt-5.6-terra`、`gpt-5.5`、`gpt-image-2.5`、`gpt-image-2.5-flare`、`gpt-image-2.5-sunburst`、`gpt-image-2`、`gpt-image-1.5`、`codex-auto-review` |
+| 分组        | model id                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| claude      | `claude-opus-5`、`claude-opus-4-8`、`claude-opus-4-7`、`claude-opus-4-6`、`claude-opus-4-5-20251101`、`claude-opus-4-1-20250805`、`claude-opus-4-20250514`、`claude-opus`、`claude-sonnet-5`、`claude-sonnet-4-6`、`claude-sonnet-4-5-20250929`、`claude-sonnet-4-20250514`、`claude-3-7-sonnet-20250219`、`claude-haiku-4-5-20251001`、`claude-haiku`、`claude-3-5-haiku-20241022`、`claude-fable-5-1`、`claude-fable-5` |
+| glm         | `GLM-4.5`、`GLM-4.5-Air`、`GLM-4.6`、`glm-4.7`、`GLM-5`、`GLM-5-Turbo`、`GLM-5.1`、`glm-5.2`、`glm-5.3`、`glm-5.3[1m]`、`glm-5.3-flash`、`glm-5.3-flash[1m]`                                                                                                                                                                                                                                                              |
+| gemini      | `gemini-3-flash`、`gemini-3.1-pro-low`、`gemini-3.1-flash-lite`、`gemini-3.1-flash-image`、`gemini-3.5-flash-lite`、`gemini-3.6-flash-high`、`gemini-3.7-flash-high`、`gemini-3.8-flash-high`、`gemini-pro-agent`                                                                                                                                                                                                         |
+| gpt / codex | `gpt-6-astra`、`gpt-5.6-sol`、`gpt-5.6-luna`、`gpt-5.6-terra`、`gpt-5.5`、`gpt-image-2.5`、`gpt-image-2.5-flare`、`gpt-image-2.5-sunburst`、`gpt-image-2`、`gpt-image-1.5`、`codex-auto-review`                                                                                                                                                                                                                           |
 
 中转站不区分接口，上面任意 model id 都可以填到下文各工具的模型设置里（如 `<codex_model>`、`<claude_model>`）。
 
@@ -87,13 +56,13 @@ curl -H "Authorization: Bearer your_api_key" https://146.56.207.178:58808/v1/mod
 
 按使用场景分为 CLI、VS Code 插件、通用配置管理、桌面端和手机端五类，地址和 key 见上面的「基本信息」。
 
-| 分类 | 推荐工具 | 适用场景 |
-| --- | --- | --- |
-| CLI | Claude Code、Codex | 在终端 / 服务器上写代码、跑任务，**vibe coding 首选** |
-| VS Code 插件 | Claude Code、Codex | 在编辑器里写代码，可配合 Remote-SSH 使用 |
-| 通用配置管理 | CC Switch | 图形界面统一管理 Claude Code、Codex 等工具的中转站配置，一键切换 |
-| 桌面端 | Cherry Studio | 日常聊天、查资料 |
-| 手机端 | Chatbox、Agora | 随手提问、查看回答 |
+| 分类         | 推荐工具           | 适用场景                                                         |
+| ------------ | ------------------ | ---------------------------------------------------------------- |
+| CLI          | Claude Code、Codex | 在终端 / 服务器上写代码、跑任务，**vibe coding 首选**            |
+| VS Code 插件 | Claude Code、Codex | 在编辑器里写代码，可配合 Remote-SSH 使用                         |
+| 通用配置管理 | CC Switch          | 图形界面统一管理 Claude Code、Codex 等工具的中转站配置，一键切换 |
+| 桌面端       | Cherry Studio      | 日常聊天、查资料                                                 |
+| 手机端       | Chatbox、Agora     | 随手提问、查看回答                                               |
 
 ### CLI
 

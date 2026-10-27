@@ -52,8 +52,8 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 - 吴恩达机器学习课程，https://space.bilibili.com/3493134768016008
 
 ### 其他理论知识
-- 时间序列分析, https://www.math.pku.edu.cn/teachers/lidf/course/atsa/atsanotes/html/_atsanotes/index.html (较为理论，可能部分看不懂)
-- 基本机器学习算法可视化和公式讲解，即 scikit-learn 的文档，https://scikit-learn.org/stable/
+- [时间序列分析](https://www.math.pku.edu.cn/teachers/lidf/course/atsa/atsanotes/html/_atsanotes/index.html) (较为理论，可能部分看不懂)
+- 基本机器学习算法可视化和公式讲解，即 [scikit-learn 文档](https://scikit-learn.org/stable/)
 
 ## 预备知识
 
@@ -100,6 +100,8 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 - [Fusion Wiki 基本的tokamak 概念定义](https://wiki.fusion.ciemat.es/wiki/Main_Page)
 - [Fusion 术语表](https://euro-fusion.org/services/eurofusion-glossary/)
 - [简单的公用服务器教程](https://www.zhihu.com/question/506241986/answer/3457669268)
+- [Tokamak Components](https://3d.energyencyclopedia.com/tokamak_reactor)
+- [Tokamak Simulator](https://www.fusionsimulator.io/run/iter?preset=hmode)
 
 ## 代码开发
 - 工具链：Conda + Pytorch ( >= 2.4 推荐 latest stable version ) + Python >= 3.9 (推荐3.12)。PS：目前 Conda 对于组织已经不是免费的了，后续会逐步迁移至x [miniforge](https://github.com/conda-forge/miniforge), miniforge 用法和 conda 一样，只是是完全基于开源社区的。
@@ -128,7 +130,7 @@ server_name = 'mds.ipp.ac.cn'
 mdsthin_get(shot, tree_name, node_name, server_name)
 ```
 
-## EAST的数据使用和相关的数据库位置
+## EAST的数据使用
 
 1. **请不要用 python 脚本读取MDS+数据库**。虽然我们内部的有相对应的数据读取方法，但是这个会影响到 EAST 正常实验的进行。如果需要使用，请一定要征得 chenguang.wan 的同意
 <!-- 2. 数据库位置 `/gpfs/mds_data/DataBase`，这个是基于 HDF5 的数据库，支持多进程的读写。如果你想要的数据没有，请联系 chenguang.wan 或 minglong.wang -->
@@ -138,7 +140,7 @@ mdsthin_get(shot, tree_name, node_name, server_name)
 1. 新神马服务器数据 `/data/share/chenguang_wan/DataBase`，该数据库支持高 IO 的数据访问，可以使用 Python 高 IO 的读取
 2. 具体使用教程可以询问：王明龙和卢敬敬
 
-## 论文撰写和文献管理相关
+## 论文撰写和文献管理
 
 ### 论文署名
 
@@ -249,9 +251,10 @@ _lyx 版本转换_
 
 ## 其他说明
 
-- 有部分链接：
-  - 如果你是小组成员，请联系 chgwan 加入到小组内部共享列表, **加入之前请给 wps 用户名改成真实姓名**，用以方便追踪。
-  - 如果你不是小组成员，这部分内容比较私密不共享。
+- 有部分链接无法访问可能是以下原因：
+  - WPS 私有链接，如果你是小组成员，请联系 chgwan 加入到小组内部共享列表, **加入之前请给 wps 用户名改成真实姓名**。
+  - WPS 私有链接，如果你不是小组成员，这部分内容比较私密不共享。
+  - 可能需要魔法上网
   
 - RSS订阅列表，方便及时追踪最新通知
   - [合肥物质科学研究院科研规划处](https://politepol.com/fd/iYjG8cdjXr5m.xml)
