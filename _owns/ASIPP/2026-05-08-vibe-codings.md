@@ -56,13 +56,13 @@ curl -H "Authorization: Bearer your_api_key" https://146.56.207.178:58808/v1/mod
 
 按使用场景分为 CLI、VS Code 插件、通用配置管理、桌面端和手机端五类，地址和 key 见上面的「基本信息」。
 
-| 分类         | 推荐工具           | 适用场景                                                         |
-| ------------ | ------------------ | ---------------------------------------------------------------- |
-| CLI          | Claude Code、Codex | 在终端 / 服务器上写代码、跑任务，**vibe coding 首选**            |
-| VS Code 插件 | Claude Code、Codex | 在编辑器里写代码，可配合 Remote-SSH 使用                         |
-| 通用配置管理 | CC Switch          | 图形界面统一管理 Claude Code、Codex 等工具的中转站配置，一键切换 |
-| 桌面端       | Cherry Studio      | 日常聊天、查资料                                                 |
-| 手机端       | Chatbox、Agora     | 随手提问、查看回答                                               |
+| 分类         | 推荐工具                      | 适用场景                                                         |
+| ------------ | ----------------------------- | ---------------------------------------------------------------- |
+| CLI          | Claude Code、Codex            | 在终端 / 服务器上写代码、跑任务，**vibe coding 首选**            |
+| VS Code 插件 | Claude Code、Codex            | 在编辑器里写代码，可配合 Remote-SSH 使用                         |
+| 通用配置管理 | CC Switch                     | 图形界面统一管理 Claude Code、Codex 等工具的中转站配置，一键切换 |
+| 桌面端       | Cherry Studio                 | 日常聊天、查资料                                                 |
+| 手机端       | Cherry Studio、Chatbox、Agora | 随手提问、查看回答                                               |
 
 ### CLI
 
@@ -187,6 +187,13 @@ provider 卡片上的连通性检测只检查地址能否访问，不检查 key 
 两者均支持第三方 provider：Codex 的配置方法与上面 CLI 的 Codex 部分类似；Claude 可以参考[这篇教程](https://docs.qcode.cc/en/docs/ide/claude-desktop)。其他具体用法请自行搜索。
 
 ### 手机端
+
+#### Cherry Studio
+
+Cherry Studio 也有手机版，支持 iOS 和 Android，添加中转站的方法与桌面端类似。
+
+- Google Play：<https://play.google.com/store/apps/details?id=com.cherryai.cherrystudio_app>
+- App Store：<https://apps.apple.com/us/app/cherry-studio-ai-workstation/id6809783714>
 
 #### Chatbox
 
