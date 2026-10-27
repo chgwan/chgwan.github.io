@@ -78,7 +78,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 - [ ] 加入小组 [WPS 共享资料库](https://kdocs.cn/join/gl3pii5?f=101) - **更改 WPS 用户名至真实姓名之后再申请加入**
 - [ ] 生成 ed25519 算法的 ssh 公钥， 上传到`共享资料库/Storage/ssh/组内公钥.docx`
   > 生成方法 `ssh-keygen -t ed25519 -C "<yourname>"` 
-- [ ] 组内 AI 中转站账号，参考 [Vibe Coding and Connection](../vibe-coding-and-connections/)
+- [ ] 组内 AI 中转站账号，参考 [Vibe Coding and Connection](../vibe-codings/)
 
 ### 代码和配置类问题解决方案
 1. 百度，Google，GPT全都搞一遍，特别是要注意给问题翻译成英文去搜一搜
