@@ -33,16 +33,10 @@ media_subpath: "/assets/img/commons"
         HostName 202.127.205.70
         Port 6021
         ProxyJump PublicJump2
-    # DCU debug node login
-    Host DCU383
-        User <nsm_account>
-        HostName shenmagpu383
-        ProxyJump TxToNSM
     ```
 
 #### 登录
 - 登录到新神马 `ssh NSMLogin`
-- 登录到 shenmagpu383，也就是我们常用的调试服务器 `ssh DCU383`
 - 登录到任意 ASIPP 内网服务器  `ssh -J PublicJump2 <username>@<ip> -p port`
 
 ### 海外服务器
