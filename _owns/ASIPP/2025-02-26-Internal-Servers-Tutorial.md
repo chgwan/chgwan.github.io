@@ -31,6 +31,7 @@ media_subpath: "/assets/img/commons"
     Host NSMLogin
         User <nsm_account>
         HostName 202.127.205.70
+        # The port may be 6022 instead; follow the official instructions.
         Port 6021
         ProxyJump PublicJump2
     ```
@@ -315,9 +316,9 @@ curl ifconfig.me
 <!-- - 所有人home目录限制大小为 3T，所有文件都可以放在 home 下面。 -->
 <!-- - 目前数据盘 `/gpfs` 容易掉，待解决  -->
 
-### TODOs
-- [x] 数据访问
-- [x] 外网直连 
+<!-- ### TODOs -->
+<!-- - [x] 数据访问 -->
+<!-- - [x] 外网直连  -->
 
 ## 一些建议
 
