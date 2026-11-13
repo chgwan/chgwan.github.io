@@ -118,7 +118,7 @@ It should print the path where you put the class. Then compile `iopjournal-templ
 
 本文以 IOP Publishing 的模板为例，介绍如何在 TeX Live 中安装新的期刊模板，包括 Linux 和 Windows 两种系统。
 
-### 下载模板
+## 下载模板
 
 IOP 模板页面是 <https://publishingsupport.iopscience.iop.org/questions/latex-template/>。当前（2025 年）的模板包是 `ioplatextemplate.zip`：
 
@@ -131,9 +131,9 @@ unzip ioplatextemplate.zip -d iop
 
 TeX Live 会先搜索用户目录树 `TEXMFHOME`，再搜索系统目录树。装在用户目录（方式一）不需要管理员权限，也不需要运行 `texhash`；而且它不在按年份命名的安装目录下，升级 TeX Live 后依然有效。只有当本机所有用户都要用这个模板时，才用系统级安装（方式二）。
 
-### Linux
+## Linux
 
-#### 方式一：安装到用户目录（推荐）
+### 方式一：安装到用户目录（推荐）
 
 `TEXMFHOME` 默认是 `~/texmf`（前面没有点）。用下面的命令查看：
 
@@ -149,7 +149,7 @@ mkdir -p ~/texmf/tex/latex/iop
 cp iop/iopjournal.cls ~/texmf/tex/latex/iop/
 ```
 
-#### 方式二：系统级安装
+### 方式二：系统级安装
 
 1. 找到 TeX Live 的安装位置：
 
@@ -173,18 +173,18 @@ cp iop/iopjournal.cls ~/texmf/tex/latex/iop/
 
     如果 `texhash` 报 `permission denied`，又不能用 `sudo`，可以把 TeX Live 目录的所有者改成当前用户：`sudo chown -R $USER /usr/local/texlive`。
 
-### Windows
+## Windows
 
 以下命令在 PowerShell 中运行，假设 TeX Live 装在默认位置 `C:\texlive\2025`；请把 `2025` 换成你的 TeX Live 年份。
 
-#### 下载并解压
+### 下载并解压
 
 ```powershell
 curl.exe -LO https://publishingsupport.iopscience.iop.org/wp-content/uploads/2025/07/ioplatextemplate.zip
 Expand-Archive ioplatextemplate.zip -DestinationPath iop
 ```
 
-#### 方式一：安装到用户目录（推荐）
+### 方式一：安装到用户目录（推荐）
 
 `TEXMFHOME` 默认是 `C:\Users\<user>\texmf`。用下面的命令查看：
 
@@ -200,7 +200,7 @@ New-Item -ItemType Directory -Force "$env:USERPROFILE\texmf\tex\latex\iop"
 Copy-Item iop\iopjournal.cls "$env:USERPROFILE\texmf\tex\latex\iop\"
 ```
 
-#### 方式二：系统级安装
+### 方式二：系统级安装
 
 以管理员身份打开 PowerShell，把类文件复制到 `C:\texlive\texmf-local`，然后重建文件数据库：
 
@@ -212,7 +212,7 @@ C:\texlive\2025\bin\windows\texhash.exe
 
 如果用 TeXstudio 或 VS Code（LaTeX Workshop）等编辑器，安装后请重启编辑器，让它识别新的类文件。
 
-### 验证
+## 验证
 
 两种系统都运行：
 

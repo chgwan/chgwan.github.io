@@ -52,26 +52,26 @@ You can also download prebuilt releases for macOS, Windows, Linux, FreeBSD and t
 
 帮助 Claude Code 等编程智能体写出更好代码的工具和技能。
 
-### Modern Web Guidance
+## Modern Web Guidance
 
 - **链接：** <https://developer.chrome.com/docs/modern-web-guidance>
 - **简介：** Chrome 团队推出的工具包，为编程智能体提供最新的 Web 平台最佳实践和浏览器兼容性数据，让它们写出现代的 HTML、CSS 和 JS，而不是过时的写法。
 - **安装：** 使用 `modern-web-guidance` 命令行工具，或作为插件安装到 Claude Code 等智能体中。
 
-### 应用克隆
+## 应用克隆
 
 这些工具用于研究现有应用的工作原理，以便构建你自己的版本。
 
 > 只研究你有权研究的软件，不要发布他人应用的复制品。
 {: .prompt-warning }
 
-#### REA
+### REA
 
 - **链接：** <https://github.com/morluto/rea>
 - **简介：** 一个 MCP 服务器和命令行工具（MIT 许可证）。它让智能体研究软件，从运行时行为一直到原生二进制文件，并为每个结论给出证据。
 - **用途：** 弄清现有应用中某个功能的实现方式，然后在自己的项目中构建类似功能。
 
-#### Craft Anything
+### Craft Anything
 
 - **链接：** <https://github.com/storytold/craft-anything>
 - **官网：** <https://craftanything.lol>
