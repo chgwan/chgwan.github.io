@@ -140,113 +140,22 @@ mdsthin_get(shot, tree_name, node_name, server_name)
 1. 新神马服务器数据 `/data/share/chenguang_wan/DataBase`，该数据库支持高 IO 的数据访问，可以使用 Python 高 IO 的读取
 2. 具体使用教程可以询问：王明龙和卢敬敬
 
-## 论文撰写和文献管理
+## 论文撰写
 
-### 论文署名
+论文署名、模板、排版、文献规范、致谢、可投期刊和所内投稿流程，详见 [论文撰写和投稿](../paper-writing/)。
 
-**下面署名一个标点符号都不能错**
-
-中文名：中国科学院合肥物质科学研究院等离子体物理研究所，合肥 230031，中国
-
-英文名：Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences, Hefei 230031, China
-
-中文名：中国科学技术大学，合肥 230026，中国
-
-英文名：University of Science and Technology of China, Hefei 230026, China
-
-**满足毕业条件后，建议将署名的第一单位改为合肥物质科学研究院**，这样的话，不仅可以拿到科研奖励，对于未来的职业发展也有帮助。
-
-用到EAST数据，需要在作者名列表中**加上 EAST team**, 其中 EAST team 的 affiliation 是 Institute of Plasma Physics, Hefei Institutes of Physical Science, Chinese Academy of Sciences, Hefei 230031, China
-
-
-### 软件和 LyX 模板等
+## 文献管理
 
 - 文献管理 -- 使用 Zotero
   - 使用Better BibTex 插件导出`.bib`文件，其中需要添加自定义配置以实现规范的Citation Keys, 设置 Edit -> Settings -> Better BibTex -> Citation keys和Active citation key formula 均设置为: `auth(0,1,author,false).capitalize+year`
   - 可使用Better Notes 插件实现基于markdown的笔记功能
   - Zotero 可以配置 WebDav / Sync Disk 以实现跨端同步文件和笔记的功能
   - WebDav 配置可以参考[中国科技云webdav支持](https://kb.cstcloud.cn/team/1904464900890169344/kb/1923253559269396480/read/798915966095333423)
-- 论文撰写 -- 使用 Lyx 2.5.x 版本 + latex 最新版 + IOP 模板，如果以使用高版本的 Lyx 编写文档，可以用高版本自带的导出功能将文档导出成兼容 2.4.x 版本的形式，具体方法见下图
-
-![lyx_convert](lyx_convert.png)
-_lyx 版本转换_
-
-- IOP 模板下载位置：https://www.kdocs.cn/l/cbc9uJBTrkSa，IOP 模板安装方法 https://www.cnblogs.com/freedom-wan/p/13429879.html
-- Nuclear Fusion 相关 lyx 模板，请**基于该模板进行撰写**，该模板的格式经过本人优化，看起来更加优美，能让审稿人看的更爽，下载链接  https://www.kdocs.cn/l/ccj2tevnX0Tl
-
-### 论文排版技巧
-- 所有的图片，除非没有 pdf 版本的图片，否则的话**全都使用 pdf 矢量图**。
-- 如果喜欢 latex overleaf, 建议使用 **中国科技云** overleaf 共享网站 https://latex.cstcloud.cn/project。
-  - ChatGPT 新 LaTex 工具: [prism.openai.com](https://prism.openai.com/) 支持协作，用起来也很好。
-- 其他格式 一般按照 Nuclear Fusion 格式，特别注意文献引用和图表引用
-- 最好保证自己的**英文论文能用 pdflatex 编译不出错**，这样才是各类英文期刊比较容易通过的格式。
-- 除非必要否则不要出现 Unicode，特别是 .bib 文件同样不允许出现 Unicode。如果使用的 Zotero，设置方法是 Settings ->  Better BibTex -> {BibLaTex, BibTex, Export BibTex }-> Export unicode as plain-text latex commands.
-
-### 论文撰写
-
-- 投稿之前一定要让"Chenguang Wan@chenguang.wan@ipp.ac.cn"确认作者列表，这个十分重要！！！
-- 如果合适的话，在论文投稿之前，最好写一个 **专利和软著**
-- 论文投稿之前，需要在 pinboard 上 **公示**，[公示方法参考](../paper-sub-procedure)
-- 基本流程：论文初稿 &rarr; 专利 &rarr; 软著&rarr; 投稿，专利的申请日要在论文发表日之前。
-- 所有论文全都用我的账号投稿，这样我能最快的和编辑沟通。（惨痛经验可以详询 Minglong Wang）
-
-#### 论文撰写其他需要注意的细节
-
-- 不要中英文标点混排，因为半角和全角符号的处理方式不一样，容易出现很奇怪的错误。比较容易出错的有：中文:"（）", 和英文 "(),", 即括号，逗号，句号，引号。
-- `~ 是 \sim 而不是直接敲 ~`
-- `.bib` 文件， Key 最好以 author-FirstName.capitalize+year, 姓首字母大写 + 年份，如果重复的话，即后面缀上 a,b,c 用以区别。即 `Wan2025c` 这种格式
-- 最好每个参考文献都有 doi，没有 doi 的时候最好有 url，而且**只能出现一个链接**，doi 优先，没有 doi 再选择其他链接。
-
-### 论文致谢
-这个部分非常重要，关系到科研项目是否能顺利结项。
-
-1. 如果用到EAST数据需要添加下列语句：
-    > We thank the staff members at EAST in Hefei (https://cstr.cn/31130.02.EAST ), for providing technical support and assistance in data collection and analysis.
-2. 其次对于所有在本论文中帮助过你的人，但是不在论文作者中，需要在致谢部分给出
-3. 项目致谢，这部分需要让 chenguang.wan@ipp.ac.cn 确认
-
-### 可投期刊推荐
-
-#### 一区 TOP 类可投
-1. Nature Machine Intelligence: 这个比较简单，目测是很容易拿下的子刊
-2. Nature Physics
-3. Nature Energy
-4. Nature Communications
-5. Communications Physics：该期刊一般是 Nature Communication 投不中的选择
-6. Cell Reports Physical Science
-7. Nuclear Fusion，其中有 Nuclear Fusion Letter，Letter 属于 NF 中比较重要的文章。
-8. Nature Machine Intelligence
-9. The Innovation (Cell Press)
-10. Journal of Fusion Energy
-11. Science Advance：和 NC 类似
-
-#### 二区期刊可投
-
-1. Nuclear Materials and Energy
-2. NUCLEAR ENGINEERING AND DESIGN
-3. PPCF
-
-#### 纯 AI 领域
-- NeurIPS, AI for Science Workshop
-- ICLR，ICML，AAAI， AI for Science
-
-#### 可投水刊列表
-
-1. IEEE Transactions on Nuclear Science
-2. Fusion Engineering and Design
-3. IEEE Transactions on Plasma Science
-
-#### 推荐审稿人列表
-
-[不宜公开内容，列表见链接](https://kdocs.cn/l/cewDvJxZMyPX)
-
-
-### 论文中建议给下列论文，全都引用一遍
-
-[Recommended citations](/assets/codes/bib/recommended_citations.bib)
+- Local AI 模型接入读文献：[beaver-zotero-local](https://github.com/chgwan/beaver-zotero-local)
+  - Zotero 的 AI 文献助手插件，接入自己的大模型服务，不需要注册账号，数据不经过任何其他服务器。
 
 ## 管理要求
-- 所有组内同学，**必须按照一周一次的频率**在周三发送周总结报告至万晨光的邮箱。
+- 所有组内同学，**必须按照一周一次的频率**在周三发送周总结报告至 chenguang.wan@ipp.ac.cn。
 - **保持邮件畅通**，在手机上安装相应的邮件程序。包括论文、会议等学术活动的通知大多使用邮件。PS: 中科院邮件客户端[设置教程](https://help.cstnet.cn/changjianwenti/youjianshoufa/kehuduan.htm)
 
 ## 其他说明

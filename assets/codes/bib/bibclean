@@ -1,0 +1,194 @@
+#!/usr/bin/env python3
+"""Clean a BibTeX file: remove 'abstract', 'file', drop 'url' when 'doi' exists.
+
+Usage:
+    bibclean input.bib [-o output.bib]     # writes to output (or stdout)
+    bibclean input.bib -i                   # in-place
+"""
+import argparse
+import re
+import sys
+from pathlib import Path
+
+
+def split_entries(text):
+    """Yield (prefix, entry_text) splitting top-level @entries."""
+    out = []
+    i = 0
+    n = len(text)
+    while i < n:
+        at = text.find('@', i)
+        if at == -1:
+            out.append(('pre', text[i:]))
+            break
+        if at > i:
+            out.append(('pre', text[i:at]))
+        brace = text.find('{', at)
+        if brace == -1:
+            out.append(('pre', text[at:]))
+            break
+        depth = 0
+        j = brace
+        while j < n:
+            c = text[j]
+            if c == '{':
+                depth += 1
+            elif c == '}':
+                depth -= 1
+                if depth == 0:
+                    j += 1
+                    break
+            j += 1
+        out.append(('entry', text[at:j]))
+        i = j
+    return out
+
+
+def parse_fields(body):
+    """Parse fields from entry body (text between first { and last }).
+    Returns (citekey, list of (name, raw_value_with_delims, trailing_sep)).
+    """
+    # body looks like: citekey,\n  field = {value},\n  ...
+    # We'll tokenize preserving original spacing where possible.
+    fields = []
+    # find first comma (end of citekey)
+    # handle citekey
+    m = re.match(r'\s*([^,\n]+?)\s*,', body)
+    if not m:
+        return None, []
+    citekey = m.group(1)
+    pos = m.end()
+    while pos < len(body):
+        # skip whitespace
+        ws = re.match(r'\s*', body[pos:])
+        pos += ws.end()
+        if pos >= len(body):
+            break
+        fm = re.match(r'([A-Za-z_][\w\-]*)\s*=\s*', body[pos:])
+        if not fm:
+            break
+        name = fm.group(1)
+        vstart = pos + fm.end()
+        # parse value: {...} (balanced), "..." or bareword
+        c = body[vstart] if vstart < len(body) else ''
+        if c == '{':
+            depth = 0
+            k = vstart
+            while k < len(body):
+                if body[k] == '{':
+                    depth += 1
+                elif body[k] == '}':
+                    depth -= 1
+                    if depth == 0:
+                        k += 1
+                        break
+                k += 1
+            vend = k
+        elif c == '"':
+            k = vstart + 1
+            while k < len(body) and body[k] != '"':
+                if body[k] == '\\':
+                    k += 2
+                else:
+                    k += 1
+            vend = k + 1
+        else:
+            k = vstart
+            while k < len(body) and body[k] not in ',\n':
+                k += 1
+            vend = k
+        value = body[vstart:vend]
+        # trailing comma/whitespace
+        tstart = vend
+        tm = re.match(r'[ \t]*,?[ \t]*\n?', body[tstart:])
+        trailing = tm.group(0) if tm else ''
+        fields.append((name, value, trailing))
+        pos = tstart + (len(trailing) if tm else 0)
+    return citekey, fields
+
+
+def clean_entry(entry):
+    """Clean a single BibTeX entry: drop 'abstract'; drop 'url' if 'doi' present."""
+    # entry like: @type{body}
+    m = re.match(r'(@\w+\s*\{)(.*)\}\s*$', entry, re.DOTALL)
+    if not m:
+        return entry
+    head = m.group(1)
+    body = m.group(2)
+    citekey, fields = parse_fields(body)
+    if citekey is None:
+        return entry
+    names_lower = {f[0].lower() for f in fields}
+    has_doi = 'doi' in names_lower
+    if 'author' not in names_lower:
+        print(f'warning: no author in entry {citekey!r}', file=sys.stderr)
+    entry_type = re.match(r'@(\w+)', head).group(1).lower()
+    if entry_type == 'article' and not ({'doi', 'url'} & names_lower):
+        print(f'warning: article {citekey!r} has no doi or url', file=sys.stderr)
+    kept = []
+    for name, value, trailing in fields:
+        low = name.lower()
+        if low == 'abstract':
+            continue
+        if low == 'file':
+            continue
+        if low == 'url' and has_doi:
+            continue
+        kept.append((name, value, trailing))
+        non_ascii = [c for c in value if ord(c) > 127]
+        if non_ascii:
+            chars = ' '.join(f'{c!r}' for c in dict.fromkeys(non_ascii))
+            print(f'warning: unicode in {citekey!r} field {name!r}: {chars}', file=sys.stderr)
+    # rebuild
+    # preserve leading whitespace style: look at original body prefix after citekey
+    # find indent used
+    indent_match = re.search(r',\s*\n(\s*)\w', body)
+    indent = indent_match.group(1) if indent_match else '  '
+    parts = [citekey + ',\n']
+    for i, (name, value, _) in enumerate(kept):
+        sep = ',\n' if i < len(kept) - 1 else '\n'
+        parts.append(f'{indent}{name} = {value}{sep}')
+    new_body = ''.join(parts)
+    return f'{head}{new_body}}}'
+
+
+def clean_bib(text):
+    parts = split_entries(text)
+    out = []
+    for kind, chunk in parts:
+        if kind == 'entry':
+            out.append(clean_entry(chunk))
+        else:
+            out.append(chunk)
+    return ''.join(out)
+
+
+def main():
+    ap = argparse.ArgumentParser(
+        description='Clean BibTeX: drop abstract, file; drop url if doi present.',
+        epilog=(
+            'examples:\n'
+            '  bibclean refs.bib                 # print cleaned output to stdout\n'
+            '  bibclean refs.bib -o clean.bib    # write to a new file\n'
+            '  bibclean refs.bib -i              # edit in place'
+        ),
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
+    ap.add_argument('input', help='input .bib file')
+    ap.add_argument('-o', '--output', metavar='FILE', help='write output to FILE (default: stdout)')
+    ap.add_argument('-i', '--in-place', action='store_true', help='edit input file in place')
+    args = ap.parse_args()
+
+    src = Path(args.input).read_text(encoding='utf-8')
+    cleaned = clean_bib(src)
+
+    if args.in_place:
+        Path(args.input).write_text(cleaned, encoding='utf-8')
+    elif args.output:
+        Path(args.output).write_text(cleaned, encoding='utf-8')
+    else:
+        sys.stdout.write(cleaned)
+
+
+if __name__ == '__main__':
+    main()

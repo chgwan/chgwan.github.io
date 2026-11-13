@@ -7,7 +7,7 @@ permalink: /posts/owns/
 ---
 ## 目录
 - **[AI tokamak 入门指南](AI-tokamak-tutorial)**
-- **[ASIPP论文投稿](paper-sub-procedure)**
+- **[论文撰写和投稿](paper-writing)**
 - **[ASIPP报销](ASIPP-reimbursement)**
 - **[开发规范](development-styles)**
 - **[内部服务器使用手册](Internal-Servers-Tutorial)**
