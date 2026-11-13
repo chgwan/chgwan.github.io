@@ -26,7 +26,7 @@ render_with_liquid: false
 - 论文撰写 -- 使用 Lyx 或者使用 LaTex，基于 IOP 模板
 - 文献管理 -- 使用 Zotero，配置方法见 [AI tokamak 入门指南](../AI-tokamak-tutorial/#文献管理)
 - IOP 模板下载位置：https://www.kdocs.cn/l/cbc9uJBTrkSa，[IOP 模板安装方法](../../texlive-install-IOP-template/)
-- Nuclear Fusion 相关 Lyx 模板，请**基于该模板进行撰写**，该模板的格式经过本人优化，看起来更加优美，能让审稿人看的更爽，下载链接  https://www.kdocs.cn/team/2584916048/586086967125，请修改 Preamble 部分中的作者部分，需要改为 第一作者 et al 的形式。
+- Nuclear Fusion 相关 Lyx 模板，请**基于该模板进行撰写**，该模板的格式经过本人优化，看起来更加优美，能让审稿人看的更爽，模板见 [NFTemplate](https://github.com/chgwan/chgwan.github.io/tree/gh-pages/assets/codes/NFTemplate)，包括 [Nuclear_Fusion.lyx](/assets/codes/NFTemplate/Nuclear_Fusion.lyx)、[Nuclear_Fusion.tex](/assets/codes/NFTemplate/Nuclear_Fusion.tex) 和 [Library.bib](/assets/codes/NFTemplate/Library.bib)，请修改 Preamble 部分中的作者部分，需要改为 第一作者 et al 的形式。
 
 ## 论文排版技巧
 - 所有的图片，除非没有 pdf 版本的图片，否则的话**全都使用 pdf 矢量图**。

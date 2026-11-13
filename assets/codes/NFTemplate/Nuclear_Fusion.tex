@@ -1,0 +1,109 @@
+%% LyX 2.5.1 created this file.  For more info, see https://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[twoside,english,sort&compress]{iopart}
+\PassOptionsToPackage{natbib=true}{biblatex}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{babel}
+\usepackage{geometry}
+\geometry{verbose}
+\pagestyle{headings}
+\PassOptionsToPackage{normalem}{ulem}
+\usepackage{ulem}
+\usepackage[bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=false,colorlinks=true]
+ {hyperref}
+\hypersetup{
+ pdfauthor={Wang},
+ citecolor=blue,linkcolor=blue,urlcolor=blue}
+
+\makeatletter
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.
+\providecolor{lyxadded}{rgb}{0,0,1}
+\providecolor{lyxdeleted}{rgb}{1,0,0}
+%% Change tracking with ulem and xcolor: base macros
+\DeclareRobustCommand{\mklyxadded}[1]{\textcolor{lyxadded}\bgroup#1\egroup}
+\DeclareRobustCommand{\mklyxdeleted}[1]{\textcolor{lyxdeleted}\bgroup\mklyxsout{#1}\egroup}
+\DeclareRobustCommand{\mklyxsout}[1]{\ifx\\#1\else\sout{#1}\fi}
+%% Change tracking with ulem, xcolor, and hyperref: ct markup
+\DeclareRobustCommand{\lyxadded}[4][]{\texorpdfstring{\mklyxadded{#4}}{#4}}
+\DeclareRobustCommand{\lyxdeleted}[4][]{\texorpdfstring{\mklyxdeleted{#4}}{}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\usepackage{iopams}
+\usepackage{setstack}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+% define \newblock to get natbib work with ioparticle
+% (normally only needed for the "thebibliography" environment)
+\def\newblock{\hskip .11em plus .33em minus .07em}
+% turn-off the odd and even pages looks different.
+\geometry{twoside=false}
+% define command \eqref
+\newcommand{\eqref}[1]{(\begin_inset CommandInset ref
+LatexCommand ref
+reference "#1"
+
+\end_inset)}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+% Change to your own name
+% \rhead{C. Wan \textit{et al}}
+\rhead{M. Wang \textit{et al}}
+\cfoot{\thepage}
+% setting figure caption in the leftmost%
+\usepackage[justification=raggedright,labelfont=bf,singlelinecheck=true]{caption}
+% setting line number
+\usepackage[pagewise]{lineno}
+\usepackage{tablefootnote}
+\usepackage{placeins}
+%% show line numbers
+\linenumbers
+\renewcommand{\floatpagefraction}{0.8} % Allows figures to take up to 80% of a float page
+\renewcommand{\topfraction}{0.8}       % Also adjust topfraction to avoid "too many unprocessed floats" errors
+
+\makeatother
+
+\usepackage[style=numeric,style=numeric-comp,sorting=none,natbib=true,maxnames=2,minnames=1,url=false,eprint=false]{biblatex}
+\addbibresource{Library.bib}
+\begin{document}
+\title{Paper Title}
+\author{Minglong Wang$^{1,2,a}$, Chenguang Wan$^{1,3,a,*}$, and the EAST
+Team$^{1}$\footnote{See Gong \emph{et al} 2024 (\href{https://doi.org/10.1088/1741-4326/ad4270}{https://doi.org/10.1088/1741-4326/ad4270}) for the EAST Team.} }
+\address{$^{1}$Institute of Plasma Physics, Hefei Institutes of Physical Science,
+Chinese Academy of Sciences 230031, Hefei}
+\address{$^{2}$University of Science and Technology of China, Hefei 230026,
+China}
+\address{$^{3}$School of Physical and Mathematical Sciences, Nanyang Technological
+University, Singapore 637371, Singapore}
+\address{$^{4}$School of Information Science and Technology, University of
+Science and Technology of China, Hefei 230093, China}
+\address{$^{a}$These authors contribute equally}
+\ead{\href{mailto:chenguang.wan@ipp.ac.cn}{chenguang.wan@ipp.ac.cn}}
+\begin{abstract}
+bla bla bla
+\end{abstract}
+\noindent{\it Keywords\/}: {\noindent EAST}
+\maketitle
+
+\section{Introduction}
+
+bla bla bla \citep{Wan2021}
+
+\section{Acknowledgment}
+
+The model training in this paper was performed on the ShenMa High
+Performance Computing Cluster in Institute of Plasma Physics, Chinese
+Academy of Sciences. We thank the staff members at EAST in Hefei (https://cstr.cn/31130.02.EAST
+), for providing technical support and assistance in data collection
+and analysis.
+
+This research is supported by the National Natural Science Foundation
+of China under Grant No. 12505267, and the National Research Foundation,
+Singapore.
+
+\printbibliography
+
+\end{document}
