@@ -64,9 +64,12 @@ render_with_liquid: false
 [不宜公开内容，列表见链接](https://kdocs.cn/l/cewDvJxZMyPX)
 
 
-## 论文中建议给下列论文，全都引用一遍
+## 推荐引用的论文
 
-[Recommended citations](/assets/codes/bib/recommended_citations.bib)
+请从下列论文中挑选与自己工作相关的进行引用，不需要全部引用。
+
+- [Zotero](https://www.zotero.org/chenguangwan)
+- [Google Scholar](https://scholar.google.com/citations?user=ncURiLEAAAAJ&hl=en)
 
 
 ## 等离子体所论文投稿流程 (Deprecated)
