@@ -36,7 +36,7 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 | Nuclear Fusion                               | 1000           |      |
 | Nature 子刊                                  | 50000          |      |
 | 其他论文                                     | 影响因子 * 200 |      |
-| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      | -->  
+| 其他工作：主要包括采购，报账等。年终统一发放 | 酌情而定       |      | -->  |
 
 ## 教材和书本
 
@@ -73,10 +73,10 @@ AI + 托卡马克，包括数据、控制和物理模拟加速等多个方面。
 
 ### 账号开通列表 <span id="open_accounts"> </span>
 - [ ] 等离子体物理研究所邮箱 - 询问自己室的秘书
-- [ ] 开通新神马和老神马账号，特别是要开通新神马 DCU 权限 - 刘晓娟老师负责
+- [ ] 开通新神马和老神马账号，特别是要开通新神马 DCU 权限, 和 chenguang_wan 组。 - 刘晓娟老师和杨小庆负责
 - [ ] EAST 账号 [Link](http://eastapp.ipp.ac.cn/eam/index.php) - 王枫老师管理 
 - [ ] 加入小组 [WPS 共享资料库](https://kdocs.cn/join/gl3pii5?f=101) - **更改 WPS 用户名至真实姓名之后再申请加入**
-- [ ] 生成 ed25519 算法的 ssh 公钥， 上传到`共享资料库/Storage/ssh/组内公钥.docx`
+- [ ] 生成 ed25519 算法的 ssh 公钥， 上传到`https://www.kdocs.cn/l/caSS9cghUx4I`
   > 生成方法 `ssh-keygen -t ed25519 -C "<yourname>"` 
 - [ ] 组内 AI 中转站账号，参考 [Vibe Coding and Connection](../vibe-codings/)
 
@@ -132,9 +132,8 @@ mdsthin_get(shot, tree_name, node_name, server_name)
 
 ## EAST的数据使用
 
-1. **请不要用 python 脚本读取MDS+数据库**。虽然我们内部的有相对应的数据读取方法，但是这个会影响到 EAST 正常实验的进行。如果需要使用，请一定要征得 chenguang.wan 的同意
-<!-- 2. 数据库位置 `/gpfs/mds_data/DataBase`，这个是基于 HDF5 的数据库，支持多进程的读写。如果你想要的数据没有，请联系 chenguang.wan 或 minglong.wang -->
-2. 数据库所有的数据请不要进行除读数据外的任何操作。**误删**会影响**所有人的工作**
+1. **请不要用 python 脚本扫描MDS+数据库**，大于2个进程，并且长期读取。扫描会影响到 EAST 正常实验的进行。如果需要扫描，请一定要征得 chenguang.wan 的同意，否则引起的任何后果，自己承担。
+2. 数据库所有的数据请不要进行除读数据外的任何操作。**误删**会影响**所有人的工作**。
 
 ### 数据库使用方法
 1. 新神马服务器数据 `/data/share/chenguang_wan/DataBase`，该数据库支持高 IO 的数据访问，可以使用 Python 高 IO 的读取
